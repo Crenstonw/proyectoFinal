@@ -1,0 +1,19 @@
+body {
+    background-image: url(BackgroundSinLetras.png);
+}
+
+img {
+    width: 80px;
+}
+
+#logo {
+    max-width: auto;
+}
+
+#salir {
+    width: 20px;
+}
+
+nav {
+    max-height: 20vh;
+}
