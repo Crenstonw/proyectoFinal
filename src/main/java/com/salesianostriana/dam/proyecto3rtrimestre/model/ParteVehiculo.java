@@ -1,4 +1,4 @@
-package com.salesianostriana.dam.proyecto3rtrimestre.model;
+/*package com.salesianostriana.dam.proyecto3rtrimestre.model;
 
 import java.time.LocalDateTime;
 
@@ -51,4 +51,4 @@ public class ParteVehiculo {
 		cliente.getParteVehiculo().remove(this);
 		this.cliente=null;
 	}
-}
+}*/
