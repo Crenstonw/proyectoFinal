@@ -1,14 +1,13 @@
 package com.salesianostriana.dam.proyecto3rtrimestre.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class indexController {
-
-	@GetMapping({"/", "/iniciarSesion"})
-	public String showInicio(Model model) {
-		return "formCliente";
+public class InicioController {
+	
+	@GetMapping("/Inicio")
+	public String showInicio() {
+		return "inicio";
 	}
 }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div th:fragment="nav">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img id="logo" th:src="@{/images/logo_provisional.png}"></a>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Tablas
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto overflow-hiden">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><img th:src="@{/images/trabajador.png}">Trabajador</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><img th:src="@{/images/cliente.png}">Cliente</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><img th:src="@{/images/coche.png}">Vehículo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><img th:src="@{/images/pieza.png}">Producto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><img th:src="@{/images/parte.png}">Parte Vehículo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><img th:src="@{/images/factura.png}">Factura</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <img th:src="@{/images/monigotebase.png}"> Administrador
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Ajustes</a></li>
+                                <li><a class="dropdown-item" href="#">Acerca de</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#"><img id="salir" src="salir.png"> Cerrar sesión</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="collapse" id="collapseExample">
+            <aside>
+                <div>
+                    <input type="search" name="busquedaAccion" placeholder="Ver lista de...">
+                    <input type="submit" value="Buscar">
+                </div>
+                <ul class="list-group d-flex">
+                    <li class="list-group-item">Clientes</li>
+                    <li class="list-group-item">Vehículos</li>
+                    <li class="list-group-item">Productos</li>
+                    <li class="list-group-item">Trabajadores</li>
+                    <li class="list-group-item">Facturas</li>
+                    <li class="list-group-item">Proveedores</li>
+                    <li class="list-group-item">Partes</li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
