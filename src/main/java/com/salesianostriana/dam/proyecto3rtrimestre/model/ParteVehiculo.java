@@ -33,6 +33,8 @@ public class ParteVehiculo {
 	
 	@JoinColumn(foreignKey = @ForeignKey(name = "fk_vehiculo"))
 	private Vehiculo vehiculo;
+	@JoinColumn(foreignKey = @ForeignKey(name = "fk_trabajador"))
+	private Trabajador trabajador;
 	@JoinColumn(foreignKey = @ForeignKey(name = "fk_cliente"))
 	private Cliente cliente;
 	private int tiempoEmpleado;
@@ -59,6 +61,17 @@ public class ParteVehiculo {
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
 	)
+	private List<Trabajador> trabajadorLista = new ArrayList<>();
+	
+	@ToString.Exclude
+	@EqualsAndHashCode.Exclude
+	@Builder.Default
+	@OneToMany(
+			mappedBy = "parteVehiculo",
+			fetch = FetchType.EAGER,
+			cascade = CascadeType.ALL,
+			orphanRemoval = true
+	)
 	private List<Cliente> clienteLista = new ArrayList<>();
 	
 	
@@ -70,6 +83,16 @@ public class ParteVehiculo {
 	public void removeVehiculo(Vehiculo v) {
 		this.vehiculoLista.remove(v);
 		v.setParteVehiculo(null);
+	}
+	
+	public void addVehiculo(Trabajador t) {
+		t.setParteVehiculo(this);
+		this.trabajadorLista.add(t);
+	}
+	
+	public void removeVehiculo(Trabajador t) {
+		this.trabajadorLista.remove(t);
+		t.setParteVehiculo(null);
 	}
 	
 	public void addCliente(Cliente c) {
