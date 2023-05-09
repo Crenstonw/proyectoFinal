@@ -1,9 +1,11 @@
 package com.salesianostriana.dam.proyecto3rtrimestre.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,14 +17,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Cliente {
-	
+public class Trabajador {
 	@Id
 	@GeneratedValue
-	private Long codCliente;
+	private Long idTrabajador;
 	
-	private String dni, nombre, apellidos, telefono, email;
+	private String nombre, apellidos, dni;
 	
-	@ManyToOne
+	private LocalDate fechaNacimiento;
+	
+	private String fotoTrabajador;
+	
+	@OneToMany
 	private ParteVehiculo parteVehiculo;
 }

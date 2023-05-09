@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,9 +26,6 @@ public class Vehiculo {
 	
 	private String bastidor, marca, modelo;
 	
-	/*@OneToMany(mappedBy = "vehiculo", fetch = FetchType.EAGER)
-	@Builder.Default
-	@EqualsAndHashCode.Exclude
-	@ToString.Exclude
-	private List<ParteVehiculo> parteVehiculo = new ArrayList<>();*/
+	@OneToMany
+	private ParteVehiculo parteVehiculo;
 }
