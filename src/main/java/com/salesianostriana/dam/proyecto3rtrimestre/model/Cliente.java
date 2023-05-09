@@ -3,6 +3,7 @@ package com.salesianostriana.dam.proyecto3rtrimestre.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,11 +21,8 @@ public class Cliente {
 	@GeneratedValue
 	private Long codCliente;
 	
-	private String dni, nombre, apellidos, telefono, email, fotoDni;
+	private String dni, nombre, apellidos, telefono, email;
 	
-	/*@OneToMany(mappedBy = "cliente", fetch = FetchType.EAGER)
-	@Builder.Default
-	@EqualsAndHashCode.Exclude
-	@ToString.Exclude
-	private List<ParteVehiculo> parteVehiculo = new ArrayList<>();*/
+	@ManyToOne
+	private ParteVehiculo parteVehiculo;
 }

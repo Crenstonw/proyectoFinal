@@ -1,19 +1,27 @@
-/*package com.salesianostriana.dam.proyecto3rtrimestre.model;
+package com.salesianostriana.dam.proyecto3rtrimestre.model;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -23,7 +31,6 @@ public class ParteVehiculo {
 	@GeneratedValue
 	private Long idParte;
 	
-	@ManyToOne
 	@JoinColumn(foreignKey = @ForeignKey(name = "fk_vehiculo"))
 	private Vehiculo vehiculo;
 	@JoinColumn(foreignKey = @ForeignKey(name = "fk_cliente"))
@@ -32,23 +39,25 @@ public class ParteVehiculo {
 	private LocalDateTime fechaLlegada, fechaSalida;
 	private String observaciones;
 	
-	public void addToVehiculo(Vehiculo vehiculo) {
-		this.vehiculo=vehiculo;
-		vehiculo.getParteVehiculo().add(this);
+	@ToString.Exclude
+	@EqualsAndHashCode.Exclude
+	@Builder.Default
+	@OneToMany(
+			mappedBy = "parteVehiculo",
+			fetch = FetchType.EAGER,
+			cascade = CascadeType.ALL,
+			orphanRemoval = true
+	)
+	private List<Cliente> clienteLista = new ArrayList<>();
+	
+	
+	public void addCliente(Cliente c) {
+		c.setParteVehiculo(this);
+		this.clienteLista.add(c);
 	}
 	
-	public void removeFromVehiculo(Vehiculo vehiculo) {
-		vehiculo.getParteVehiculo().remove(this);
-		this.vehiculo=null;
+	public void removeAsiento(Cliente c) {
+		this.clienteLista.remove(c);
+		c.setParteVehiculo(null);
 	}
-	
-	public void addToCliente(Cliente cliente) {
-		this.cliente=cliente;
-		cliente.getParteVehiculo().add(this);
-	}
-	
-	public void removeFromCliente(Cliente cliente) {
-		cliente.getParteVehiculo().remove(this);
-		this.cliente=null;
-	}
-}*/
+}
