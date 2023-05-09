@@ -7,10 +7,8 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
@@ -31,12 +29,6 @@ public class ParteVehiculo {
 	@GeneratedValue
 	private Long idParte;
 	
-	@JoinColumn(foreignKey = @ForeignKey(name = "fk_vehiculo"))
-	private Vehiculo vehiculo;
-	@JoinColumn(foreignKey = @ForeignKey(name = "fk_trabajador"))
-	private Trabajador trabajador;
-	@JoinColumn(foreignKey = @ForeignKey(name = "fk_cliente"))
-	private Cliente cliente;
 	private int tiempoEmpleado;
 	private LocalDateTime fechaLlegada, fechaSalida;
 	private String observaciones;
@@ -45,7 +37,7 @@ public class ParteVehiculo {
 	@EqualsAndHashCode.Exclude
 	@Builder.Default
 	@OneToMany(
-			mappedBy = "parteVehiculo",
+			mappedBy = "matricula",
 			fetch = FetchType.EAGER,
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
@@ -56,7 +48,7 @@ public class ParteVehiculo {
 	@EqualsAndHashCode.Exclude
 	@Builder.Default
 	@OneToMany(
-			mappedBy = "parteVehiculo",
+			mappedBy = "idTrabajador",
 			fetch = FetchType.EAGER,
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
@@ -67,7 +59,7 @@ public class ParteVehiculo {
 	@EqualsAndHashCode.Exclude
 	@Builder.Default
 	@OneToMany(
-			mappedBy = "parteVehiculo",
+			mappedBy = "codCliente",
 			fetch = FetchType.EAGER,
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
