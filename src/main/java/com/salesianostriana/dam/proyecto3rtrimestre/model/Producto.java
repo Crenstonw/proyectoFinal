@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,5 +26,6 @@ public class Producto {
 	
 	private String nombre;
 	private double precio, pvp;
+	@Lob
 	private String descripcion;
 }

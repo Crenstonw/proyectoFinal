@@ -13,7 +13,7 @@ import com.salesianostriana.dam.proyecto3rtrimestre.model.Cliente;
 import com.salesianostriana.dam.proyecto3rtrimestre.servicios.ClienteService;
 
 @Controller
-@RequestMapping("/listaCliente/clientes")
+@RequestMapping("/inicio/listaCliente")
 public class ClienteController {
 
 	@Autowired
@@ -21,9 +21,7 @@ public class ClienteController {
 	
 	@GetMapping("/")
 	public String showFormCliente(Model model) {
-		model.addAttribute("producto", new Cliente());
-		
-		model.addAttribute("categorias", clienteService.findAll());
+		model.addAttribute("clientes", clienteService.findAll());
 		return "listaCliente";
 		
 	}
@@ -31,7 +29,7 @@ public class ClienteController {
 	@PostMapping("/addCliente")
 	public String submitNuevoCliente(@ModelAttribute("cliente") Cliente cliente, Model model) {
 		model.addAttribute("cliente", cliente);
-		return "redirect:/listaCliente";
+		return "formularios/form-cliente";
 	}
 	
 	@GetMapping("/editar/{id}")

@@ -4,7 +4,7 @@
 	<div th:fragment="nav">
         <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img id="logo" th:src="@{/images/logo_provisional.png}"></a>
+                <a class="navbar-brand" href="#"><img id="logo" th:src="@{/images/logo.png}"></a>
                 <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                     Tablas
@@ -56,7 +56,7 @@
                     <input type="submit" value="Buscar">
                 </div>
                 <ul class="list-group d-flex">
-                    <a th:href="@{/listaCliente}"><li class="list-group-item">Clientes</li></a>
+                    <a th:href="@{/inicio/listaCliente/}"><li class="list-group-item">Clientes</li></a>
                     <li class="list-group-item">Vehículos</li>
                     <li class="list-group-item">Productos</li>
                     <li class="list-group-item">Trabajadores</li>
