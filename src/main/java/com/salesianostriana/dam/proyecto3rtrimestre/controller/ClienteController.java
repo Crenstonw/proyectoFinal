@@ -11,12 +11,12 @@ import com.salesianostriana.dam.proyecto3rtrimestre.model.Cliente;
 @Controller
 public class ClienteController {
 
-	@GetMapping("/cliente")
+	@GetMapping("/clientes")
 	public String showFormCliente(Model model) {
 		Cliente cliente= new Cliente();
-		model.addAttribute("clienteForm", cliente);
+		model.addAttribute("listaCliente", cliente);
 		
-		return "formCliente";
+		return "listaCliente";
 	}
 	
 	@PostMapping("/addCliente")

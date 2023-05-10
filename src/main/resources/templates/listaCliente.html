@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragmentos/head::head">
+<meta charset="utf-8">
+
+</head>
+<body>
+
+<!-- Todo lo relacionado con plantilla mostrar está explicado en ejemplos anteriores de listado o en la 
+plantilla html list-categoria de este proyecto -->
+
+	<nav th:replace="/fragmentos/nav::nav">
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-offset-1 col-md-10">
+				<div class="pull-right">
+					<a href="form-producto.html" th:href="@{/admin/producto/nuevo/}" class="btn btn-primary">Nuevo
+						producto</a>
+
+				</div>
+
+				<table class="table">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>DNI</th>
+							<th>Nombre</th>
+							<th>Apellidos</th>
+							<th>Email</th>
+							<th>Operaciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="cliente : ${clientes}">
+							<td th:text="${cliente.idCliente}"></td>
+							<td th:text="${cliente.nombre}"></td>
+							<td th:text="${cliente.apellidos}"></td>
+							<td th:text="${cliente.telefono}"></td>
+							<td th:text="${cliente.email}"></td>
+							<td class="operaciones"><a href="#"
+								th:href="@{/admin/cliente/editar/{id}(id=${cliente.idCliente})}"
+								class="btn btn-primary">Editar</a>
+								<button type="button" class="btn btn-danger" data-toggle="modal"
+									data-target="#delete-modal" th:data-id="${cliente.idCliente}">Borrar</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Borrar producto</h4>
+				</div>
+				<div class="modal-body">
+					<p>¿Está usted seguro de borrar este producto?</p>
+					<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+					<a href="/admin/producto/borrar/" class="btn btn-danger">Sí</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>
