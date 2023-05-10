@@ -12,9 +12,9 @@ plantilla html list-categoria de este proyecto -->
 	<nav th:replace="/fragmentos/nav::nav">
 	</nav>
 
-	<div class="container">
+	<div class="container mt-2">
 		<div class="row">
-			<div class="col-md-offset-1 col-md-10">
+			<div class="col-md-offset-1">
 				<div class="pull-right">
 					<a href="form-producto.html" th:href="@{/admin/producto/nuevo/}" class="btn btn-primary">Nuevo
 						producto</a>
@@ -34,16 +34,16 @@ plantilla html list-categoria de este proyecto -->
 					</thead>
 					<tbody>
 						<tr th:each="cliente : ${clientes}">
-							<td th:text="${cliente.idCliente}"></td>
+							<td th:text="${cliente.codCliente}"></td>
 							<td th:text="${cliente.nombre}"></td>
 							<td th:text="${cliente.apellidos}"></td>
 							<td th:text="${cliente.telefono}"></td>
 							<td th:text="${cliente.email}"></td>
 							<td class="operaciones"><a href="#"
-								th:href="@{/admin/cliente/editar/{id}(id=${cliente.idCliente})}"
+								th:href="@{/admin/cliente/editar/{id}(id=${cliente.codCliente})}"
 								class="btn btn-primary">Editar</a>
 								<button type="button" class="btn btn-danger" data-toggle="modal"
-									data-target="#delete-modal" th:data-id="${cliente.idCliente}">Borrar</button></td>
+									data-target="#delete-modal" th:data-id="${cliente.codCliente}">Borrar</button></td>
 						</tr>
 					</tbody>
 				</table>
