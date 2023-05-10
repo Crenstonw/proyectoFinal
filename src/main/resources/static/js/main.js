@@ -1,7 +1,12 @@
-let boton = document.getElementById('boton')
+$(document).ready(function() {
+	$('#delete-modal').on('show.bs.modal', function(event) {
+		var button = $(event.relatedTarget);
+		var data = button.data('id');
 
-boton.addEventListener('click', paginaInicio)
+		var modal = $(this);
 
-function paginaInicio() {
-    location.replace('inicio.html')
-}
+		var a = modal.find('.modal-body a')[0];
+		a.href = a.href + data;
+
+	});
+});

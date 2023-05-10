@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="~{fragmentos/head::head}">
+</head>
+<body>
+	<nav th:replace="~{fragmentos/nav::nav}">
+	</nav>
+		<div class="container">
+		<div class="row">
+			<div class="col-md-offset-2 col-md-8">
+				<form method="post" action="#"
+					th:action="@{/inicio/listaCliente/nuevo/submit}" th:object="${cliente}">
+					<h1>
+						<span th:text="${cliente.codCliente} ? 'Editar' : 'Nuevo'"></span>
+						cliente
+					</h1>
+					<input type="hidden" th:field="*{codCliente}" id="codCliente" />
+					<div class="form-group">
+						<label for="dni">DNI</label> <input type="text"
+							class="form-control" id="dni" placeholder="DNI"
+							th:field="*{dni}" />
+					</div>
+					<div class="form-group">
+						<label for="nombre">Nombre</label> <input type="text"
+							class="form-control" id="nombre" placeholder="Nombre"
+							th:field="*{nombre}" />
+					</div>
+					<div class="form-group">
+						<label for="apellidos">Apellidos</label> <input type="text"
+							class="form-control" id="apellidos" placeholder="Apellidos"
+							th:field="*{apellidos}">
+					</div>
+					<div class="form-group">
+						<label for="telefono">Teléfono</label>
+						<input class="form-control" type="text" id="telefono"
+							placeholder="Teléfono" th:field="*{telefono}"></input>
+					</div>
+					<div class="form-group">
+						<label for="email">Email</label> <input type="text"
+							class="form-control" id="email" placeholder="example@gmail.com" th:field="*{email}" />
+
+					</div>
+					<br>
+					<button type="submit" class="btn btn-primary">
+						<span th:text="${cliente.codCliente} ? 'Editar' : 'Agregar'"></span>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!--jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragmentos/head::head">
+<meta charset="utf-8">
+
+</head>
+<body>
+
+<!-- Todo lo relacionado con plantilla mostrar está explicado en ejemplos anteriores de listado o en la 
+plantilla html list-categoria de este proyecto -->
+
+	<nav th:replace="/fragmentos/nav::nav">
+	</nav>
+
+	<div class="container mt-2">
+		<div class="row">
+			<div class="col-md-offset-1">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>DNI</th>
+							<th>Nombre</th>
+							<th>Apellidos</th>
+							<th>Teléfono</th>
+							<th>Email</th>
+							<th>Operaciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="cliente : ${clientes}">
+    						<td th:text="${cliente.codCliente}"></td>
+    						<td th:text="${cliente.dni}"></td>
+    						<td th:text="${cliente.nombre}"></td>
+    						<td th:text="${cliente.apellidos}"></td>
+    						<td th:text="${cliente.telefono}"></td>
+   							<td th:text="${cliente.email}"></td>
+    						<td class="operaciones">
+        					<a href="#" th:href="@{/inicio/listaCliente/editar/{codCliente}(codCliente=${cliente.codCliente})}" class="btn btn-primary">Editar</a>
+        					<a th:href="@{/inicio/listaCliente/borrar/{codCliente}(codCliente=${cliente.codCliente})}" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Borrar</a>
+    						</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</body>
+</html>

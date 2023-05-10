@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
@@ -31,6 +32,7 @@ public class ParteVehiculo {
 	
 	private int tiempoEmpleado;
 	private LocalDateTime fechaLlegada, fechaSalida;
+	@Lob
 	private String observaciones;
 	
 	@ToString.Exclude

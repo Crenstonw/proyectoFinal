@@ -1,5 +1,5 @@
 body {
-    background-image: url(BackgroundSinLetras.png);
+    background-image: url(@{/images/BackgroundSinLetras.png}) /*url(BackgroundSinLetras.png)*/;
 }
 
 img {

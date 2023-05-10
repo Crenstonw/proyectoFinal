@@ -4,10 +4,10 @@
 	<div th:fragment="nav">
         <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img id="logo" th:src="@{/images/logo_provisional.png}"></a>
+                <a class="navbar-brand" th:href="@{../inicio}"><img id="logo" th:src="@{/images/logo.png}"></a>
                 <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    Tablas
+                    Datos
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto overflow-hiden">
@@ -15,8 +15,10 @@
                             <a class="nav-link" href="#"><img th:src="@{/images/trabajador.png}">Trabajador</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><img th:src="@{/images/cliente.png}">Cliente</a>
-                        </li>
+    						<form action="/inicio/listaCliente/nuevo" method="post">
+        						<button type="submit" class="btn"><img th:src="@{/images/cliente.png}">Cliente</button>
+    						</form>
+						</li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><img th:src="@{/images/coche.png}">Vehículo</a>
                         </li>
@@ -40,7 +42,7 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#"><img id="salir" src="salir.png"> Cerrar sesión</a>
+                                <li><a class="dropdown-item" href="#"><img id="salir" th:src="@{/images/salir.png}"> Cerrar sesión</a>
                                 </li>
                             </ul>
                         </li>
@@ -56,7 +58,7 @@
                     <input type="submit" value="Buscar">
                 </div>
                 <ul class="list-group d-flex">
-                    <li class="list-group-item">Clientes</li>
+                    <a th:href="@{/inicio/listaCliente/}"><li class="list-group-item">Clientes</li></a>
                     <li class="list-group-item">Vehículos</li>
                     <li class="list-group-item">Productos</li>
                     <li class="list-group-item">Trabajadores</li>
