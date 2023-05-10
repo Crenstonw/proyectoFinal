@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,32 +25,41 @@ public class ClienteController {
 		
 	}
 	
-	@PostMapping("/addCliente")
-	public String submitNuevoCliente(@ModelAttribute("cliente") Cliente cliente, Model model) {
-		model.addAttribute("cliente", cliente);
+	@PostMapping("/nuevo")
+	public String nuevoCliente(Model model) {
+		model.addAttribute("cliente", new Cliente());
 		return "formularios/form-cliente";
 	}
 	
-	@GetMapping("/editar/{id}")
-	public String editarCliente(@PathVariable("id") Long codCliente, Model model) {
+	@PostMapping("/nuevo/submit")
+	public String submitNuevoProducto(Cliente cliente, Model model) {
+
+		clienteService.save(cliente);
+		return "redirect:/inicio/listaCliente/";
+
+	}
+	
+	@GetMapping("/editar/{codCliente}")
+	public String editarCliente(@PathVariable("codCliente") Long codCliente, Model model) {
 		Cliente cliente = clienteService.findById(codCliente);
 		
 		if(cliente != null) {
 			model.addAttribute("cliente", cliente);
-			return "listaCliente";
+			return "formularios/form-cliente";
 		} else {
-			return "redirect:/listaCliente";
+			return "listaCliente";
 		}
 	}
 	
-	@GetMapping("/borrar/{id}")
-	public String borrarCliente(@PathVariable("id") Long codCliente, Model model) {
+	@GetMapping("/borrar/{codCliente}")
+	public String borrarCliente(@PathVariable("codCliente") Long codCliente, Model model) {
+		
 		Cliente cliente = clienteService.findById(codCliente);
 		
 		if(cliente != null) {
 			clienteService.delete(cliente);
 		}
 		
-		return "redirect:/listaCliente";
+		return "redirect:/inicio/listaCliente/";
 	}
 }

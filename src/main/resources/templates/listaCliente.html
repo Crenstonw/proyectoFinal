@@ -16,9 +16,9 @@ plantilla html list-categoria de este proyecto -->
 		<div class="row">
 			<div class="col-md-offset-1">
 				<div class="pull-right">
-					<a href="form-producto.html" th:href="@{/inicio/listaCliente/addCliente}" class="btn btn-primary">Nuevo
-						producto</a>
-
+    				<form action="/inicio/listaCliente/nuevo" method="post">
+        				<button type="submit" class="btn btn-primary">Nuevo cliente</button>
+    				</form>
 				</div>
 
 				<table class="table">
@@ -34,16 +34,16 @@ plantilla html list-categoria de este proyecto -->
 					</thead>
 					<tbody>
 						<tr th:each="cliente : ${clientes}">
-							<td th:text="${cliente.codCliente}"></td>
-							<td th:text="${cliente.nombre}"></td>
-							<td th:text="${cliente.apellidos}"></td>
-							<td th:text="${cliente.telefono}"></td>
-							<td th:text="${cliente.email}"></td>
-							<td class="operaciones"><a href="#"
-								th:href="@{/admin/cliente/editar/{id}(id=${cliente.codCliente})}"
-								class="btn btn-primary">Editar</a>
-								<button type="button" class="btn btn-danger" data-toggle="modal"
-									data-target="#delete-modal" th:data-id="${cliente.codCliente}">Borrar</button></td>
+    						<td th:text="${cliente.codCliente}"></td>
+    						<td th:text="${cliente.dni}"></td>
+    						<td th:text="${cliente.nombre}"></td>
+    						<td th:text="${cliente.apellidos}"></td>
+    						<td th:text="${cliente.telefono}"></td>
+   							<td th:text="${cliente.email}"></td>
+    						<td class="operaciones">
+        					<a href="#" th:href="@{/inicio/listaCliente/editar/{codCliente}(codCliente=${cliente.codCliente})}" class="btn btn-primary">Editar</a>
+        					<a th:href="@{/inicio/listaCliente/borrar/{codCliente}(codCliente=${cliente.codCliente})}" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Borrar</a>
+    						</td>
 						</tr>
 					</tbody>
 				</table>
@@ -51,25 +51,7 @@ plantilla html list-categoria de este proyecto -->
 		</div>
 	</div>
 
-	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title">Borrar producto</h4>
-				</div>
-				<div class="modal-body">
-					<p>¿Está usted seguro de borrar este producto?</p>
-					<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-					<a href="/admin/producto/borrar/" class="btn btn-danger">Sí</a>
-				</div>
-			</div>
 
-		</div>
-	</div>
-
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </body>
 </html>
