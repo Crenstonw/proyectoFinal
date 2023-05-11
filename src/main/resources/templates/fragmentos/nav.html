@@ -4,7 +4,7 @@
 	<div th:fragment="nav">
         <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom">
             <div class="container-fluid">
-                <a class="navbar-brand" th:href="@{../inicio}"><img id="logo" th:src="@{/images/logo.png}"></a>
+                <a class="navbar-brand" th:href="@{/inicio}"><img id="logo" th:src="@{/images/logo.png}"></a>
                 <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                     Datos
@@ -53,10 +53,10 @@
 
         <div class="collapse" id="collapseExample">
             <aside>
-                <div>
+                <!--<div>
                     <input type="search" name="busquedaAccion" placeholder="Ver lista de...">
                     <input type="submit" value="Buscar">
-                </div>
+                </div>-->
                 <ul class="list-group d-flex">
                     <a th:href="@{/inicio/listaCliente/}"><li class="list-group-item">Clientes</li></a>
                     <li class="list-group-item">Vehículos</li>

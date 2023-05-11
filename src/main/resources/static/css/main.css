@@ -1,5 +1,9 @@
-body {
-    background-image: url(@{/images/BackgroundSinLetras.png}) /*url(BackgroundSinLetras.png)*/;
+.login{
+	background-image: url('../images/Background.png');
+}
+
+.main {
+    background-image: url('../../images/BackgroundSinLetras.png');
 }
 
 img {
