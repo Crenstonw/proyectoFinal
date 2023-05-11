@@ -23,9 +23,10 @@ public class Trabajador {
 	@GeneratedValue
 	private Long idTrabajador;
 	
-	private String nombre, apellidos, dni;
 	private LocalDate fechaNacimiento;
-	private String observaciones;
+	private String dni, nombre, apellidos;
+	private String fotoTrabajador;
+	private Boolean isAdmin;
 	
 	@ManyToOne
 	private ParteVehiculo parteVehiculo;
