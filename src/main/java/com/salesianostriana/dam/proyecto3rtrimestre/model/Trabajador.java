@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,9 +25,11 @@ public class Trabajador {
 	@GeneratedValue
 	private Long idTrabajador;
 	
-	private String nombre, apellidos, dni;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fechaNacimiento;
-	private String observaciones;
+	private String dni, nombre, apellidos;
+	private String fotoTrabajador;
+	private Boolean isAdmin;
 	
 	@ManyToOne
 	private ParteVehiculo parteVehiculo;

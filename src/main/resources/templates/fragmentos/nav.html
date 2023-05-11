@@ -12,7 +12,9 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto overflow-hiden">
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><img th:src="@{/images/trabajador.png}">Trabajador</a>
+                            <form action="/inicio/listaTrabajador/nuevo" method="post">
+        						<button type="submit" class="btn"><img th:src="@{/images/trabajador.png}">Trabajador</button>
+    						</form>
                         </li>
                         <li class="nav-item">
     						<form action="/inicio/listaCliente/nuevo" method="post">
@@ -56,12 +58,13 @@
                 <!--<div>
                     <input type="search" name="busquedaAccion" placeholder="Ver lista de...">
                     <input type="submit" value="Buscar">
+                    
                 </div>-->
                 <ul class="list-group d-flex">
                     <a th:href="@{/inicio/listaCliente/}"><li class="list-group-item">Clientes</li></a>
                     <li class="list-group-item">Vehículos</li>
                     <li class="list-group-item">Productos</li>
-                    <li class="list-group-item">Trabajadores</li>
+                    <a th:href="@{/inicio/listaTrabajador/}"><li class="list-group-item">Trabajadores</li></a>
                     <li class="list-group-item">Facturas</li>
                     <li class="list-group-item">Proveedores</li>
                     <li class="list-group-item">Partes</li>

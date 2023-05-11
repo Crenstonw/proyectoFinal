@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragmentos/head::head">
+<meta charset="utf-8">
+
+</head>
+<body class="main">
+
+<!-- Todo lo relacionado con plantilla mostrar está explicado en ejemplos anteriores de listado o en la 
+plantilla html list-categoria de este proyecto -->
+
+	<nav th:replace="/fragmentos/nav::nav">
+	</nav>
+
+	<div class="container mt-2">
+		<div class="row">
+			<div class="col-md-offset-1">
+				<table class="table table-striped bg-light rounded-2">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Fecha de Nacimiento</th>
+							<th>DNI</th>
+							<th>Nombre</th>
+							<th>Apellidos</th>
+							<th>Foto del Trabajador</th>
+							<th>Admin</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="trabajador : ${trabajadores}">
+    						<td th:text="${trabajador.idTrabajador}"></td>
+    						<td th:text="${trabajador.fechaNacimiento}"></td>
+    						<td th:text="${trabajador.dni}"></td>
+    						<td th:text="${trabajador.nombre}"></td>
+    						<td th:text="${trabajador.apellidos}"></td>
+    						<td><img
+								th:src="${not (#strings.isEmpty(trabajador.fotoTrabajador))} ? ${trabajador.fotoTrabajador} : 'http://placehold.it/48x48'"
+								class="img-responsive icono-categoria" alt="imagen" /></td>
+   							<td th:text="${trabajador.isAdmin}"></td>
+    						<td class="operaciones">
+        					<a href="#" th:href="@{/inicio/listaTrabajador/editar/{idTrabajador}(idTrabajador=${trabajador.idTrabajador})}" class="btn btn-primary">Editar</a>
+        					<a th:href="@{/inicio/listaTrabajador/borrar/{idTrabajador}(codTrabajador=${trabajador.idTrabajador})}" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Borrar</a>
+    						</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</body>
+</html>
