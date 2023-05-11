@@ -9,4 +9,9 @@ public class MainController {
 	public String showInicioSesion() {
 		return "index";
 	}
+	
+	@GetMapping("/inicio")
+	public String showInicio() {
+		return "inicio";
+	}
 }

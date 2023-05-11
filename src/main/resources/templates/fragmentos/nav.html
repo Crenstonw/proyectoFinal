@@ -22,7 +22,9 @@
     						</form>
 						</li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><img th:src="@{/images/coche.png}">Vehículo</a>
+                            <form action="/inicio/listaVehiculo/nuevo" method="post">
+        						<button type="submit" class="btn"><img th:src="@{/images/coche.png}">Vehículo</button>
+    						</form>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><img th:src="@{/images/pieza.png}">Producto</a>
@@ -44,7 +46,8 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#"><img id="salir" th:src="@{/images/salir.png}"> Cerrar sesión</a>
+                                <form th:action="@{/index}" method="POST" id="logoutForm"></form>
+                                <li><a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()"><img id="salir" th:src="@{/images/salir.png}"> Cerrar sesión</a>
                                 </li>
                             </ul>
                         </li>
