@@ -41,13 +41,14 @@
 					</div>
 					<div class="form-group">
 						<label for="isAdmin"><input type="checkbox"
-							value="false" id="isAdmin" th:field="*{isAdmin}" />
+							 id="isAdmin" th:field="*{isAdmin}" />
 							Admin
 						</label>
 					</div>
 					<br>
 					<button type="submit" class="btn btn-primary">
-						<span th:text="${trabajador.idtrabajador} ? 'Editar' : 'Agregar'"></span>
+						Enviar
+						<!--<span th:text="${trabajador.idtrabajador} ? 'Editar' : 'Agregar'"></span>-->
 					</button>
 				</form>
 			</div>
