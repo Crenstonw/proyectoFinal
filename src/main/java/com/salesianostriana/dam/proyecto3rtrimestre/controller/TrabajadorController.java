@@ -21,14 +21,14 @@ public class TrabajadorController {
 	@GetMapping("/")
 	public String showFormTrabajador(Model model) {
 		model.addAttribute("trabajadores", trabajadorService.findAll());
-		return "listaTrabajador";
+		return "admin/listaTrabajador";
 		
 	}
 	
 	@PostMapping("/nuevo")
 	public String nuevoTrabajador(Model model) {
 		model.addAttribute("trabajador", new Trabajador());
-		return "formularios/form-trabajador";
+		return "admin/form-trabajador";
 	}
 	
 	@PostMapping("/nuevo/submit")
@@ -47,7 +47,7 @@ public class TrabajadorController {
 			model.addAttribute("trabajador", trabajador);
 			return "formularios/form-trabajador";
 		} else {
-			return "listaTrabajador";
+			return "admin/listaTrabajador";
 		}
 	}
 	

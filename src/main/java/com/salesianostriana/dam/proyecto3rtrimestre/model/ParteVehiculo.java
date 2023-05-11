@@ -94,7 +94,7 @@ public class ParteVehiculo {
 		this.clienteLista.add(c);
 	}
 	
-	public void removeAsiento(Cliente c) {
+	public void removeCliente(Cliente c) {
 		this.clienteLista.remove(c);
 		c.setParteVehiculo(null);
 	}

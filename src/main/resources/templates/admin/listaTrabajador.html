@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="/fragmentos/head::head">
 <meta charset="utf-8">
 
@@ -40,7 +41,7 @@ plantilla html list-categoria de este proyecto -->
    							<td th:text="${trabajador.isAdmin}"></td>
     						<td class="operaciones">
         					<a href="#" th:href="@{/inicio/listaTrabajador/editar/{idTrabajador}(idTrabajador=${trabajador.idTrabajador})}" class="btn btn-primary">Editar</a>
-        					<a th:href="@{/inicio/listaTrabajador/borrar/{idTrabajador}(codTrabajador=${trabajador.idTrabajador})}" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Borrar</a>
+        					<a th:href="@{/inicio/listaTrabajador/borrar/{idTrabajador}(idTrabajador=${trabajador.idTrabajador})}" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Borrar</a>
     						</td>
 						</tr>
 					</tbody>
