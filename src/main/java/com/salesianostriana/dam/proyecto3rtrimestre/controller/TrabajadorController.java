@@ -45,7 +45,7 @@ public class TrabajadorController {
 		
 		if(trabajador != null) {
 			model.addAttribute("trabajador", trabajador);
-			return "formularios/form-trabajador";
+			return "admin/form-trabajador";
 		} else {
 			return "admin/listaTrabajador";
 		}

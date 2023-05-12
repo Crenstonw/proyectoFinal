@@ -39,7 +39,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <img th:src="@{/images/monigotebase.png}"> 
-                                <spam>Administrador</spam>
+                                <sec:authorize url="/inicio/listaTrabajador/">Administrador</sec:authorize>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">Ajustes</a></li>
