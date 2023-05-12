@@ -44,13 +44,16 @@ public class SecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
 		.authorizeRequests()
-			.antMatchers("/css/**","/js/**","/webjars/**", "/h2-console/**").permitAll()
-			.antMatchers("/admin/**").hasRole("ADMIN")
+			.antMatchers("/css/**","/js/**","/images/**", "/h2-console/**").permitAll()
+			.antMatchers("/inicio/listaTrabajador/", "/inicio/listaTrabajador/nuevo", "/inicio/listaTrabajador/editar").hasRole("ADMIN")
 			.anyRequest().authenticated()
 			.and()
 		.formLogin()
 			.loginPage("/index")
+			.defaultSuccessUrl("/inicio", true)
+			.failureUrl("/index")
 			.permitAll();
+		
 
 		http.csrf().disable();
 		http.headers().frameOptions().disable();
