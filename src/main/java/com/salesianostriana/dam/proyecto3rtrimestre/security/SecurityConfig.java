@@ -44,12 +44,13 @@ public class SecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
 		.authorizeRequests()
-			.antMatchers("/css/**","/js/**","/webjars/**", "/h2-console/**").permitAll()
+			.antMatchers("/css/**","js/**", "fragmentos/**", "/h2-console/**").permitAll()
 			.antMatchers("/admin/**").hasRole("ADMIN")
 			.anyRequest().authenticated()
 			.and()
 		.formLogin()
 			.loginPage("/index")
+			.defaultSuccessUrl("/inicio", true)
 			.permitAll();
 
 		http.csrf().disable();
