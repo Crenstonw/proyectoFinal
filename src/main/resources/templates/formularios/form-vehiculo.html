@@ -12,7 +12,7 @@
 					th:action="@{/inicio/listaVehiculo/nuevo/submit}" th:object="${vehiculo}">
 					<h1>
 						<span th:text="${vehiculo.matricula} ? 'Editar' : 'Nuevo'"></span>
-						cliente
+						Vehiculo
 					</h1>
 					<div class="form-group">
 						<label for="matricula">Matrícula</label> <input type="text"
@@ -20,33 +20,28 @@
 							th:field="*{matricula}" />
 					</div>
 					<div class="form-group">
-						<label for="tipoVehiculo">Tipo de Vehículo</label> <input type="text"
-							class="form-control" id="tipoVehiculo" placeholder="-----"
-							th:field="*{tipoVehiculo}" />
+						<selec th:field="*{tipoVehiculo}">
+							<option th:value="${T(com.salesianostriana.dam.proyecto3rtrimestre.model.TipoVehiculo).CAMION}" th:text="Camión"></option>
+						</selec>
 					</div>
 					<div class="form-group">
-						<label for="nombre">Nombre</label> <input type="text"
-							class="form-control" id="nombre" placeholder="Nombre"
-							th:field="*{nombre}" />
+						<label for="bastidor">Bastidor</label> <input type="text"
+							class="form-control" id="bastido" placeholder="Número de bastidor"
+							th:field="*{bastidor}" />
+					</div>
+					<div class="form-floating">
+						<label for="marca">Marca</label> <input type="text"
+							class="form-control" id="marca" placeholder="Marca"
+							th:field="*{marca}">
 					</div>
 					<div class="form-group">
-						<label for="apellidos">Apellidos</label> <input type="text"
-							class="form-control" id="apellidos" placeholder="Apellidos"
-							th:field="*{apellidos}">
-					</div>
-					<div class="form-group">
-						<label for="telefono">Teléfono</label>
-						<input class="form-control" type="text" id="telefono"
-							placeholder="Teléfono" th:field="*{telefono}"></input>
-					</div>
-					<div class="form-group">
-						<label for="email">Email</label> <input type="text"
-							class="form-control" id="email" placeholder="example@gmail.com" th:field="*{email}" />
-
+						<label for="modelo">Modelo</label>
+						<input class="form-control" type="text" id="modelo"
+							placeholder="Modelo" th:field="*{modelo}"></input>
 					</div>
 					<br>
 					<button type="submit" class="btn btn-primary">
-						<span th:text="${cliente.codCliente} ? 'Editar' : 'Agregar'"></span>
+						<span th:text="${vehiculo.matricula} ? 'Editar' : 'Agregar'"></span>
 					</button>
 				</form>
 			</div>
