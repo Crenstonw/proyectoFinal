@@ -21,7 +21,7 @@ public class VehiculoController {
 	@GetMapping("/")
 	public String showFormVehiculo(Model model) {
 		model.addAttribute("vehiculos", vehiculoService.findAll());
-		return "listaVehiculos";
+		return "listaVehiculo";
 		
 	}
 	
