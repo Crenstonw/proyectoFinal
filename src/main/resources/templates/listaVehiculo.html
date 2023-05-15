@@ -9,17 +9,24 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 	<nav th:replace="/fragmentos/nav::nav">
 	</nav>
 
-	<div class="container mt-2">
+	<div class="container mt-2 cuerpo">
 		<div class="row">
 			<div class="col-md-offset-1">
 				<table class="table table-striped bg-light rounded-2">
 					<thead>
+						<form th:action="@{/inicio/listaVehiculo/nuevo}" method="POST">
+							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit"
+								aria-expanded="false">
+								<img th:src="@{/images/vehiculoMas.png}">
+							</button>
+						</form>
 						<tr>
 							<th>Matrícula</th>
 							<th>Tipo de vehículo</th>
 							<th>Numero de Bastidor</th>
 							<th>Marca</th>
 							<th>Modelo</th>
+							<th>Operaciones</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -30,8 +37,11 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     						<td th:text="${vehiculo.marca}"></td>
     						<td th:text="${vehiculo.modelo}"></td>
     						<td class="operaciones">
-        					<a href="#" th:href="@{/inicio/listaVehiculo/editar/{matricula}(matricula=${vehiculo.matricula})}" class="btn btn-primary">Editar</a>
-        					<a th:href="@{/inicio/listaVehiculo/borrar/{matricula}(matricula=${vehiculo.matricula})}" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">Borrar</a>
+        					<a href="#" th:href="@{/inicio/listaVehiculo/editar/{matricula}(matricula=${vehiculo.matricula})}" 
+        					class="btn btn-primary">
+								<img th:src="@{/images/editar.png}"></a>
+        					<a th:href="@{/inicio/listaVehiculo/borrar/{matricula}(matricula=${vehiculo.matricula})}" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
+								<img th:src="@{/images/borrar.png}"></a>
     						</td>
 						</tr>
 					</tbody>
