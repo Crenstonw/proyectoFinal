@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="~{fragmentos/head::head}">
+</head>
+<body class="main">
+	<nav th:replace="~{fragmentos/nav::nav}">
+	</nav>
+		<div class="container">
+		<div class="row">
+			<div class="col-md-offset-2 col-md-8">
+				<form method="post" action="#"
+					th:action="@{/inicio/listaVehiculo/nuevo/submit}" th:object="${vehiculo}">
+					<h1>
+						<span th:text="${vehiculo.matricula} ? 'Editar' : 'Nuevo'"></span>
+						Vehiculo
+					</h1>
+					<div class="form-floating">
+						<input type="text"
+							class="form-control" id="matricula" placeholder="Matrícula"
+							th:field="*{matricula}" />
+						<label for="matricula">Matrícula</label>
+					</div>
+					<br>
+					<div class="form-floating">
+  						<select class="form-select" id="tipoVehiculo" name="tipoVehiculo">
+    						<option th:value="${T(com.salesianostriana.dam.proyecto3rtrimestre.model.TipoVehiculo).CAMION}" th:text="Camión">1</option>
+    						<option>2</option>
+    						<option>3</option>
+    						<option>4</option>
+  						</select>
+ 						 <label for="tipoVehiculo" class="form-label">Selecciona el tipo de vehiculo:</label>
+					</div>
+					<br>
+					<div class="form-floating">
+						<input type="text"
+							class="form-control" id="bastido" placeholder="Número de bastidor"
+							th:field="*{bastidor}" />
+						<label for="bastidor">Bastidor</label>
+					</div>
+					<br>
+					<div class="form-floating">
+						 <input type="text"
+							class="form-control" id="marca" placeholder="Marca"
+							th:field="*{marca}">
+							<label for="marca">Marca</label>
+					</div>
+					<br>
+					<div class="form-floating">
+						<input class="form-control" type="text" id="modelo"
+							placeholder="Modelo" th:field="*{modelo}"></input>
+						<label for="modelo">Modelo</label>
+					</div>
+					<br>
+					<button type="submit" class="btn btn-primary">
+						<span th:text="${vehiculo.matricula} ? 'Editar' : 'Agregar'"></span>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
