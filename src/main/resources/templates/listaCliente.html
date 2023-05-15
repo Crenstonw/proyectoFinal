@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="/fragmentos/head::head">
 <meta charset="utf-8">
 
 </head>
 <body class="main">
-
-<!-- Todo lo relacionado con plantilla mostrar está explicado en ejemplos anteriores de listado o en la 
-plantilla html list-categoria de este proyecto -->
 
 	<nav th:replace="/fragmentos/nav::nav">
 	</nav>
@@ -15,7 +13,7 @@ plantilla html list-categoria de este proyecto -->
 	<div class="container mt-2">
 		<div class="row">
 			<div class="col-md-offset-1">
-				<table class="table table-striped bg-light rounded-2">
+				<table class="table table-striped bg-light rounded-3">
 					<thead>
 						<tr>
 							<th>ID</th>

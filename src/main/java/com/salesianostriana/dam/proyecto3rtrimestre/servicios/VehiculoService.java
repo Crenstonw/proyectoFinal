@@ -31,4 +31,8 @@ public class VehiculoService {
 		repositorio.delete(result);
 		return result;
 	}
+	
+	/*public String[] tipoVehiculos(TipoVehiculo tp) {
+		String [] tipos = new String{tp.AUTOBUS, tp.CAMION};
+	}*/
 }

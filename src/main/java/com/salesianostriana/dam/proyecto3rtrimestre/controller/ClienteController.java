@@ -32,7 +32,7 @@ public class ClienteController {
 	}
 	
 	@PostMapping("/nuevo/submit")
-	public String submitNuevoProducto(Cliente cliente, Model model) {
+	public String submitNuevoCliente(Cliente cliente, Model model) {
 
 		clienteService.save(cliente);
 		return "redirect:/inicio/listaCliente/";
