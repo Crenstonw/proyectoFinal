@@ -16,36 +16,32 @@
 			<div class="col-md-offset-1">
 				<table class="table table-striped bg-light rounded-2">
 					<thead>
-						<form th:action="@{/inicio/listaProducto/nuevo}" method="POST">
+						<form th:action="@{/inicio/listaProveedor/nuevo}" method="POST">
 							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit"
 								aria-expanded="false">
-								<img th:src="@{/images/productoMas.png}">
+								<img th:src="@{/images/proveedor.png}">
 							</button>
 						</form>
 						<tr>
-							<th>Referencia</th>
 							<th>ID del proveedor</th>
 							<th>Nombre</th>
-							<th>Precio</th>
-							<th>PVP</th>
+							<th>Dirección</th>
 							<th>Descripción</th>
 							<th>Operaciones</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="producto : ${productos}">
-							<td th:text="${producto.referencia}"></td>
-							<td th:text="${producto.proveedor}"></td>
-							<td th:text="${producto.nombre}"></td>
-							<td th:text="${producto.precio}"></td>
-							<td th:text="${producto.pvp}"></td>
+						<tr th:each="proveedor : ${proveedores}">
+							<td th:text="${proveedor.idProveedor}"></td>
+							<td th:text="${proveedor.nombre}"></td>
+							<td th:text="${proveedor.direccion}"></td>
 							<td th:text="${producto.descripcion}"></td>
 							<td class="operaciones">
 								<span>
 								<a href="#"
-									th:href="@{/inicio/listaProducto/editar/{referencia}(referencia=${producto.referencia})}"
+									th:href="@{/inicio/listaProveedor/editar/{idProveedor}(idProveedor=${proveedor.idProveedor})}"
 									class="btn btn-primary"><img th:src="@{/images/editar.png}"></a>
-								<a th:href="@{/inicio/listaProducto/borrar/{referencia}(referencia=${producto.referencia})}"
+								<a th:href="@{/inicio/listaProveedor/borrar/{idProveedor}(referencia=${proveedor.idProveedor})}"
 									class="btn btn-danger" data-toggle="modal" data-target="#delete-modal"><img th:src="@{/images/borrar.png}"></a>
 								</span>
 							</td>
