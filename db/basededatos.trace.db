@@ -3801,3 +3801,11 @@ insert into Vehiculo (matricula, tipo_vehiculo, bastidor, marca, modelo) values 
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
 	at com.salesianostriana.dam.proyecto3rtrimestre.Proyecto3rTrimestreApplication.main(Proyecto3rTrimestreApplication.java:10)
+2023-05-16 13:08:26 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'342gh23' (PRODUCTO: ""ID_PROVEEDOR"" BIGINT NOT NULL)"
+Data conversion error converting "'342gh23' (PRODUCTO: ""ID_PROVEEDOR"" BIGINT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."PRODUCTO"("REFERENCIA","DESCRIPCION","ID_PROVEEDOR","NOMBRE","PRECIO","PVP","PROVEEDOR_ID_PROVEEDOR")VALUES(?,?,?,?,?,?,?) [22018-214]
+2023-05-16 13:08:26 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'342gh23' (PRODUCTO: ""ID_PROVEEDOR"" BIGINT NOT NULL)"
+Data conversion error converting "'342gh23' (PRODUCTO: ""ID_PROVEEDOR"" BIGINT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."PRODUCTO"("REFERENCIA","DESCRIPCION","ID_PROVEEDOR","NOMBRE","PRECIO","PVP","PROVEEDOR_ID_PROVEEDOR")VALUES(?,?,?,?,?,?,?) [22018-214]
