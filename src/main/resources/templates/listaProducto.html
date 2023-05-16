@@ -16,37 +16,33 @@
 			<div class="col-md-offset-1">
 				<table class="table table-striped bg-light rounded-2">
 					<thead>
-						<form th:action="@{/inicio/listaTrabajador/nuevo}" method="POST">
+						<form th:action="@{/inicio/listaProducto/nuevo}" method="POST">
 							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit"
 								aria-expanded="false">
-								<img th:src="@{/images/trabajadorMas.png}">
+								<img th:src="@{/images/productoMas.png}">
 							</button>
 						</form>
 						<tr>
-							<th>ID</th>
-							<th>Fecha de Nacimiento</th>
-							<th>DNI</th>
+							<th>Referencia</th>
+							<th>ID del proveedor</th>
 							<th>Nombre</th>
-							<th>Apellidos</th>
-							<th>Foto del Trabajador</th>
-							<th>Admin</th>
+							<th>Precio</th>
+							<th>PVP</th>
+							<th>Descripción</th>
 							<th>Operaciones</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="trabajador : ${trabajadores}" th:if="${trabajador.username == null || trabajador.username == ''}">
-							<td th:text="${trabajador.idTrabajador}"></td>
-							<td th:text="${trabajador.fechaNacimiento}"></td>
-							<td th:text="${trabajador.dni}"></td>
-							<td th:text="${trabajador.nombre}"></td>
-							<td th:text="${trabajador.apellidos}"></td>
-							<td><img th:src="${not (#strings.isEmpty(trabajador.fotoTrabajador))} ? ${trabajador.fotoTrabajador} : 'http://placehold.it/48x48'"
-									class="img-responsive icono-categoria" alt="imagen" /></td>
-							<td th:text="${trabajador.isAdmin}"></td>
+						<tr th:each="producto : ${productos}">
+							<td th:text="${producto.referencia}"></td>
+							<td th:text="${producto.idProveedor}"></td>
+							<td th:text="${producto.nombre}"></td>
+							<td th:text="${producto.precio}"></td>
+							<td th:text="${producto.pvp}"></td>
 							<td class="operaciones">
 								<span>
 								<a href="#"
-									th:href="@{/inicio/listaTrabajador/editar/{idTrabajador}(idTrabajador=${trabajador.idTrabajador})}"
+									th:href="@{/inicio/listaProducto/editar/{idTrabajador}(idTrabajador=${trabajador.idTrabajador})}"
 									class="btn btn-primary"><img th:src="@{/images/editar.png}"></a>
 								<a th:href="@{/inicio/listaTrabajador/borrar/{idTrabajador}(idTrabajador=${trabajador.idTrabajador})}"
 									class="btn btn-danger" data-toggle="modal" data-target="#delete-modal"><img th:src="@{/images/borrar.png}"></a>
