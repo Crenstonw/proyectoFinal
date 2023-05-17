@@ -3809,3 +3809,315 @@ INSERT INTO "PUBLIC"."PRODUCTO"("REFERENCIA","DESCRIPCION","ID_PROVEEDOR","NOMBR
 org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'342gh23' (PRODUCTO: ""ID_PROVEEDOR"" BIGINT NOT NULL)"
 Data conversion error converting "'342gh23' (PRODUCTO: ""ID_PROVEEDOR"" BIGINT NOT NULL)"; SQL statement:
 INSERT INTO "PUBLIC"."PRODUCTO"("REFERENCIA","DESCRIPCION","ID_PROVEEDOR","NOMBRE","PRECIO","PVP","PROVEEDOR_ID_PROVEEDOR")VALUES(?,?,?,?,?,?,?) [22018-214]
+2023-05-17 13:45:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "6728APG"
+Data conversion error converting "6728APG"; SQL statement:
+select partevehic0_.id_parte as id_parte1_1_0_, partevehic0_.id_parte as id_parte1_1_1_, partevehic0_.cliente_cod_cliente as cliente_6_1_1_, partevehic0_.fecha_llegada as fecha_ll2_1_1_, partevehic0_.fecha_salida as fecha_sa3_1_1_, partevehic0_.observaciones as observac4_1_1_, partevehic0_.tiempo_empleado as tiempo_e5_1_1_, partevehic0_.trabajador_id_trabajador as trabajad7_1_1_, partevehic0_.vehiculo_matricula as vehiculo8_1_1_, cliente1_.cod_cliente as cod_clie1_0_2_, cliente1_.apellidos as apellido2_0_2_, cliente1_.dni as dni3_0_2_, cliente1_.email as email4_0_2_, cliente1_.nombre as nombre5_0_2_, cliente1_.telefono as telefono6_0_2_, trabajador2_.id_trabajador as id_traba1_4_3_, trabajador2_.apellidos as apellido2_4_3_, trabajador2_.dni as dni3_4_3_, trabajador2_.fecha_nacimiento as fecha_na4_4_3_, trabajador2_.foto_trabajador as foto_tra5_4_3_, trabajador2_.is_admin as is_admin6_4_3_, trabajador2_.nombre as nombre7_4_3_, trabajador2_.password as password8_4_3_, trabajador2_.username as username9_4_3_, vehiculo3_.matricula as matricul1_5_4_, vehiculo3_.bastidor as bastidor2_5_4_, vehiculo3_.marca as marca3_5_4_, vehiculo3_.modelo as modelo4_5_4_, vehiculo3_.tipo_vehiculo as tipo_veh5_5_4_ from parte_vehiculo partevehic0_ left outer join cliente cliente1_ on partevehic0_.cliente_cod_cliente=cliente1_.cod_cliente left outer join trabajador trabajador2_ on partevehic0_.trabajador_id_trabajador=trabajador2_.id_trabajador left outer join vehiculo vehiculo3_ on partevehic0_.vehiculo_matricula=vehiculo3_.matricula where partevehic0_.id_parte=? [22018-214]
+2023-05-17 13:45:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "6728APG"
+Data conversion error converting "6728APG"; SQL statement:
+select partevehic0_.id_parte as id_parte1_1_0_, partevehic0_.id_parte as id_parte1_1_1_, partevehic0_.cliente_cod_cliente as cliente_6_1_1_, partevehic0_.fecha_llegada as fecha_ll2_1_1_, partevehic0_.fecha_salida as fecha_sa3_1_1_, partevehic0_.observaciones as observac4_1_1_, partevehic0_.tiempo_empleado as tiempo_e5_1_1_, partevehic0_.trabajador_id_trabajador as trabajad7_1_1_, partevehic0_.vehiculo_matricula as vehiculo8_1_1_, cliente1_.cod_cliente as cod_clie1_0_2_, cliente1_.apellidos as apellido2_0_2_, cliente1_.dni as dni3_0_2_, cliente1_.email as email4_0_2_, cliente1_.nombre as nombre5_0_2_, cliente1_.telefono as telefono6_0_2_, trabajador2_.id_trabajador as id_traba1_4_3_, trabajador2_.apellidos as apellido2_4_3_, trabajador2_.dni as dni3_4_3_, trabajador2_.fecha_nacimiento as fecha_na4_4_3_, trabajador2_.foto_trabajador as foto_tra5_4_3_, trabajador2_.is_admin as is_admin6_4_3_, trabajador2_.nombre as nombre7_4_3_, trabajador2_.password as password8_4_3_, trabajador2_.username as username9_4_3_, vehiculo3_.matricula as matricul1_5_4_, vehiculo3_.bastidor as bastidor2_5_4_, vehiculo3_.marca as marca3_5_4_, vehiculo3_.modelo as modelo4_5_4_, vehiculo3_.tipo_vehiculo as tipo_veh5_5_4_ from parte_vehiculo partevehic0_ left outer join cliente cliente1_ on partevehic0_.cliente_cod_cliente=cliente1_.cod_cliente left outer join trabajador trabajador2_ on partevehic0_.trabajador_id_trabajador=trabajador2_.id_trabajador left outer join vehiculo vehiculo3_ on partevehic0_.vehiculo_matricula=vehiculo3_.matricula where partevehic0_.id_parte=? [22018-214]
+2023-05-17 13:45:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "6728APG"
+Data conversion error converting "6728APG"; SQL statement:
+select partevehic0_.id_parte as id_parte1_1_0_, partevehic0_.id_parte as id_parte1_1_1_, partevehic0_.cliente_cod_cliente as cliente_6_1_1_, partevehic0_.fecha_llegada as fecha_ll2_1_1_, partevehic0_.fecha_salida as fecha_sa3_1_1_, partevehic0_.observaciones as observac4_1_1_, partevehic0_.tiempo_empleado as tiempo_e5_1_1_, partevehic0_.trabajador_id_trabajador as trabajad7_1_1_, partevehic0_.vehiculo_matricula as vehiculo8_1_1_, cliente1_.cod_cliente as cod_clie1_0_2_, cliente1_.apellidos as apellido2_0_2_, cliente1_.dni as dni3_0_2_, cliente1_.email as email4_0_2_, cliente1_.nombre as nombre5_0_2_, cliente1_.telefono as telefono6_0_2_, trabajador2_.id_trabajador as id_traba1_4_3_, trabajador2_.apellidos as apellido2_4_3_, trabajador2_.dni as dni3_4_3_, trabajador2_.fecha_nacimiento as fecha_na4_4_3_, trabajador2_.foto_trabajador as foto_tra5_4_3_, trabajador2_.is_admin as is_admin6_4_3_, trabajador2_.nombre as nombre7_4_3_, trabajador2_.password as password8_4_3_, trabajador2_.username as username9_4_3_, vehiculo3_.matricula as matricul1_5_4_, vehiculo3_.bastidor as bastidor2_5_4_, vehiculo3_.marca as marca3_5_4_, vehiculo3_.modelo as modelo4_5_4_, vehiculo3_.tipo_vehiculo as tipo_veh5_5_4_ from parte_vehiculo partevehic0_ left outer join cliente cliente1_ on partevehic0_.cliente_cod_cliente=cliente1_.cod_cliente left outer join trabajador trabajador2_ on partevehic0_.trabajador_id_trabajador=trabajador2_.id_trabajador left outer join vehiculo vehiculo3_ on partevehic0_.vehiculo_matricula=vehiculo3_.matricula where partevehic0_.id_parte=? [22018-214]
+2023-05-17 13:49:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "6728APG"
+Data conversion error converting "6728APG"; SQL statement:
+select partevehic0_.id_parte as id_parte1_1_0_, partevehic0_.id_parte as id_parte1_1_1_, partevehic0_.cliente_cod_cliente as cliente_6_1_1_, partevehic0_.fecha_llegada as fecha_ll2_1_1_, partevehic0_.fecha_salida as fecha_sa3_1_1_, partevehic0_.observaciones as observac4_1_1_, partevehic0_.tiempo_empleado as tiempo_e5_1_1_, partevehic0_.trabajador_id_trabajador as trabajad7_1_1_, partevehic0_.vehiculo_matricula as vehiculo8_1_1_, cliente1_.cod_cliente as cod_clie1_0_2_, cliente1_.apellidos as apellido2_0_2_, cliente1_.dni as dni3_0_2_, cliente1_.email as email4_0_2_, cliente1_.nombre as nombre5_0_2_, cliente1_.telefono as telefono6_0_2_, trabajador2_.id_trabajador as id_traba1_4_3_, trabajador2_.apellidos as apellido2_4_3_, trabajador2_.dni as dni3_4_3_, trabajador2_.fecha_nacimiento as fecha_na4_4_3_, trabajador2_.foto_trabajador as foto_tra5_4_3_, trabajador2_.is_admin as is_admin6_4_3_, trabajador2_.nombre as nombre7_4_3_, trabajador2_.password as password8_4_3_, trabajador2_.username as username9_4_3_, vehiculo3_.matricula as matricul1_5_4_, vehiculo3_.bastidor as bastidor2_5_4_, vehiculo3_.marca as marca3_5_4_, vehiculo3_.modelo as modelo4_5_4_, vehiculo3_.tipo_vehiculo as tipo_veh5_5_4_ from parte_vehiculo partevehic0_ left outer join cliente cliente1_ on partevehic0_.cliente_cod_cliente=cliente1_.cod_cliente left outer join trabajador trabajador2_ on partevehic0_.trabajador_id_trabajador=trabajador2_.id_trabajador left outer join vehiculo vehiculo3_ on partevehic0_.vehiculo_matricula=vehiculo3_.matricula where partevehic0_.id_parte=? [22018-214]
+2023-05-17 13:50:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "6728APG"
+Data conversion error converting "6728APG"; SQL statement:
+select partevehic0_.id_parte as id_parte1_1_0_, partevehic0_.id_parte as id_parte1_1_1_, partevehic0_.cliente_cod_cliente as cliente_6_1_1_, partevehic0_.fecha_llegada as fecha_ll2_1_1_, partevehic0_.fecha_salida as fecha_sa3_1_1_, partevehic0_.observaciones as observac4_1_1_, partevehic0_.tiempo_empleado as tiempo_e5_1_1_, partevehic0_.trabajador_id_trabajador as trabajad7_1_1_, partevehic0_.vehiculo_matricula as vehiculo8_1_1_, cliente1_.cod_cliente as cod_clie1_0_2_, cliente1_.apellidos as apellido2_0_2_, cliente1_.dni as dni3_0_2_, cliente1_.email as email4_0_2_, cliente1_.nombre as nombre5_0_2_, cliente1_.telefono as telefono6_0_2_, trabajador2_.id_trabajador as id_traba1_4_3_, trabajador2_.apellidos as apellido2_4_3_, trabajador2_.dni as dni3_4_3_, trabajador2_.fecha_nacimiento as fecha_na4_4_3_, trabajador2_.foto_trabajador as foto_tra5_4_3_, trabajador2_.is_admin as is_admin6_4_3_, trabajador2_.nombre as nombre7_4_3_, trabajador2_.password as password8_4_3_, trabajador2_.username as username9_4_3_, vehiculo3_.matricula as matricul1_5_4_, vehiculo3_.bastidor as bastidor2_5_4_, vehiculo3_.marca as marca3_5_4_, vehiculo3_.modelo as modelo4_5_4_, vehiculo3_.tipo_vehiculo as tipo_veh5_5_4_ from parte_vehiculo partevehic0_ left outer join cliente cliente1_ on partevehic0_.cliente_cod_cliente=cliente1_.cod_cliente left outer join trabajador trabajador2_ on partevehic0_.trabajador_id_trabajador=trabajador2_.id_trabajador left outer join vehiculo vehiculo3_ on partevehic0_.vehiculo_matricula=vehiculo3_.matricula where partevehic0_.id_parte=? [22018-214]
+2023-05-17 13:52:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "6728APG"
+Data conversion error converting "6728APG"; SQL statement:
+select partevehic0_.id_parte as id_parte1_1_0_, partevehic0_.id_parte as id_parte1_1_1_, partevehic0_.cliente_cod_cliente as cliente_6_1_1_, partevehic0_.fecha_llegada as fecha_ll2_1_1_, partevehic0_.fecha_salida as fecha_sa3_1_1_, partevehic0_.observaciones as observac4_1_1_, partevehic0_.tiempo_empleado as tiempo_e5_1_1_, partevehic0_.trabajador_id_trabajador as trabajad7_1_1_, partevehic0_.vehiculo_matricula as vehiculo8_1_1_, cliente1_.cod_cliente as cod_clie1_0_2_, cliente1_.apellidos as apellido2_0_2_, cliente1_.dni as dni3_0_2_, cliente1_.email as email4_0_2_, cliente1_.nombre as nombre5_0_2_, cliente1_.telefono as telefono6_0_2_, trabajador2_.id_trabajador as id_traba1_4_3_, trabajador2_.apellidos as apellido2_4_3_, trabajador2_.dni as dni3_4_3_, trabajador2_.fecha_nacimiento as fecha_na4_4_3_, trabajador2_.foto_trabajador as foto_tra5_4_3_, trabajador2_.is_admin as is_admin6_4_3_, trabajador2_.nombre as nombre7_4_3_, trabajador2_.password as password8_4_3_, trabajador2_.username as username9_4_3_, vehiculo3_.matricula as matricul1_5_4_, vehiculo3_.bastidor as bastidor2_5_4_, vehiculo3_.marca as marca3_5_4_, vehiculo3_.modelo as modelo4_5_4_, vehiculo3_.tipo_vehiculo as tipo_veh5_5_4_ from parte_vehiculo partevehic0_ left outer join cliente cliente1_ on partevehic0_.cliente_cod_cliente=cliente1_.cod_cliente left outer join trabajador trabajador2_ on partevehic0_.trabajador_id_trabajador=trabajador2_.id_trabajador left outer join vehiculo vehiculo3_ on partevehic0_.vehiculo_matricula=vehiculo3_.matricula where partevehic0_.id_parte=? [22018-214]
+2023-05-17 13:53:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "7482LWJ"
+Data conversion error converting "7482LWJ"; SQL statement:
+select partevehic0_.id_parte as id_parte1_1_0_, partevehic0_.id_parte as id_parte1_1_1_, partevehic0_.cliente_cod_cliente as cliente_6_1_1_, partevehic0_.fecha_llegada as fecha_ll2_1_1_, partevehic0_.fecha_salida as fecha_sa3_1_1_, partevehic0_.observaciones as observac4_1_1_, partevehic0_.tiempo_empleado as tiempo_e5_1_1_, partevehic0_.trabajador_id_trabajador as trabajad7_1_1_, partevehic0_.vehiculo_matricula as vehiculo8_1_1_, cliente1_.cod_cliente as cod_clie1_0_2_, cliente1_.apellidos as apellido2_0_2_, cliente1_.dni as dni3_0_2_, cliente1_.email as email4_0_2_, cliente1_.nombre as nombre5_0_2_, cliente1_.telefono as telefono6_0_2_, trabajador2_.id_trabajador as id_traba1_4_3_, trabajador2_.apellidos as apellido2_4_3_, trabajador2_.dni as dni3_4_3_, trabajador2_.fecha_nacimiento as fecha_na4_4_3_, trabajador2_.foto_trabajador as foto_tra5_4_3_, trabajador2_.is_admin as is_admin6_4_3_, trabajador2_.nombre as nombre7_4_3_, trabajador2_.password as password8_4_3_, trabajador2_.username as username9_4_3_, vehiculo3_.matricula as matricul1_5_4_, vehiculo3_.bastidor as bastidor2_5_4_, vehiculo3_.marca as marca3_5_4_, vehiculo3_.modelo as modelo4_5_4_, vehiculo3_.tipo_vehiculo as tipo_veh5_5_4_ from parte_vehiculo partevehic0_ left outer join cliente cliente1_ on partevehic0_.cliente_cod_cliente=cliente1_.cod_cliente left outer join trabajador trabajador2_ on partevehic0_.trabajador_id_trabajador=trabajador2_.id_trabajador left outer join vehiculo vehiculo3_ on partevehic0_.vehiculo_matricula=vehiculo3_.matricula where partevehic0_.id_parte=? [22018-214]
+2023-05-17 13:58:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "2938GAK"
+Data conversion error converting "2938GAK"; SQL statement:
+select partevehic0_.id_parte as id_parte1_1_0_, partevehic0_.id_parte as id_parte1_1_1_, partevehic0_.cliente_cod_cliente as cliente_6_1_1_, partevehic0_.fecha_llegada as fecha_ll2_1_1_, partevehic0_.fecha_salida as fecha_sa3_1_1_, partevehic0_.observaciones as observac4_1_1_, partevehic0_.tiempo_empleado as tiempo_e5_1_1_, partevehic0_.trabajador_id_trabajador as trabajad7_1_1_, partevehic0_.vehiculo_matricula as vehiculo8_1_1_, cliente1_.cod_cliente as cod_clie1_0_2_, cliente1_.apellidos as apellido2_0_2_, cliente1_.dni as dni3_0_2_, cliente1_.email as email4_0_2_, cliente1_.nombre as nombre5_0_2_, cliente1_.telefono as telefono6_0_2_, trabajador2_.id_trabajador as id_traba1_4_3_, trabajador2_.apellidos as apellido2_4_3_, trabajador2_.dni as dni3_4_3_, trabajador2_.fecha_nacimiento as fecha_na4_4_3_, trabajador2_.foto_trabajador as foto_tra5_4_3_, trabajador2_.is_admin as is_admin6_4_3_, trabajador2_.nombre as nombre7_4_3_, trabajador2_.password as password8_4_3_, trabajador2_.username as username9_4_3_, vehiculo3_.matricula as matricul1_5_4_, vehiculo3_.bastidor as bastidor2_5_4_, vehiculo3_.marca as marca3_5_4_, vehiculo3_.modelo as modelo4_5_4_, vehiculo3_.tipo_vehiculo as tipo_veh5_5_4_ from parte_vehiculo partevehic0_ left outer join cliente cliente1_ on partevehic0_.cliente_cod_cliente=cliente1_.cod_cliente left outer join trabajador trabajador2_ on partevehic0_.trabajador_id_trabajador=trabajador2_.id_trabajador left outer join vehiculo vehiculo3_ on partevehic0_.vehiculo_matricula=vehiculo3_.matricula where partevehic0_.id_parte=? [22018-214]
+2023-05-17 13:58:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "2938GAK"
+Data conversion error converting "2938GAK"; SQL statement:
+select partevehic0_.id_parte as id_parte1_1_0_, partevehic0_.id_parte as id_parte1_1_1_, partevehic0_.cliente_cod_cliente as cliente_6_1_1_, partevehic0_.fecha_llegada as fecha_ll2_1_1_, partevehic0_.fecha_salida as fecha_sa3_1_1_, partevehic0_.observaciones as observac4_1_1_, partevehic0_.tiempo_empleado as tiempo_e5_1_1_, partevehic0_.trabajador_id_trabajador as trabajad7_1_1_, partevehic0_.vehiculo_matricula as vehiculo8_1_1_, cliente1_.cod_cliente as cod_clie1_0_2_, cliente1_.apellidos as apellido2_0_2_, cliente1_.dni as dni3_0_2_, cliente1_.email as email4_0_2_, cliente1_.nombre as nombre5_0_2_, cliente1_.telefono as telefono6_0_2_, trabajador2_.id_trabajador as id_traba1_4_3_, trabajador2_.apellidos as apellido2_4_3_, trabajador2_.dni as dni3_4_3_, trabajador2_.fecha_nacimiento as fecha_na4_4_3_, trabajador2_.foto_trabajador as foto_tra5_4_3_, trabajador2_.is_admin as is_admin6_4_3_, trabajador2_.nombre as nombre7_4_3_, trabajador2_.password as password8_4_3_, trabajador2_.username as username9_4_3_, vehiculo3_.matricula as matricul1_5_4_, vehiculo3_.bastidor as bastidor2_5_4_, vehiculo3_.marca as marca3_5_4_, vehiculo3_.modelo as modelo4_5_4_, vehiculo3_.tipo_vehiculo as tipo_veh5_5_4_ from parte_vehiculo partevehic0_ left outer join cliente cliente1_ on partevehic0_.cliente_cod_cliente=cliente1_.cod_cliente left outer join trabajador trabajador2_ on partevehic0_.trabajador_id_trabajador=trabajador2_.id_trabajador left outer join vehiculo vehiculo3_ on partevehic0_.vehiculo_matricula=vehiculo3_.matricula where partevehic0_.id_parte=? [22018-214]
+2023-05-17 13:59:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "2938DVG"
+Data conversion error converting "2938DVG"; SQL statement:
+select partevehic0_.id_parte as id_parte1_1_0_, partevehic0_.id_parte as id_parte1_1_1_, partevehic0_.cliente_cod_cliente as cliente_6_1_1_, partevehic0_.fecha_llegada as fecha_ll2_1_1_, partevehic0_.fecha_salida as fecha_sa3_1_1_, partevehic0_.observaciones as observac4_1_1_, partevehic0_.tiempo_empleado as tiempo_e5_1_1_, partevehic0_.trabajador_id_trabajador as trabajad7_1_1_, partevehic0_.vehiculo_matricula as vehiculo8_1_1_, cliente1_.cod_cliente as cod_clie1_0_2_, cliente1_.apellidos as apellido2_0_2_, cliente1_.dni as dni3_0_2_, cliente1_.email as email4_0_2_, cliente1_.nombre as nombre5_0_2_, cliente1_.telefono as telefono6_0_2_, trabajador2_.id_trabajador as id_traba1_4_3_, trabajador2_.apellidos as apellido2_4_3_, trabajador2_.dni as dni3_4_3_, trabajador2_.fecha_nacimiento as fecha_na4_4_3_, trabajador2_.foto_trabajador as foto_tra5_4_3_, trabajador2_.is_admin as is_admin6_4_3_, trabajador2_.nombre as nombre7_4_3_, trabajador2_.password as password8_4_3_, trabajador2_.username as username9_4_3_, vehiculo3_.matricula as matricul1_5_4_, vehiculo3_.bastidor as bastidor2_5_4_, vehiculo3_.marca as marca3_5_4_, vehiculo3_.modelo as modelo4_5_4_, vehiculo3_.tipo_vehiculo as tipo_veh5_5_4_ from parte_vehiculo partevehic0_ left outer join cliente cliente1_ on partevehic0_.cliente_cod_cliente=cliente1_.cod_cliente left outer join trabajador trabajador2_ on partevehic0_.trabajador_id_trabajador=trabajador2_.id_trabajador left outer join vehiculo vehiculo3_ on partevehic0_.vehiculo_matricula=vehiculo3_.matricula where partevehic0_.id_parte=? [22018-214]
+2023-05-17 13:59:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "2938DVG"
+Data conversion error converting "2938DVG"; SQL statement:
+select partevehic0_.id_parte as id_parte1_1_0_, partevehic0_.id_parte as id_parte1_1_1_, partevehic0_.cliente_cod_cliente as cliente_6_1_1_, partevehic0_.fecha_llegada as fecha_ll2_1_1_, partevehic0_.fecha_salida as fecha_sa3_1_1_, partevehic0_.observaciones as observac4_1_1_, partevehic0_.tiempo_empleado as tiempo_e5_1_1_, partevehic0_.trabajador_id_trabajador as trabajad7_1_1_, partevehic0_.vehiculo_matricula as vehiculo8_1_1_, cliente1_.cod_cliente as cod_clie1_0_2_, cliente1_.apellidos as apellido2_0_2_, cliente1_.dni as dni3_0_2_, cliente1_.email as email4_0_2_, cliente1_.nombre as nombre5_0_2_, cliente1_.telefono as telefono6_0_2_, trabajador2_.id_trabajador as id_traba1_4_3_, trabajador2_.apellidos as apellido2_4_3_, trabajador2_.dni as dni3_4_3_, trabajador2_.fecha_nacimiento as fecha_na4_4_3_, trabajador2_.foto_trabajador as foto_tra5_4_3_, trabajador2_.is_admin as is_admin6_4_3_, trabajador2_.nombre as nombre7_4_3_, trabajador2_.password as password8_4_3_, trabajador2_.username as username9_4_3_, vehiculo3_.matricula as matricul1_5_4_, vehiculo3_.bastidor as bastidor2_5_4_, vehiculo3_.marca as marca3_5_4_, vehiculo3_.modelo as modelo4_5_4_, vehiculo3_.tipo_vehiculo as tipo_veh5_5_4_ from parte_vehiculo partevehic0_ left outer join cliente cliente1_ on partevehic0_.cliente_cod_cliente=cliente1_.cod_cliente left outer join trabajador trabajador2_ on partevehic0_.trabajador_id_trabajador=trabajador2_.id_trabajador left outer join vehiculo vehiculo3_ on partevehic0_.vehiculo_matricula=vehiculo3_.matricula where partevehic0_.id_parte=? [22018-214]
+2023-05-17 13:59:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "2938DVG"
+Data conversion error converting "2938DVG"; SQL statement:
+select partevehic0_.id_parte as id_parte1_1_0_, partevehic0_.id_parte as id_parte1_1_1_, partevehic0_.cliente_cod_cliente as cliente_6_1_1_, partevehic0_.fecha_llegada as fecha_ll2_1_1_, partevehic0_.fecha_salida as fecha_sa3_1_1_, partevehic0_.observaciones as observac4_1_1_, partevehic0_.tiempo_empleado as tiempo_e5_1_1_, partevehic0_.trabajador_id_trabajador as trabajad7_1_1_, partevehic0_.vehiculo_matricula as vehiculo8_1_1_, cliente1_.cod_cliente as cod_clie1_0_2_, cliente1_.apellidos as apellido2_0_2_, cliente1_.dni as dni3_0_2_, cliente1_.email as email4_0_2_, cliente1_.nombre as nombre5_0_2_, cliente1_.telefono as telefono6_0_2_, trabajador2_.id_trabajador as id_traba1_4_3_, trabajador2_.apellidos as apellido2_4_3_, trabajador2_.dni as dni3_4_3_, trabajador2_.fecha_nacimiento as fecha_na4_4_3_, trabajador2_.foto_trabajador as foto_tra5_4_3_, trabajador2_.is_admin as is_admin6_4_3_, trabajador2_.nombre as nombre7_4_3_, trabajador2_.password as password8_4_3_, trabajador2_.username as username9_4_3_, vehiculo3_.matricula as matricul1_5_4_, vehiculo3_.bastidor as bastidor2_5_4_, vehiculo3_.marca as marca3_5_4_, vehiculo3_.modelo as modelo4_5_4_, vehiculo3_.tipo_vehiculo as tipo_veh5_5_4_ from parte_vehiculo partevehic0_ left outer join cliente cliente1_ on partevehic0_.cliente_cod_cliente=cliente1_.cod_cliente left outer join trabajador trabajador2_ on partevehic0_.trabajador_id_trabajador=trabajador2_.id_trabajador left outer join vehiculo vehiculo3_ on partevehic0_.vehiculo_matricula=vehiculo3_.matricula where partevehic0_.id_parte=? [22018-214]
+2023-05-17 14:00:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "2938DVG"
+Data conversion error converting "2938DVG"; SQL statement:
+select partevehic0_.id_parte as id_parte1_1_0_, partevehic0_.id_parte as id_parte1_1_1_, partevehic0_.cliente_cod_cliente as cliente_6_1_1_, partevehic0_.fecha_llegada as fecha_ll2_1_1_, partevehic0_.fecha_salida as fecha_sa3_1_1_, partevehic0_.observaciones as observac4_1_1_, partevehic0_.tiempo_empleado as tiempo_e5_1_1_, partevehic0_.trabajador_id_trabajador as trabajad7_1_1_, partevehic0_.vehiculo_matricula as vehiculo8_1_1_, cliente1_.cod_cliente as cod_clie1_0_2_, cliente1_.apellidos as apellido2_0_2_, cliente1_.dni as dni3_0_2_, cliente1_.email as email4_0_2_, cliente1_.nombre as nombre5_0_2_, cliente1_.telefono as telefono6_0_2_, trabajador2_.id_trabajador as id_traba1_4_3_, trabajador2_.apellidos as apellido2_4_3_, trabajador2_.dni as dni3_4_3_, trabajador2_.fecha_nacimiento as fecha_na4_4_3_, trabajador2_.foto_trabajador as foto_tra5_4_3_, trabajador2_.is_admin as is_admin6_4_3_, trabajador2_.nombre as nombre7_4_3_, trabajador2_.password as password8_4_3_, trabajador2_.username as username9_4_3_, vehiculo3_.matricula as matricul1_5_4_, vehiculo3_.bastidor as bastidor2_5_4_, vehiculo3_.marca as marca3_5_4_, vehiculo3_.modelo as modelo4_5_4_, vehiculo3_.tipo_vehiculo as tipo_veh5_5_4_ from parte_vehiculo partevehic0_ left outer join cliente cliente1_ on partevehic0_.cliente_cod_cliente=cliente1_.cod_cliente left outer join trabajador trabajador2_ on partevehic0_.trabajador_id_trabajador=trabajador2_.id_trabajador left outer join vehiculo vehiculo3_ on partevehic0_.vehiculo_matricula=vehiculo3_.matricula where partevehic0_.id_parte=? [22018-214]
+2023-05-17 14:00:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "2938DVG"
+Data conversion error converting "2938DVG"; SQL statement:
+select partevehic0_.id_parte as id_parte1_1_0_, partevehic0_.id_parte as id_parte1_1_1_, partevehic0_.cliente_cod_cliente as cliente_6_1_1_, partevehic0_.fecha_llegada as fecha_ll2_1_1_, partevehic0_.fecha_salida as fecha_sa3_1_1_, partevehic0_.observaciones as observac4_1_1_, partevehic0_.tiempo_empleado as tiempo_e5_1_1_, partevehic0_.trabajador_id_trabajador as trabajad7_1_1_, partevehic0_.vehiculo_matricula as vehiculo8_1_1_, cliente1_.cod_cliente as cod_clie1_0_2_, cliente1_.apellidos as apellido2_0_2_, cliente1_.dni as dni3_0_2_, cliente1_.email as email4_0_2_, cliente1_.nombre as nombre5_0_2_, cliente1_.telefono as telefono6_0_2_, trabajador2_.id_trabajador as id_traba1_4_3_, trabajador2_.apellidos as apellido2_4_3_, trabajador2_.dni as dni3_4_3_, trabajador2_.fecha_nacimiento as fecha_na4_4_3_, trabajador2_.foto_trabajador as foto_tra5_4_3_, trabajador2_.is_admin as is_admin6_4_3_, trabajador2_.nombre as nombre7_4_3_, trabajador2_.password as password8_4_3_, trabajador2_.username as username9_4_3_, vehiculo3_.matricula as matricul1_5_4_, vehiculo3_.bastidor as bastidor2_5_4_, vehiculo3_.marca as marca3_5_4_, vehiculo3_.modelo as modelo4_5_4_, vehiculo3_.tipo_vehiculo as tipo_veh5_5_4_ from parte_vehiculo partevehic0_ left outer join cliente cliente1_ on partevehic0_.cliente_cod_cliente=cliente1_.cod_cliente left outer join trabajador trabajador2_ on partevehic0_.trabajador_id_trabajador=trabajador2_.id_trabajador left outer join vehiculo vehiculo3_ on partevehic0_.vehiculo_matricula=vehiculo3_.matricula where partevehic0_.id_parte=? [22018-214]
+2023-05-17 14:02:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "7482LWJ"
+Data conversion error converting "7482LWJ"; SQL statement:
+select partevehic0_.id_parte as id_parte1_1_0_, partevehic0_.id_parte as id_parte1_1_1_, partevehic0_.cliente_cod_cliente as cliente_6_1_1_, partevehic0_.fecha_llegada as fecha_ll2_1_1_, partevehic0_.fecha_salida as fecha_sa3_1_1_, partevehic0_.observaciones as observac4_1_1_, partevehic0_.tiempo_empleado as tiempo_e5_1_1_, partevehic0_.trabajador_id_trabajador as trabajad7_1_1_, partevehic0_.vehiculo_matricula as vehiculo8_1_1_, cliente1_.cod_cliente as cod_clie1_0_2_, cliente1_.apellidos as apellido2_0_2_, cliente1_.dni as dni3_0_2_, cliente1_.email as email4_0_2_, cliente1_.nombre as nombre5_0_2_, cliente1_.telefono as telefono6_0_2_, trabajador2_.id_trabajador as id_traba1_4_3_, trabajador2_.apellidos as apellido2_4_3_, trabajador2_.dni as dni3_4_3_, trabajador2_.fecha_nacimiento as fecha_na4_4_3_, trabajador2_.foto_trabajador as foto_tra5_4_3_, trabajador2_.is_admin as is_admin6_4_3_, trabajador2_.nombre as nombre7_4_3_, trabajador2_.password as password8_4_3_, trabajador2_.username as username9_4_3_, vehiculo3_.matricula as matricul1_5_4_, vehiculo3_.bastidor as bastidor2_5_4_, vehiculo3_.marca as marca3_5_4_, vehiculo3_.modelo as modelo4_5_4_, vehiculo3_.tipo_vehiculo as tipo_veh5_5_4_ from parte_vehiculo partevehic0_ left outer join cliente cliente1_ on partevehic0_.cliente_cod_cliente=cliente1_.cod_cliente left outer join trabajador trabajador2_ on partevehic0_.trabajador_id_trabajador=trabajador2_.id_trabajador left outer join vehiculo vehiculo3_ on partevehic0_.vehiculo_matricula=vehiculo3_.matricula where partevehic0_.id_parte=? [22018-214]
+2023-05-17 14:27:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "PROVEEDOR_ID_PROVEEEDOR" no encontrada
+Column "PROVEEDOR_ID_PROVEEEDOR" not found; SQL statement:
+insert into producto (referencia, proveedor_id_proveeedor, nombre, precio, pvp, descripcion) values ('kj23jsd', 1, 'junta la trocola', 12.3, 15, 'una perfercamente normal junta la trocola') [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:749)
+	at org.h2.command.Parser.parseColumn(Parser.java:1256)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1241)
+	at org.h2.command.Parser.parseInsert(Parser.java:1641)
+	at org.h2.command.Parser.parsePrepared(Parser.java:814)
+	at org.h2.command.Parser.parse(Parser.java:689)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:569)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applyImportSources(SchemaCreatorImpl.java:514)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:183)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:168)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:910)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.salesianostriana.dam.proyecto3rtrimestre.Proyecto3rTrimestreApplication.main(Proyecto3rTrimestreApplication.java:10)
+2023-05-17 14:27:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "PROVEEDOR_ID_PROVEEEDOR" no encontrada
+Column "PROVEEDOR_ID_PROVEEEDOR" not found; SQL statement:
+insert into producto (referencia, proveedor_id_proveeedor, nombre, precio, pvp, descripcion) values ('kj23jsd', 1, 'junta la trocola', 12.3, 15, 'una perfercamente normal junta la trocola') [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:749)
+	at org.h2.command.Parser.parseColumn(Parser.java:1256)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1241)
+	at org.h2.command.Parser.parseInsert(Parser.java:1641)
+	at org.h2.command.Parser.parsePrepared(Parser.java:814)
+	at org.h2.command.Parser.parse(Parser.java:689)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:569)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applyImportSources(SchemaCreatorImpl.java:514)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:183)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:168)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:910)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.salesianostriana.dam.proyecto3rtrimestre.Proyecto3rTrimestreApplication.main(Proyecto3rTrimestreApplication.java:10)
+2023-05-17 17:31:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "PROVEEDOR_ID_PROVEEEDOR" no encontrada
+Column "PROVEEDOR_ID_PROVEEEDOR" not found; SQL statement:
+insert into producto (referencia, proveedor_id_proveeedor, nombre, precio, pvp, descripcion) values ('kj23jsd', 1, 'junta la trocola', 12.3, 15, 'una perfercamente normal junta la trocola') [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:749)
+	at org.h2.command.Parser.parseColumn(Parser.java:1256)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1241)
+	at org.h2.command.Parser.parseInsert(Parser.java:1641)
+	at org.h2.command.Parser.parsePrepared(Parser.java:814)
+	at org.h2.command.Parser.parse(Parser.java:689)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:569)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applyImportSources(SchemaCreatorImpl.java:514)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:183)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:168)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:910)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.salesianostriana.dam.proyecto3rtrimestre.Proyecto3rTrimestreApplication.main(Proyecto3rTrimestreApplication.java:10)
+2023-05-17 17:36:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Columna "ID_PROVEEEDOR" no encontrada
+Column "ID_PROVEEEDOR" not found; SQL statement:
+insert into producto (referencia, id_proveeedor, nombre, precio, pvp, descripcion) values ('kj23jsd', 1, 'junta la trocola', 12.3, 15, 'una perfercamente normal junta la trocola') [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:749)
+	at org.h2.command.Parser.parseColumn(Parser.java:1256)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1241)
+	at org.h2.command.Parser.parseInsert(Parser.java:1641)
+	at org.h2.command.Parser.parsePrepared(Parser.java:814)
+	at org.h2.command.Parser.parse(Parser.java:689)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:569)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applySqlString(SchemaCreatorImpl.java:458)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.applyImportSources(SchemaCreatorImpl.java:514)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:183)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:138)
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:124)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:168)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:85)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:335)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:471)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1498)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:910)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.salesianostriana.dam.proyecto3rtrimestre.Proyecto3rTrimestreApplication.main(Proyecto3rTrimestreApplication.java:10)
+2023-05-17 17:37:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "kj23jsd"
+Data conversion error converting "kj23jsd"; SQL statement:
+select proveedor0_.id_proveedor as id_prove1_3_0_, proveedor0_.descripcion as descripc2_3_0_, proveedor0_.direccion as direccio3_3_0_, proveedor0_.nombre as nombre4_3_0_, productoli1_.referencia as referenc1_2_1_, productoli1_.referencia as referenc1_2_2_, productoli1_.descripcion as descripc2_2_2_, productoli1_.nombre as nombre3_2_2_, productoli1_.precio as precio4_2_2_, productoli1_.proveedor_id_proveedor as proveedo6_2_2_, productoli1_.pvp as pvp5_2_2_, proveedor2_.id_proveedor as id_prove1_3_3_, proveedor2_.descripcion as descripc2_3_3_, proveedor2_.direccion as direccio3_3_3_, proveedor2_.nombre as nombre4_3_3_ from proveedor proveedor0_ left outer join producto productoli1_ on proveedor0_.id_proveedor=productoli1_.referencia left outer join proveedor proveedor2_ on productoli1_.proveedor_id_proveedor=proveedor2_.id_proveedor where proveedor0_.id_proveedor=? [22018-214]
+2023-05-17 17:37:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "kj23jsd"
+Data conversion error converting "kj23jsd"; SQL statement:
+select productoli0_.referencia as referenc1_2_0_, productoli0_.referencia as referenc1_2_1_, productoli0_.descripcion as descripc2_2_1_, productoli0_.nombre as nombre3_2_1_, productoli0_.precio as precio4_2_1_, productoli0_.proveedor_id_proveedor as proveedo6_2_1_, productoli0_.pvp as pvp5_2_1_, proveedor1_.id_proveedor as id_prove1_3_2_, proveedor1_.descripcion as descripc2_3_2_, proveedor1_.direccion as direccio3_3_2_, proveedor1_.nombre as nombre4_3_2_ from producto productoli0_ left outer join proveedor proveedor1_ on productoli0_.proveedor_id_proveedor=proveedor1_.id_proveedor where productoli0_.referencia=? [22018-214]
+2023-05-17 17:40:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "kj23jsd"
+Data conversion error converting "kj23jsd"; SQL statement:
+select productoli0_.referencia as referenc1_2_0_, productoli0_.referencia as referenc1_2_1_, productoli0_.descripcion as descripc2_2_1_, productoli0_.nombre as nombre3_2_1_, productoli0_.precio as precio4_2_1_, productoli0_.proveedor_id_proveedor as proveedo6_2_1_, productoli0_.pvp as pvp5_2_1_, proveedor1_.id_proveedor as id_prove1_3_2_, proveedor1_.descripcion as descripc2_3_2_, proveedor1_.direccion as direccio3_3_2_, proveedor1_.nombre as nombre4_3_2_ from producto productoli0_ left outer join proveedor proveedor1_ on productoli0_.proveedor_id_proveedor=proveedor1_.id_proveedor where productoli0_.referencia=? [22018-214]
+2023-05-17 17:41:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "kj23jsd"
+Data conversion error converting "kj23jsd"; SQL statement:
+select proveedor0_.id_proveedor as id_prove1_3_0_, proveedor0_.descripcion as descripc2_3_0_, proveedor0_.direccion as direccio3_3_0_, proveedor0_.nombre as nombre4_3_0_, productoli1_.referencia as referenc1_2_1_, productoli1_.referencia as referenc1_2_2_, productoli1_.descripcion as descripc2_2_2_, productoli1_.nombre as nombre3_2_2_, productoli1_.precio as precio4_2_2_, productoli1_.proveedor_id_proveedor as proveedo6_2_2_, productoli1_.pvp as pvp5_2_2_, proveedor2_.id_proveedor as id_prove1_3_3_, proveedor2_.descripcion as descripc2_3_3_, proveedor2_.direccion as direccio3_3_3_, proveedor2_.nombre as nombre4_3_3_ from proveedor proveedor0_ left outer join producto productoli1_ on proveedor0_.id_proveedor=productoli1_.referencia left outer join proveedor proveedor2_ on productoli1_.proveedor_id_proveedor=proveedor2_.id_proveedor where proveedor0_.id_proveedor=? [22018-214]
+2023-05-17 19:18:59 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "kj23jsd"
+Data conversion error converting "kj23jsd"; SQL statement:
+select productoli0_.referencia as referenc1_2_0_, productoli0_.referencia as referenc1_2_1_, productoli0_.descripcion as descripc2_2_1_, productoli0_.nombre as nombre3_2_1_, productoli0_.precio as precio4_2_1_, productoli0_.proveedor_id_proveedor as proveedo6_2_1_, productoli0_.pvp as pvp5_2_1_, proveedor1_.id_proveedor as id_prove1_3_2_, proveedor1_.descripcion as descripc2_3_2_, proveedor1_.direccion as direccio3_3_2_, proveedor1_.nombre as nombre4_3_2_ from producto productoli0_ left outer join proveedor proveedor1_ on productoli0_.proveedor_id_proveedor=proveedor1_.id_proveedor where productoli0_.referencia=? [22018-214]
+2023-05-17 19:19:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "kj23jsd"
+Data conversion error converting "kj23jsd"; SQL statement:
+select productoli0_.referencia as referenc1_2_0_, productoli0_.referencia as referenc1_2_1_, productoli0_.descripcion as descripc2_2_1_, productoli0_.nombre as nombre3_2_1_, productoli0_.precio as precio4_2_1_, productoli0_.proveedor_id_proveedor as proveedo6_2_1_, productoli0_.pvp as pvp5_2_1_, proveedor1_.id_proveedor as id_prove1_3_2_, proveedor1_.descripcion as descripc2_3_2_, proveedor1_.direccion as direccio3_3_2_, proveedor1_.nombre as nombre4_3_2_ from producto productoli0_ left outer join proveedor proveedor1_ on productoli0_.proveedor_id_proveedor=proveedor1_.id_proveedor where productoli0_.referencia=? [22018-214]

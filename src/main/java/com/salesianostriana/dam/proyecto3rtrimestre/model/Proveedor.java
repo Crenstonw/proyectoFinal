@@ -39,7 +39,7 @@ public class Proveedor {
 	@EqualsAndHashCode.Exclude
 	@Builder.Default
 	@OneToMany(
-			mappedBy = "referencia",
+			mappedBy = "proveedor",
 			fetch = FetchType.EAGER,
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
