@@ -27,7 +27,9 @@ public class Proveedor {
 	@Id
 	@GeneratedValue
 	private Long idProveedor;
+	
 	private String nombre, direccion;
+	
 	@Lob
 	private String descripcion;
 	
@@ -37,7 +39,7 @@ public class Proveedor {
 	@EqualsAndHashCode.Exclude
 	@Builder.Default
 	@OneToMany(
-			mappedBy = "referencia",
+			mappedBy = "proveedor",
 			fetch = FetchType.EAGER,
 			cascade = CascadeType.ALL,
 			orphanRemoval = true

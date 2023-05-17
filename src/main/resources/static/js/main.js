@@ -12,5 +12,3 @@ document.getElementById('fotoTrabajador').addEventListener('focus', function() {
 		this.value = 'http://robohash.org/' + nom;
 	}
   });
-
-  alert(nom);

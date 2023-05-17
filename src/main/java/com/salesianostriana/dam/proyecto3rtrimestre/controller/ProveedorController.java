@@ -19,21 +19,21 @@ public class ProveedorController {
 	
 	@GetMapping("/")
 	public String showFormProveedor(Model model) {
-		model.addAttribute("Proveedores", proveedorService.findAll());
+		model.addAttribute("proveedores", proveedorService.findAll());
 		return "listaProveedor";
 		
 	}
 	
 	@PostMapping("/nuevo")
 	public String nuevoProveedor(Model model) {
-		model.addAttribute("Proveedor", new Proveedor());
+		model.addAttribute("proveedor", new Proveedor());
 		return "formularios/form-Proveedor";
 	}
 	
 	@PostMapping("/nuevo/submit")
-	public String submitNuevoProveedor(Proveedor Proveedor, Model model) {
-
-		proveedorService.save(Proveedor);
+	public String submitNuevoProveedor(Proveedor proveedor, Model model) {
+		
+		proveedorService.save(proveedor);
 		return "redirect:/inicio/listaProveedor/";
 
 	}
