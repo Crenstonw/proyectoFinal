@@ -19,7 +19,7 @@
 						<form th:action="@{/inicio/listaProveedor/nuevo}" method="POST">
 							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit"
 								aria-expanded="false">
-								<img th:src="@{/images/proveedor.png}">
+								<img th:src="@{/images/proveedorMas.png}">
 							</button>
 						</form>
 						<tr>
@@ -35,7 +35,7 @@
 							<td th:text="${proveedor.idProveedor}"></td>
 							<td th:text="${proveedor.nombre}"></td>
 							<td th:text="${proveedor.direccion}"></td>
-							<td th:text="${producto.descripcion}"></td>
+							<td th:text="${proveedor.descripcion}"></td>
 							<td class="operaciones">
 								<span>
 								<a href="#"

@@ -27,7 +27,9 @@ public class Proveedor {
 	@Id
 	@GeneratedValue
 	private Long idProveedor;
+	
 	private String nombre, direccion;
+	
 	@Lob
 	private String descripcion;
 	
