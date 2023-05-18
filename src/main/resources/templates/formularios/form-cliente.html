@@ -16,30 +16,36 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 						cliente
 					</h1>
 					<input type="hidden" th:field="*{codCliente}" id="codCliente" />
-					<div class="form-group">
-						<label for="dni">DNI</label> <input type="text"
+					<div class="form-floating">
+						 <input type="text"
 							class="form-control" id="dni" placeholder="DNI"
 							th:field="*{dni}" />
+						<label for="dni">DNI</label>
 					</div>
-					<div class="form-group">
-						<label for="nombre">Nombre</label> <input type="text"
+					<br>
+					<div class="form-floating">
+						 <input type="text"
 							class="form-control" id="nombre" placeholder="Nombre"
-							th:field="*{nombre}" />
+							th:field="*{nombre}" /><label for="nombre">Nombre</label>
 					</div>
-					<div class="form-group">
-						<label for="apellidos">Apellidos</label> <input type="text"
+					<br>
+					<div class="form-floating">
+						 <input type="text"
 							class="form-control" id="apellidos" placeholder="Apellidos"
 							th:field="*{apellidos}">
+						<label for="apellidos">Apellidos</label>
 					</div>
-					<div class="form-group">
-						<label for="telefono">Teléfono</label>
+					<br>
+					<div class="form-floating">
 						<input class="form-control" type="text" id="telefono"
 							placeholder="Teléfono" th:field="*{telefono}"></input>
+							<label for="telefono">Teléfono</label>
 					</div>
-					<div class="form-group">
-						<label for="email">Email</label> <input type="text"
+					<br>
+					<div class="form-floating">
+						 <input type="text"
 							class="form-control" id="email" placeholder="example@gmail.com" th:field="*{email}" />
-
+						<label for="email">Email</label>
 					</div>
 					<br>
 					<button type="submit" class="btn btn-primary">
@@ -49,9 +55,5 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 			</div>
 		</div>
 	</div>
-
-	<!--jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
 </body>
 </htmlxmlns:sec="http://www.thymeleaf.org/extras/spring-security">>
