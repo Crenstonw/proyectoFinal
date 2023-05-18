@@ -24,9 +24,14 @@
 					<br>
 					<div class="form-floating">
 						<select class="form-select" id="tipoVehiculo" name="tipoVehiculo">
+							<span th:if="${vehiculo.matricula} == null">
+								<option value="" selected disabled></option>
+							</span>
+							
 							<option
 								th:each="tipoVehiculo : ${T(com.salesianostriana.dam.proyecto3rtrimestre.model.TipoVehiculo).values()}"
 								th:value="${tipoVehiculo}"
+								th:selected="${tipoVehiculo} == *{tipoVehiculo}"
 								th:text="${tipoVehiculo}"></option>
 						</select>
 						<label for="tipoVehiculo" class="form-label">Selecciona el tipo de vehiculo:</label>

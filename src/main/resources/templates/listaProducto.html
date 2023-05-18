@@ -35,7 +35,7 @@
 					<tbody>
 						<tr th:each="producto : ${productos}">
 							<td th:text="${producto.referencia}"></td>
-							<td th:text="${producto.proveedor}"></td>
+							<td th:text="${producto.proveedor.idProveedor}"></td>
 							<td th:text="${producto.nombre}"></td>
 							<td th:text="${producto.precio}"></td>
 							<td th:text="${producto.pvp}"></td>
