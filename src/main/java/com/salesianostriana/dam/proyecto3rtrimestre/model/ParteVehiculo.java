@@ -1,6 +1,6 @@
 package com.salesianostriana.dam.proyecto3rtrimestre.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,7 +25,7 @@ public class ParteVehiculo {
 	private Long idParte;
 	
 	private int tiempoEmpleado;
-	private LocalDateTime fechaLlegada, fechaSalida;
+	private LocalDate fechaLlegada, fechaSalida;
 	@Lob
 	private String observaciones;
 	
