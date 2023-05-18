@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{fragmentos/head::head}">
+</head>
+<body class="main">
+	<nav th:replace="~{fragmentos/nav::nav}">
+	</nav>
+		<div class="container">
+		<div class="row">
+			<div class="col-md-offset-2 col-md-8">
+				<form method="post" action="#"
+					th:action="@{/inicio/listaParte/nuevo/submit}" th:object="${parte}">
+					<h1>
+						<span th:text="${parte.idParte} ? 'Editar' : 'Nuevo'"></span>
+						Parte
+					</h1>
+					<input type="hidden" th:field="*{idParte}" id="idParte" />
+					<div class="form-floating">
+						 <input type="number"
+							class="form-control" id="tiempoEmpleado" placeholder="Tiempo empleado"
+							th:field="*{tiempoEmpleado}" />
+						<label for="tiempoEmpleado">Tiempo empleado</label>
+					</div>
+					<br>
+					<div class="form-floating">
+						 <input type="date"
+							class="form-control" id="fechaLlegada" placeholder="Fecha de llegada"
+							th:value="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}"
+							th:field="*{fechaLlegada}" /><label for="fechaLlegada">Fecha de llegada del vehículo</label>
+					</div>
+					<br>
+					<div class="form-floating">
+						 <input type="date"
+							class="form-control" id="fechaSalida" placeholder="Fecha de salida"
+							th:field="*{fechaSalida}">
+						<label for="fechaSalida">Fecha de salida del vehículo</label>
+					</div>
+					<br>
+					<div class="form-floating">
+						<input class="form-control" type="text" id="observaciones"
+							placeholder="Observaciones" th:field="*{observaciones}"></input>
+							<label for="observaciones">Observaciones</label>
+					</div>
+					<br>
+					<div class="form-floating">
+						 <input type="text"
+							class="form-control" id="matricula" placeholder="Matrícula del vehículo" th:field="*{vehiculo.matricula}" />
+						<label for="matricula">Matrícula del vehículo</label>
+					</div>
+					<br>
+					<div class="form-floating">
+						 <input type="text"
+							class="form-control" id="idTrabajador" placeholder="ID del trabajador" th:field="*{trabajador.idTrabajador}" />
+						<label for="idTrabajador">ID del trabajador</label>
+					</div>
+					<br>
+					<div class="form-floating">
+						 <input type="text"
+							class="form-control" id="codCliente" placeholder="ID del cliente" th:field="*{cliente.codCliente}" />
+						<label for="codCliente">ID del cliente</label>
+					</div>
+					<br>
+					<button type="submit" class="btn btn-primary">
+						<span th:text="${parte} ? 'Editar' : 'Agregar'"></span>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>

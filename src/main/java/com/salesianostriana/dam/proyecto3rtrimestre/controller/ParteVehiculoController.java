@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.salesianostriana.dam.proyecto3rtrimestre.model.ParteVehiculo;
-import com.salesianostriana.dam.proyecto3rtrimestre.model.Producto;
 import com.salesianostriana.dam.proyecto3rtrimestre.servicios.ParteVehiculoService;
 
 @Controller
@@ -27,7 +26,7 @@ public class ParteVehiculoController {
 	
 	@PostMapping("/nuevo")
 	public String nuevoParteVehiculo(Model model) {
-		model.addAttribute("parte", new Producto());
+		model.addAttribute("parte", new ParteVehiculo());
 		return "formularios/form-parte";
 	}
 	
