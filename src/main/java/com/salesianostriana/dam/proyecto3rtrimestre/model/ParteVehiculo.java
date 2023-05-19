@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,6 +27,7 @@ public class ParteVehiculo {
 	private Long idParte;
 	
 	private int tiempoEmpleado;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fechaLlegada, fechaSalida;
 	@Lob
 	private String observaciones;

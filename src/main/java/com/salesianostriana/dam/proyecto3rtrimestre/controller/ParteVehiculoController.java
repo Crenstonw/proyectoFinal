@@ -9,17 +9,26 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.salesianostriana.dam.proyecto3rtrimestre.model.ParteVehiculo;
+import com.salesianostriana.dam.proyecto3rtrimestre.servicios.ClienteService;
 import com.salesianostriana.dam.proyecto3rtrimestre.servicios.ParteVehiculoService;
+import com.salesianostriana.dam.proyecto3rtrimestre.servicios.TrabajadorService;
+import com.salesianostriana.dam.proyecto3rtrimestre.servicios.VehiculoService;
 
 @Controller
 @RequestMapping("/inicio/listaParte")
 public class ParteVehiculoController {
 	@Autowired
+	private ClienteService clienteService;
+	@Autowired
+	private VehiculoService vehiculoService;
+	@Autowired
+	private TrabajadorService trabajadorService;
+	@Autowired
 	private ParteVehiculoService parteVehiculoService;
 	
 	@GetMapping("/")
 	public String showFormParteVehiculo(Model model) {
-		model.addAttribute("parte", parteVehiculoService.findAll());
+		model.addAttribute("partes", parteVehiculoService.findAll());
 		return "listaParte";
 		
 	}
@@ -27,6 +36,9 @@ public class ParteVehiculoController {
 	@PostMapping("/nuevo")
 	public String nuevoParteVehiculo(Model model) {
 		model.addAttribute("parte", new ParteVehiculo());
+		model.addAttribute("trabajadores", trabajadorService.findAll());
+		model.addAttribute("clientes", clienteService.findAll());
+		model.addAttribute("vehiculos", vehiculoService.findAll());		
 		return "formularios/form-parte";
 	}
 	

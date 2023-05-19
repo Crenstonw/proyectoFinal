@@ -17,7 +17,43 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 					</h1>
 					<input type="hidden" th:field="*{idParte}" id="idParte" />
 					<div class="form-floating">
-						 <input type="number"
+						 <input type="text"
+							class="form-control" id="matricula" placeholder="Matrícula del vehículo" th:field="*{vehiculo.matricula}"
+							list="listaVehiculos" />
+						<label for="matricula">Matrícula del vehículo</label>
+						<datalist id="listaVehiculos">
+							<option th:each="vehiculo : ${vehiculos}"
+							th:value="${vehiculo.matricula}" 
+							th:text="${vehiculo.tipoVehiculo} + ', ' + ${vehiculo.marca} + ', ' + ${vehiculo.modelo}"></option>
+						</datalist>
+					</div>
+					<br>
+					<div class="form-floating">
+						 <input type="text"
+							class="form-control" id="idTrabajadorParte" placeholder="Trabajador asociado" 
+							th:field="*{trabajador.idTrabajador}" list="listaTrabajadores" />
+						<label for="idTrabajadorParte">ID del trabajador</label>
+						<datalist id="listaTrabajadores">
+							<option th:each="trabajador : ${trabajadores}" th:if="${trabajador.username == null || trabajador.username == ''}"
+							th:value="${trabajador.idTrabajador}" 
+							th:text="${trabajador.apellidos} + ', ' + ${trabajador.nombre}"></option>
+						</datalist>
+					</div>
+					<br>
+					<div class="form-floating">
+						 <input type="text"
+							class="form-control" id="codClienteParte" placeholder="ID del cliente" th:field="*{cliente.codCliente}" 
+							list="listaClientes"/>
+						<label for="codClienteParte">ID del cliente</label>
+						<datalist id="listaClientes">
+							<option th:each="cliente : ${clientes}"
+							th:value="${cliente.codCliente}" 
+							th:text="${cliente.apellidos} + ', ' + ${cliente.nombre}"></option>
+						</datalist>
+					</div>
+					<br>
+					<div class="form-floating">
+						 <input type="number" min="0"
 							class="form-control" id="tiempoEmpleado" placeholder="Tiempo empleado"
 							th:field="*{tiempoEmpleado}" />
 						<label for="tiempoEmpleado">Tiempo empleado</label>
@@ -43,26 +79,9 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 							<label for="observaciones">Observaciones</label>
 					</div>
 					<br>
-					<div class="form-floating">
-						 <input type="text"
-							class="form-control" id="matricula" placeholder="Matrícula del vehículo" th:field="*{vehiculo.matricula}" />
-						<label for="matricula">Matrícula del vehículo</label>
-					</div>
-					<br>
-					<div class="form-floating">
-						 <input type="text"
-							class="form-control" id="idTrabajador" placeholder="ID del trabajador" th:field="*{trabajador.idTrabajador}" />
-						<label for="idTrabajador">ID del trabajador</label>
-					</div>
-					<br>
-					<div class="form-floating">
-						 <input type="text"
-							class="form-control" id="codCliente" placeholder="ID del cliente" th:field="*{cliente.codCliente}" />
-						<label for="codCliente">ID del cliente</label>
-					</div>
-					<br>
+					
 					<button type="submit" class="btn btn-primary">
-						<span th:text="${parte} ? 'Editar' : 'Agregar'"></span>
+						<span th:text="${parte.idParte} ? 'Editar' : 'Agregar'"></span>
 					</button>
 				</form>
 			</div>
