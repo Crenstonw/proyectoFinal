@@ -62,4 +62,6 @@ public class TrabajadorController {
 		
 		return "redirect:/inicio/listaTrabajador/";
 	}
+	
+	
 }
