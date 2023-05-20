@@ -1,12 +1,14 @@
 package com.salesianostriana.dam.proyecto3rtrimestre.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,7 +27,8 @@ public class ParteVehiculo {
 	private Long idParte;
 	
 	private int tiempoEmpleado;
-	private LocalDateTime fechaLlegada, fechaSalida;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate fechaLlegada, fechaSalida;
 	@Lob
 	private String observaciones;
 	

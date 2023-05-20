@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{fragmentos/head::head}">
+</head>
+<body class="main">
+	<nav th:replace="~{fragmentos/nav::nav}">
+	</nav>
+		<div class="container">
+		<div class="row">
+			<div class="col-md-offset-2 col-md-8">
+				<form method="post" action="#"
+					th:action="@{/inicio/listaParte/nuevo/submit}" th:object="${parte}">
+					<h1>
+						<span th:text="${parte.idParte} ? 'Editar' : 'Nuevo'"></span>
+						Parte
+					</h1>
+					<input type="hidden" th:field="*{idParte}" id="idParte" />
+					<div class="form-floating">
+						 <input type="text"
+							class="form-control" id="matricula" placeholder="Matrícula del vehículo" th:field="*{vehiculo.matricula}"
+							list="listaVehiculos" />
+						<label for="matricula">Matrícula del vehículo</label>
+						<datalist id="listaVehiculos">
+							<option th:each="vehiculo : ${vehiculos}"
+							th:value="${vehiculo.matricula}" 
+							th:text="${vehiculo.tipoVehiculo} + ', ' + ${vehiculo.marca} + ', ' + ${vehiculo.modelo}"></option>
+						</datalist>
+					</div>
+					<br>
+					<div class="form-floating">
+						 <input type="text"
+							class="form-control" id="idTrabajadorParte" placeholder="Trabajador asociado" 
+							th:field="*{trabajador.idTrabajador}" list="listaTrabajadores" />
+						<label for="idTrabajadorParte">ID del trabajador</label>
+						<datalist id="listaTrabajadores">
+							<option th:each="trabajador : ${trabajadores}" th:if="${trabajador.username == null || trabajador.username == ''}"
+							th:value="${trabajador.idTrabajador}" 
+							th:text="${trabajador.apellidos} + ', ' + ${trabajador.nombre}"></option>
+						</datalist>
+					</div>
+					<br>
+					<div class="form-floating">
+						 <input type="text"
+							class="form-control" id="codClienteParte" placeholder="ID del cliente" th:field="*{cliente.codCliente}" 
+							list="listaClientes"/>
+						<label for="codClienteParte">ID del cliente</label>
+						<datalist id="listaClientes">
+							<option th:each="cliente : ${clientes}"
+							th:value="${cliente.codCliente}" 
+							th:text="${cliente.apellidos} + ', ' + ${cliente.nombre}"></option>
+						</datalist>
+					</div>
+					<br>
+					<div class="form-floating">
+						 <input type="number" min="0"
+							class="form-control" id="tiempoEmpleado" placeholder="Tiempo empleado"
+							th:field="*{tiempoEmpleado}" />
+						<label for="tiempoEmpleado">Tiempo empleado</label>
+					</div>
+					<br>
+					<div class="form-floating">
+						 <input type="date"
+							class="form-control" id="fechaLlegada" placeholder="Fecha de llegada"
+							th:value="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}"
+							th:field="*{fechaLlegada}" /><label for="fechaLlegada">Fecha de llegada del vehículo</label>
+					</div>
+					<br>
+					<div class="form-floating">
+						 <input type="date"
+							class="form-control" id="fechaSalida" placeholder="Fecha de salida"
+							th:field="*{fechaSalida}">
+						<label for="fechaSalida">Fecha de salida del vehículo</label>
+					</div>
+					<br>
+					<div class="form-floating">
+						<input class="form-control" type="text" id="observaciones"
+							placeholder="Observaciones" th:field="*{observaciones}"></input>
+							<label for="observaciones">Observaciones</label>
+					</div>
+					<br>
+					
+					<button type="submit" class="btn btn-primary">
+						<span th:text="${parte.idParte} ? 'Editar' : 'Agregar'"></span>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>

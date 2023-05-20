@@ -4,6 +4,8 @@
 
 .main {
     background-image: url('../../images/BackgroundSinLetras.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 img {
