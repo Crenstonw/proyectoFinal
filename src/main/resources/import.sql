@@ -79,7 +79,38 @@ INSERT INTO vehiculo (matricula, tipo_vehiculo, bastidor, marca, modelo) VALUES 
 
 
 insert into proveedor (id_proveedor, nombre, direccion, descripcion) values (1, 'Lodrones', 'C/laundra 23', 'distribuidor de trocolas');
+INSERT INTO proveedor (id_proveedor, nombre, direccion, descripcion) VALUES (2, 'SpeedTech', 'C/Oak Lane nº 67', 'Especialistas en sistemas de escape de alto rendimiento.');
+INSERT INTO proveedor (id_proveedor, nombre, direccion, descripcion) VALUES (3, 'AutoPartsPlus', 'C/Alder Court nº 89', 'Proveedor de productos de fibra de carbono para automóviles.');
+INSERT INTO proveedor (id_proveedor, nombre, direccion, descripcion) VALUES (4, 'RaceGear', 'C/Beech Avenue nº 93', 'Proveedor de productos de fibra de carbono para automóviles.');
+INSERT INTO proveedor (id_proveedor, nombre, direccion, descripcion) VALUES (5, 'MotorSportSupplies', 'C/Oak Lane nº 50', 'Especialistas en accesorios y componentes para drift.');
+INSERT INTO proveedor (id_proveedor, nombre, direccion, descripcion) VALUES (6, 'TurboTech', 'C/Sycamore Court nº 81', 'Suministro de combustible de alto octanaje para competición.');
+INSERT INTO proveedor (id_proveedor, nombre, direccion, descripcion) VALUES (7, 'PerformanceWheels', 'C/Poplar Place nº 86', 'Suministro de combustible de alto octanaje para competición.');
+INSERT INTO proveedor (id_proveedor, nombre, direccion, descripcion) VALUES (8, 'TrackTires', 'C/Birch Street nº 86', 'Fabricantes de kits de carrocería aerodinámicos.');
+INSERT INTO proveedor (id_proveedor, nombre, direccion, descripcion) VALUES (9, 'ExhaustMasters', 'C/Birch Street nº 3', 'Ofrecemos equipamiento para pilotos y entusiastas del automovilismo.');
+INSERT INTO proveedor (id_proveedor, nombre, direccion, descripcion) VALUES (10, 'CarbonFiberTech', 'C/Cypress Circle nº 76', 'Fabricantes de kits de carrocería aerodinámicos.');
+INSERT INTO proveedor (id_proveedor, nombre, direccion, descripcion) VALUES (11, 'RacingBrakeSystems', 'C/Juniper Lane nº 97', 'Expertos en sistemas de turboalimentación de alto rendimiento.');
+
 
 insert into producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) values ('kj23jsd', 1, 'junta la trocola', 12.3, 15, 'una perfercamente normal junta la trocola');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('13465424', 1, 'Motor de arranque', 81372.40, 98460.60, 'Garantiza un sellado hermético entre la culata y el bloque del motor, evitando fugas de gases o líquidos.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('70684030', 11, 'Sensor de oxígeno', 4806.15, 5815.44, 'Ofrece una frenada potente y efectiva, proporcionando seguridad y control al vehículo.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('60087105', 3, 'Radiador', 27118.52, 32813.41, 'Conjunto de componentes que permiten la transmisión de potencia entre el motor y la caja de cambios.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('88834278', 2, 'Alternador', 2318.54, 2805.43, 'Garantiza un sellado hermético entre la culata y el bloque del motor, evitando fugas de gases o líquidos.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('59103631', 5, 'Termostato', 38697.00, 46823.37, 'Monitorea la cantidad de oxígeno en los gases de escape para ajustar la mezcla de combustible y aire.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('18458313', 2, 'Termostato', 37741.39, 45667.09, 'Conjunto de componentes que permiten la transmisión de potencia entre el motor y la caja de cambios.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('87011668', 7, 'Sensor de presión de neumáticos', 7288.68, 8819.31, 'Mide y monitorea la temperatura del líquido de refrigeración para evitar sobrecalentamiento del motor.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('84927591', 3, 'Amortiguador', 62987.83, 76215.28, 'Diseñada para proporcionar una chispa confiable y una combustión eficiente en el motor.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('1394152', 6, 'Suspensión', 2555.47, 3092.11, 'Monitorea la presión de los neumáticos y alerta al conductor sobre posibles problemas de inflado.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('85501097', 3, 'Termostato', 85069.60, 102934.22, 'Diseñada para proporcionar una chispa confiable y una combustión eficiente en el motor.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('4703736', 6, 'Freno de disco', 28239.00, 34169.19, 'Diseñada para proporcionar una chispa confiable y una combustión eficiente en el motor.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('51540171', 11, 'Catalizador', 20037.55, 24245.43, 'Conjunto de componentes que permiten la conexión entre el chasis y las ruedas del vehículo.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('54679119', 6, 'Termostato', 38980.10, 47165.92, 'Ayuda a controlar las emisiones de gases y mejora la eficiencia del motor.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('57397939', 3, 'Válvula EGR', 50629.93, 61262.21, 'Suministra combustible desde el depósito hacia el sistema de inyección del motor.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('8503483', 3, 'Pastillas de freno', 59668.87, 72199.33, 'Controla y regula la temperatura del motor, asegurando un rendimiento óptimo en todas las condiciones.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('53736040', 1, 'Sensor de oxígeno', 70537.17, 85349.98, 'Monitorea la presión de los neumáticos y alerta al conductor sobre posibles problemas de inflado.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('34650556', 2, 'Correa de distribución', 25211.71, 30506.17, 'Mide y monitorea la temperatura del líquido de refrigeración para evitar sobrecalentamiento del motor.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('20605736', 4, 'Suspensión', 9650.93, 11677.62, 'Suministra energía eléctrica al sistema del vehículo y carga la batería mientras el motor está en marcha.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('35398576', 5, 'Motor de arranque', 42437.97, 51349.94, 'Conjunto de componentes que permiten la conexión entre el chasis y las ruedas del vehículo.');
+INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('71375194', 5, 'Correa de distribución', 82480.87, 99801.85, 'Garantiza un sellado hermético entre la culata y el bloque del motor, evitando fugas de gases o líquidos.');
 
 ALTER SEQUENCE hibernate_sequence RESTART WITH 1000;
