@@ -9,8 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -27,32 +25,20 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ParteVehiculo {
-
+public class Factura {
 	@Id
 	@GeneratedValue
-	private Long idParte;
-	
-	private int tiempoEmpleado;
+	private Long numFactura;
+	private boolean is_a_b;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private LocalDate fechaLlegada, fechaSalida;
-	@Lob
-	private String observaciones;
-	
-	@ManyToOne
-	private Vehiculo vehiculo;
-	
-	@ManyToOne
-	private Trabajador trabajador;
-	
-	@ManyToOne
-	private Cliente cliente;
+	private LocalDate fecha;
+	private double total;
 	
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
 	@Builder.Default
 	@OneToMany(
-			mappedBy = "parteVehiculo",
+			mappedBy = "factura",
 			fetch = FetchType.EAGER,
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
@@ -60,12 +46,16 @@ public class ParteVehiculo {
 	private List<LineaFactura> lineaFacturaLista = new ArrayList<>();
 	
 	public void addLineaFactura(LineaFactura lf) {
-		lf.setParteVehiculo(this);
+		lf.setFactura(this);
 		this.lineaFacturaLista.add(lf);
 	}
 	
 	public void removeLineaFactura(LineaFactura lf) {
 		this.lineaFacturaLista.remove(lf);
-		lf.setParteVehiculo(null);	
+		lf.setFactura(null);	
+	}
+	
+	public boolean isIs_a_b() {
+	    return is_a_b;
 	}
 }

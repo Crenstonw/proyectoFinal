@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{fragmentos/head::head}">
+</head>
+<body class="main">
+	<nav th:replace="~{fragmentos/nav::nav}">
+	</nav>
+		<div class="container">
+		<div class="row">
+			<div class="col-md-offset-2 col-md-8">
+				<form method="post" action="#"
+					th:action="@{/inicio/listaFactura/nuevo/submit}" th:object="${factura}">
+					<h1>
+						<span th:text="${factura.numFactura} ? 'Editar' : 'Nuevo'"></span>
+						Factura
+					</h1>
+					<input type="hidden" th:field="*{numFactura}" id="numFactura" />
+					<div class="form-floating">
+						 <input type="checkbox"
+						 id="is_a_b" placeholder="Factura en A" th:field="*{is_a_b}" /><label for="matricula">Factura en A</label>
+					</div>
+					<br>
+					<div class="form-floating">
+						 <input type="date"
+							class="form-control" id="fecha" placeholder="Fecha de la factura"
+							th:field="*{fecha}" /><label for="fecha">Fecha de la factura</label>
+					</div>
+					<br>
+					<div class="form-floating">
+						 <input type="text"
+							class="form-control" id="total" placeholder="total de la factura"
+							th:field="*{total}" readonly>
+						<label for="total">Total</label>
+					</div>
+					<br>
+					<button type="submit" class="btn btn-primary">
+						<span th:text="${factura.numFactura} ? 'Editar' : 'Agregar'"></span>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>

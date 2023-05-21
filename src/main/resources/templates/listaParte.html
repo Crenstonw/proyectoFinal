@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org"
-xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="/fragmentos/head::head">
 <meta charset="utf-8">
 
@@ -36,7 +35,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 					<tbody>
 						<tr th:each="parte : ${partes}">
     						<td th:text="${parte.idParte}"></td>
-    						<td th:text="${parte.tiempoEmpleado}" + ' horas'></td>
+    						<td th:text="${parte.tiempoEmpleado} + ' horas'"></td>
     						<td th:text="${parte.fechaLlegada}"></td>
     						<td th:text="${parte.fechaSalida}"></td>
     						<td th:text="${parte.vehiculo.matricula}"></td>
@@ -44,10 +43,10 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
    							<td th:text="${parte.cliente.apellidos} + ', ' + ${parte.cliente.nombre}"></td>
    							<td th:text="${parte.observaciones}"></td>
     						<td class="operaciones">
-        					<a href="#" th:href="@{/inicio/listaParte/editar/{idParte}(parte=${parte.idParte})}" 
+        					<a href="#" th:href="@{/inicio/listaParte/editar/{idParte}(idParte=${parte.idParte})}" 
         					class="btn btn-primary">
 								<img th:src="@{/images/editar.png}"></a>
-        					<a th:href="@{/inicio/listaParte/borrar/{idParte}(idParte=${parte.idParte})}" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
+        					<a href="#" th:href="@{/inicio/listaParte/borrar/{idParte}(idParte=${parte.idParte})}" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
 								<img th:src="@{/images/borrar.png}"></a>
     						</td>
 						</tr>

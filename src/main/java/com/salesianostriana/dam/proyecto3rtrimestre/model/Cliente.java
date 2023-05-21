@@ -41,7 +41,7 @@ public class Cliente {
 	)
 	private List<ParteVehiculo> parteVehiculoLista = new ArrayList<>();
 	
-	public void addPArteVehiculo(ParteVehiculo pv) {
+	public void addParteVehiculo(ParteVehiculo pv) {
 		pv.setCliente(this);
 		this.parteVehiculoLista.add(pv);
 	}
