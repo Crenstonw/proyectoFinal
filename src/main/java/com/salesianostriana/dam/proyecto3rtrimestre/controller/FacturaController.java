@@ -10,12 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.salesianostriana.dam.proyecto3rtrimestre.model.Factura;
 import com.salesianostriana.dam.proyecto3rtrimestre.servicios.FacturaService;
+import com.salesianostriana.dam.proyecto3rtrimestre.servicios.LineaFacturaService;
 
 @Controller
 @RequestMapping("/inicio/listaFactura")
 public class FacturaController {
 	@Autowired
 	private FacturaService facturaService;
+	
+	@Autowired
+	private LineaFacturaService lineaFacturaService;
 	
 	@GetMapping("/")
 	public String showFormProducto(Model model) {
