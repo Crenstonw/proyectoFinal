@@ -75,7 +75,7 @@ public class ParteVehiculoController {
 		ParteVehiculo parteVehiculo = parteVehiculoService.findById(idParte);
 		if(parteVehiculo != null) {
 			model.addAttribute("lineaFactura", new LineaFactura())
-			.addAttribute("parteVehiculo", parteVehiculo);
+			.addAttribute("parte", parteVehiculo);
 			return "formularios/form-parte";
 		} else {
 			return "listaParte";
@@ -85,7 +85,7 @@ public class ParteVehiculoController {
 	@PostMapping("/editar/{idParte}/nuevoArticulo/submit")
 	public String submitNuevoProducto(LineaFactura lineaFactura, Model model) {
 		lineaFacturaService.save(lineaFactura);
-		return "redirect:/inicio/listaParte/";
+		return "redirect:/inicio/listaParte/editar/{idParte}";
 
 	}
 	

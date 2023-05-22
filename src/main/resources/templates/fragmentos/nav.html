@@ -32,7 +32,8 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <img th:src="@{/images/cliente.png}"> 
-                                <sec:authorize url="/inicio/listaTrabajador/">Administrador</sec:authorize>
+                                <span sec:authorize="hasRole('ROLE_ADMIN')">Administrador</span>
+                                <span sec:authorize="hasRole('ROLE_USER')">Usuario</span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">Ajustes</a></li>

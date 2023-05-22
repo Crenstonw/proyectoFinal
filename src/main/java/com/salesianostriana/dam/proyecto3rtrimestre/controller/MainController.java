@@ -14,4 +14,9 @@ public class MainController {
 	public String showInicio() {
 		return "inicio";
 	}
+	
+	/*@GetMapping("/AccessDenied")
+	public String accesoDenegado() {
+		return "error";
+	}*/
 }

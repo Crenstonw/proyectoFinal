@@ -2,6 +2,12 @@
 	background-image: url('../images/Background.png');
 }
 
+#error {
+	background-image: url('../../images/nao.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 .main {
     background-image: url('../../images/BackgroundSinLetras.png');
     background-repeat: no-repeat;
@@ -26,4 +32,16 @@ nav {
 
 .cuerpo img{
 	width: 40px;
+}
+
+.input-control input:focus {
+    outline: 0;
+}
+
+.input-control.success input{
+    border-color: aqua;
+}
+
+.input-control.error input{
+    border-color: rgb(196, 50, 50);
 }
