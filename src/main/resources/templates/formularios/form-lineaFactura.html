@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{fragmentos/head::head}">
+</head>
+<body class="main">
+	<nav th:replace="~{fragmentos/nav::nav}">
+	</nav>
+		<div class="container cuerpo">
+		<div class="row">
+			<div class="col-md-offset-2 col-md-8">
+				<form method="post" action="#"
+					th:action="@{/inicio/listaParte/{idParte}/nuevoArticulo/submit}" th:object="${lineaFactura}">
+					<h1>
+						<span th:text="${lineaFactura.codLineaFactura} ? 'Editar' : 'Nuevo'"></span>
+						Factura
+					</h1>
+					<input type="hidden" th:field="*{codLineaFactura}" id="numFactura" />
+					<div class="form-group">
+						 <input type="text"
+						 id="parte" placeholder="idParte" th:field="*{parteVehiculo.idParte}" />
+						 <label for="parte">Parte</label>
+					</div>
+					<br>
+					<div class="form-floating">
+						 <input type="text"
+							class="form-control" id="referencia" placeholder="Parte de la factura" 
+							th:field="*{producto.referencia}" list="listaReferencias" />
+						<label for="referencia">Referencia del producto</label>
+						<datalist id="listaReferencias">
+							<option th:each="producto : ${productos}"
+							th:value="${producto.referencia}" 
+							th:text="${lineaFactura.producto.nombre} + ', ' + ${lineaFactura.producto.proveedor.nombre}"></option>
+						</datalist>
+					</div>
+					<div class="form-floating">
+						 <input type="number" min="0"
+							class="form-control" id="cantidad" placeholder="cantidad"
+							th:field="*{cantidad}">
+						<label for="Cantidad">Cantidad</label>
+					</div>
+					<br>
+					<button type="submit" class="btn btn-primary">
+						<span th:text="${factura.numFactura} ? 'Editar' : 'Agregar'"></span>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>

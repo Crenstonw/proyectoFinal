@@ -13,7 +13,25 @@ public class LineaFacturaService {
 	@Autowired
 	private RepositorioLineaFactura repositorio;
 	
-	public List<LineaFactura> searchLineasFactura(Long numFactura) {
-		return repositorio.findByNumFactura(numFactura);
+	public List<LineaFactura> findAll() {
+		return repositorio.findAll();
+	}
+	
+	public LineaFactura save(LineaFactura lf) {
+		return repositorio.save(lf);
+	}
+	
+	public LineaFactura findById(Long codLineaFactura) {
+		return repositorio.findById(codLineaFactura).orElse(null);
+	}
+	
+	public LineaFactura delete(LineaFactura lf) {
+		LineaFactura result = findById(lf.getCodLineaFactura());
+		repositorio.delete(result);
+		return result;
+	}
+	
+	public LineaFactura findByParte(Long idParte) {
+		return repositorio.findById(idParte).orElse(null);
 	}
 }

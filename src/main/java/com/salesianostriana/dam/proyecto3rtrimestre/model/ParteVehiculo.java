@@ -35,9 +35,12 @@ public class ParteVehiculo {
 	
 	private int tiempoEmpleado;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private LocalDate fechaLlegada, fechaSalida;
+	private LocalDate fechaLlegada, fechaSalida, fechaFactura;
 	@Lob
 	private String observaciones;
+	
+	private boolean is_a_b, parteCerrado;
+	private double total;
 	
 	@ManyToOne
 	private Vehiculo vehiculo;

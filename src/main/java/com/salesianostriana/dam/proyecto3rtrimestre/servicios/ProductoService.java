@@ -30,4 +30,8 @@ public class ProductoService {
 		repositorio.delete(result);
 		return result;
 	}
+	
+	/*public List<Producto> productosParte(Long idParte) {
+		return repositorio.mostrarProductosParte(idParte);
+	}*/
 }
