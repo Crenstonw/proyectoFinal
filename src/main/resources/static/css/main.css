@@ -3,7 +3,7 @@
 }
 
 #error {
-	background-image: url('../../images/nao.png');
+	background-image: url('../../images/error.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
