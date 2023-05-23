@@ -70,18 +70,6 @@ public class ParteVehiculoController {
 		}
 	}
 	
-	@PostMapping("/editar/{idParte}/nuevoArticulo")
-	public String nuevoProducto(@PathVariable("idParte") Long idParte, Model model) {
-		ParteVehiculo parteVehiculo = parteVehiculoService.findById(idParte);
-		if(parteVehiculo != null) {
-			model.addAttribute("lineaFactura", new LineaFactura())
-			.addAttribute("parte", parteVehiculo);
-			return "formularios/form-parte";
-		} else {
-			return "listaParte";
-		}
-	}
-	
 	@PostMapping("/editar/{idParte}/nuevoArticulo/submit")
 	public String submitNuevoProducto(LineaFactura lineaFactura, Model model) {
 		lineaFacturaService.save(lineaFactura);

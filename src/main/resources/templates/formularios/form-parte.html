@@ -88,7 +88,7 @@
 				<br>
 				<table class="table table-striped bg-light rounded-3" th:if="${parte.idParte}">
 					<thead>
-						<form th:action="@{/inicio/listaParte/editar/{idParte}/nuevoArticulo(idParte=${parte.idParte})}" method="POST">
+						<form th:action="@{/inicio/articulo/nuevo}" method="POST">
 							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit"
 								aria-expanded="false">
 								<img th:src="@{/images/productoMas.png}">
