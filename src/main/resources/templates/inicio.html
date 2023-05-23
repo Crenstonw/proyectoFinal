@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head th:replace="~{fragmentos/head::head}">
 </head>
 
 <body class="main">
-    <div th:replace="~{fragmentos/nav::nav}">
-    </div>
+
+    <header>
+        <div th:replace="~{fragmentos/nav::nav}">
+        </div>
+    </header>
     <main>
+        <h1>Bienvenido de nuevo
+            <span sec:authorize="hasRole('ROLE_ADMIN')">administrador</span>
+            <span sec:authorize="hasRole('ROLE_USER')">usuario</span>
+            !
+        </h1>
     </main>
+    
 </body>
+<footer th:replace="~{fragmentos/footer::footer}"></footer>
 </html>

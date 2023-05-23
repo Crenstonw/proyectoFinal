@@ -1,77 +1,78 @@
 <!DOCTYPE html>
 <html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head th:replace="~{fragmentos/head::head}">
 </head>
+
 <body class="main">
-	<nav th:replace="~{fragmentos/nav::nav}">
-	</nav>
-		<div class="container cuerpo">
+	<header>
+		<div th:replace="~{fragmentos/nav::nav}">
+		</div>
+	</header>
+	<div class="container cuerpo">
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8">
-				<form method="post" action="#"
-					th:action="@{/inicio/listaFactura/nuevo/submit}" th:object="${factura}">
+				<form method="post" action="#" th:action="@{/inicio/listaFactura/nuevo/submit}" th:object="${factura}">
 					<h1>
 						<span th:text="${factura.numFactura} ? 'Editar' : 'Nuevo'"></span>
 						Factura
 					</h1>
 					<input type="hidden" th:field="*{numFactura}" id="numFactura" />
 					<div class="form-group">
-						 <input type="checkbox"
-						 id="is_a_b" placeholder="Factura en A" th:field="*{is_a_b}" /><label for="matricula"> Factura en A</label>
+						<input type="checkbox" id="is_a_b" placeholder="Factura en A" th:field="*{is_a_b}" /><label
+							for="matricula"> Factura en A</label>
 					</div>
 					<br>
 					<div class="form-floating">
-						 <input type="date"
-							class="form-control" id="fecha" placeholder="Fecha de la factura"
+						<input type="date" class="form-control" id="fecha" placeholder="Fecha de la factura"
 							th:field="*{fecha}" /><label for="fecha">Fecha de la factura</label>
 					</div>
 					<br>
 					<div class="form-floating">
-						 <input type="text"
-							class="form-control" id="idParte" placeholder="Parte de la factura" 
+						<input type="text" class="form-control" id="idParte" placeholder="Parte de la factura"
 							th:field="${lineaFactura.parte.idParte}" list="listaPartes" />
 						<label for="idParte">ID del parte</label>
 						<datalist id="listaPartes">
-							<option th:each="parte : ${partes}"
-							th:value="${parte.idParte}" 
-							th:text="${parte.vehiculo.matricula} + ', ' + ${parte.cliente.nombre}"></option>
+							<option th:each="parte : ${partes}" th:value="${parte.idParte}"
+								th:text="${parte.vehiculo.matricula} + ', ' + ${parte.cliente.nombre}"></option>
 						</datalist>
 					</div>
 					<table class="table table-striped bg-light rounded-3">
-					<thead>
-						<form th:action="@{/inicio/listaFactura/nuevo}" method="POST">
-							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit"
-								aria-expanded="false">
-								<img th:src="@{/images/productoMas.png}">
-							</button>
-						</form>
-						<tr>
-							<th>Referencia</th>
-							<th>Nombre</th>
-							<th>PVP</th>
-							<th>Número de artículos</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="factura : ${facturas}">
-    						<td th:text="${factura.numFactura}"></td>
-    						<td th:text="${factura.is_a_b} ? 'A' : 'B'"></td>
-    						<td th:text="${factura.fecha}"></td>
-    						<td th:text=""></td>
-    						<td th:text="${factura.total}"></td>
-    						<td class="operaciones">
-        					<a href="#" th:href="@{/inicio/listaFactura/editar/{numFactura}(numFactura=${factura.numFactura})}" 
-        					class="btn btn-primary">
-								<img th:src="@{/images/editar.png}"></a>
-        					<a th:href="@{/inicio/listaFactura/borrar/{numFactura}(numFactura=${factura.numFactura})}" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
-								<img th:src="@{/images/borrar.png}"></a>
-    						</td>
-						</tr>
-					</tbody>
-				</table>
+						<thead>
+							<form th:action="@{/inicio/listaFactura/nuevo}" method="POST">
+								<button class="btn btn-primary mt-2 col-md-offset-1" type="submit"
+									aria-expanded="false">
+									<img th:src="@{/images/productoMas.png}">
+								</button>
+							</form>
+							<tr>
+								<th>Referencia</th>
+								<th>Nombre</th>
+								<th>PVP</th>
+								<th>Número de artículos</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="factura : ${facturas}">
+								<td th:text="${factura.numFactura}"></td>
+								<td th:text="${factura.is_a_b} ? 'A' : 'B'"></td>
+								<td th:text="${factura.fecha}"></td>
+								<td th:text=""></td>
+								<td th:text="${factura.total}"></td>
+								<td class="operaciones">
+									<a href="#"
+										th:href="@{/inicio/listaFactura/editar/{numFactura}(numFactura=${factura.numFactura})}"
+										class="btn btn-primary">
+										<img th:src="@{/images/editar.png}"></a>
+									<a th:href="@{/inicio/listaFactura/borrar/{numFactura}(numFactura=${factura.numFactura})}"
+										class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
+										<img th:src="@{/images/borrar.png}"></a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 					<div class="form-floating">
-						 <input type="text"
-							class="form-control" id="total" placeholder="total de la factura"
+						<input type="text" class="form-control" id="total" placeholder="total de la factura"
 							th:field="*{total}" readonly>
 						<label for="total">Total</label>
 					</div>
@@ -83,4 +84,7 @@
 			</div>
 		</div>
 	</div>
+	
 </body>
+<footer th:replace="~{fragmentos/footer::footer}"></footer>
+</html>

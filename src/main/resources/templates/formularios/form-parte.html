@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head th:replace="~{fragmentos/head::head}">
 </head>
+
 <body class="main">
-	<nav th:replace="~{fragmentos/nav::nav}">
-	</nav>
-		<div class="container cuerpo">
+	<header>
+		<div th:replace="~{fragmentos/nav::nav}">
+		</div>
+	</header>
+	<div class="container cuerpo">
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8">
-				<form method="post" action="#"
-					th:action="@{/inicio/listaParte/nuevo/submit}" th:object="${parte}">
+				<form method="post" action="#" th:action="@{/inicio/listaParte/nuevo/submit}" th:object="${parte}">
 					<h1>
 						<span th:text="${parte.idParte} ? 'Editar' : 'Nuevo'"></span>
 						Parte
@@ -21,66 +24,60 @@
 					<br>
 					<input type="hidden" th:field="*{idParte}" id="idParte" />
 					<div class="form-floating">
-						 <input type="text"
-							class="form-control" id="matricula" placeholder="Matrícula del vehículo" th:field="*{vehiculo.matricula}"
-							list="listaVehiculos" />
+						<input type="text" class="form-control" id="matricula" placeholder="Matrícula del vehículo"
+							th:field="*{vehiculo.matricula}" list="listaVehiculos" />
 						<label for="matricula">Matrícula del vehículo</label>
 						<datalist id="listaVehiculos">
-							<option th:each="vehiculo : ${vehiculos}"
-							th:value="${vehiculo.matricula}" 
-							th:text="${vehiculo.tipoVehiculo} + ', ' + ${vehiculo.marca} + ', ' + ${vehiculo.modelo}"></option>
+							<option th:each="vehiculo : ${vehiculos}" th:value="${vehiculo.matricula}"
+								th:text="${vehiculo.tipoVehiculo} + ', ' + ${vehiculo.marca} + ', ' + ${vehiculo.modelo}">
+							</option>
 						</datalist>
 					</div>
 					<br>
 					<div class="form-floating">
-						 <input type="text"
-							class="form-control" id="idTrabajadorParte" placeholder="Trabajador asociado" 
+						<input type="text" class="form-control" id="idTrabajadorParte" placeholder="Trabajador asociado"
 							th:field="*{trabajador.idTrabajador}" list="listaTrabajadores" />
 						<label for="idTrabajadorParte">Nombre del trabajador</label>
 						<datalist id="listaTrabajadores">
-							<option th:each="trabajador : ${trabajadores}" th:if="${trabajador.username == null || trabajador.username == ''}"
-							th:value="${trabajador.idTrabajador}" 
-							th:text="${trabajador.apellidos} + ', ' + ${trabajador.nombre}"></option>
+							<option th:each="trabajador : ${trabajadores}"
+								th:if="${trabajador.username == null || trabajador.username == ''}"
+								th:value="${trabajador.idTrabajador}"
+								th:text="${trabajador.apellidos} + ', ' + ${trabajador.nombre}"></option>
 						</datalist>
 					</div>
 					<br>
 					<div class="form-floating">
-						 <input type="text"
-							class="form-control" id="codClienteParte" placeholder="ID del cliente" th:field="*{cliente.codCliente}" 
-							list="listaClientes"/>
+						<input type="text" class="form-control" id="codClienteParte" placeholder="ID del cliente"
+							th:field="*{cliente.codCliente}" list="listaClientes" />
 						<label for="codClienteParte">ID del cliente</label>
 						<datalist id="listaClientes">
-							<option th:each="cliente : ${clientes}"
-							th:value="${cliente.codCliente}" 
-							th:text="${cliente.apellidos} + ', ' + ${cliente.nombre}"></option>
+							<option th:each="cliente : ${clientes}" th:value="${cliente.codCliente}"
+								th:text="${cliente.apellidos} + ', ' + ${cliente.nombre}"></option>
 						</datalist>
 					</div>
 					<br>
 					<div class="form-floating">
-						 <input type="number" min="0"
-							class="form-control" id="tiempoEmpleado" placeholder="Tiempo empleado"
-							th:field="*{tiempoEmpleado}" />
+						<input type="number" min="0" class="form-control" id="tiempoEmpleado"
+							placeholder="Tiempo empleado" th:field="*{tiempoEmpleado}" />
 						<label for="tiempoEmpleado">Tiempo empleado</label>
 					</div>
 					<br>
 					<div class="form-floating">
-						 <input type="date"
-							class="form-control" id="fechaLlegada" placeholder="Fecha de llegada"
+						<input type="date" class="form-control" id="fechaLlegada" placeholder="Fecha de llegada"
 							th:value="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}"
 							th:field="*{fechaLlegada}" /><label for="fechaLlegada">Fecha de llegada del vehículo</label>
 					</div>
 					<br>
 					<div class="form-floating">
-						 <input type="date"
-							class="form-control" id="fechaSalida" placeholder="Fecha de salida"
+						<input type="date" class="form-control" id="fechaSalida" placeholder="Fecha de salida"
 							th:field="*{fechaSalida}">
 						<label for="fechaSalida">Fecha de salida del vehículo</label>
 					</div>
 					<br>
 					<div class="form-floating">
-						<input class="form-control" type="text" id="observaciones"
-							placeholder="Observaciones" th:field="*{observaciones}">
-							<label for="observaciones">Observaciones</label>
+						<input class="form-control" type="text" id="observaciones" placeholder="Observaciones"
+							th:field="*{observaciones}">
+						<label for="observaciones">Observaciones</label>
 					</div>
 					<br>
 				</form>
@@ -89,8 +86,7 @@
 				<table class="table table-striped bg-light rounded-3" th:if="${parte.idParte}">
 					<thead>
 						<form th:action="@{/inicio/articulo/nuevo}" method="POST">
-							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit"
-								aria-expanded="false">
+							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit" aria-expanded="false">
 								<img th:src="@{/images/productoMas.png}">
 							</button>
 						</form>
@@ -104,21 +100,26 @@
 					</thead>
 					<tbody>
 						<tr th:each="lineaFactura : ${lineaFacturas}">
-    						<td th:text="${lineaFactura.producto.referencia}"></td>
-    						<td th:text="${lineaFactura.producto.nombre}"></td>
-    						<td th:text="${lineaFactura.producto.pvp}"></td>
-    						<td th:text="${lineaFactura.cantidad}"></td>
-    						<td class="operaciones">
-        					<a href="#" th:href="@{/inicio/listaFactura/editar/{numFactura}(numFactura=${lineaFactura.numFactura})}" 
-        					class="btn btn-primary">
-								<img th:src="@{/images/editar.png}"></a>
-        					<a 			th:href="@{/inicio/listaFactura/borrar/{numFactura}(numFactura=${lineaFactura.numFactura})}" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
-								<img th:src="@{/images/borrar.png}"></a>
-    						</td>
+							<td th:text="${lineaFactura.producto.referencia}"></td>
+							<td th:text="${lineaFactura.producto.nombre}"></td>
+							<td th:text="${lineaFactura.producto.pvp}"></td>
+							<td th:text="${lineaFactura.cantidad}"></td>
+							<td class="operaciones">
+								<a href="#"
+									th:href="@{/inicio/listaFactura/editar/{numFactura}(numFactura=${lineaFactura.numFactura})}"
+									class="btn btn-primary">
+									<img th:src="@{/images/editar.png}"></a>
+								<a th:href="@{/inicio/listaFactura/borrar/{numFactura}(numFactura=${lineaFactura.numFactura})}"
+									class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
+									<img th:src="@{/images/borrar.png}"></a>
+							</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
 	</div>
+	
 </body>
+<footer th:replace="~{fragmentos/footer::footer}"></footer>
+</html>

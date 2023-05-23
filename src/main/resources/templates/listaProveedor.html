@@ -8,8 +8,10 @@
 
 <body class="main">
 
-	<nav th:replace="/fragmentos/nav::nav">
-	</nav>
+	<header>
+		<div th:replace="~{fragmentos/nav::nav}">
+		</div>
+	</header>
 
 	<div class="container mt-2 cuerpo">
 		<div class="row">
@@ -17,8 +19,7 @@
 				<table class="table table-striped bg-light rounded-2">
 					<thead>
 						<form th:action="@{/inicio/listaProveedor/nuevo}" method="POST">
-							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit"
-								aria-expanded="false">
+							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit" aria-expanded="false">
 								<img th:src="@{/images/proveedorMas.png}">
 							</button>
 						</form>
@@ -41,7 +42,8 @@
 									th:href="@{/inicio/listaProveedor/editar/{idProveedor}(idProveedor=${proveedor.idProveedor})}"
 									class="btn btn-primary"><img th:src="@{/images/editar.png}"></a>
 								<a th:href="@{/inicio/listaProveedor/borrar/{idProveedor}(idProveedor=${proveedor.idProveedor})}"
-									class="btn btn-danger" data-toggle="modal" data-target="#delete-modal"><img th:src="@{/images/borrar.png}"></a>
+									class="btn btn-danger" data-toggle="modal" data-target="#delete-modal"><img
+										th:src="@{/images/borrar.png}"></a>
 							</td>
 						</tr>
 					</tbody>
@@ -49,6 +51,7 @@
 			</div>
 		</div>
 	</div>
+	
 </body>
-
+<footer th:replace="~{fragmentos/footer::footer}"></footer>
 </html>

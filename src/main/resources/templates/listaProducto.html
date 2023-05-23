@@ -8,8 +8,10 @@
 
 <body class="main">
 
-	<nav th:replace="/fragmentos/nav::nav">
-	</nav>
+	<header>
+		<div th:replace="~{fragmentos/nav::nav}">
+		</div>
+	</header>
 
 	<div class="container mt-2 cuerpo">
 		<div class="row">
@@ -17,8 +19,7 @@
 				<table class="table table-striped bg-light rounded-2">
 					<thead>
 						<form th:action="@{/inicio/listaProducto/nuevo}" method="POST">
-							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit"
-								aria-expanded="false">
+							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit" aria-expanded="false">
 								<img th:src="@{/images/productoMas.png}">
 							</button>
 						</form>
@@ -42,11 +43,12 @@
 							<td th:text="${producto.descripcion}"></td>
 							<td class="operaciones">
 								<span>
-								<a href="#"
-									th:href="@{/inicio/listaProducto/editar/{referencia}(referencia=${producto.referencia})}"
-									class="btn btn-primary"><img th:src="@{/images/editar.png}"></a>
-								<a th:href="@{/inicio/listaProducto/borrar/{referencia}(referencia=${producto.referencia})}"
-									class="btn btn-danger" data-toggle="modal" data-target="#delete-modal"><img th:src="@{/images/borrar.png}"></a>
+									<a href="#"
+										th:href="@{/inicio/listaProducto/editar/{referencia}(referencia=${producto.referencia})}"
+										class="btn btn-primary"><img th:src="@{/images/editar.png}"></a>
+									<a th:href="@{/inicio/listaProducto/borrar/{referencia}(referencia=${producto.referencia})}"
+										class="btn btn-danger" data-toggle="modal" data-target="#delete-modal"><img
+											th:src="@{/images/borrar.png}"></a>
 								</span>
 							</td>
 						</tr>
@@ -55,6 +57,7 @@
 			</div>
 		</div>
 	</div>
+	
 </body>
-
+<footer th:replace="~{fragmentos/footer::footer}"></footer>
 </html>

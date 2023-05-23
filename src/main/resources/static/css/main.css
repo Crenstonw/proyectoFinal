@@ -12,6 +12,7 @@
     background-image: url('../../images/BackgroundSinLetras.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
+    margin-bottom: 5%;
 }
 
 img {
@@ -45,3 +46,19 @@ nav {
 .input-control.error input{
     border-color: rgb(196, 50, 50);
 }
+
+footer {
+    height: 5%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: right;
+  }
+
+  footer p {
+    color: rgba(0, 0, 0, 0.8);
+  }

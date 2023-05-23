@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org"
-xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head th:replace="/fragmentos/head::head">
-<meta charset="utf-8">
+	<meta charset="utf-8">
 
 </head>
+
 <body class="main">
 
-	<nav th:replace="/fragmentos/nav::nav">
-	</nav>
+	<header>
+		<div th:replace="~{fragmentos/nav::nav}">
+		</div>
+	</header>
 
 	<div class="container mt-2 cuerpo">
 		<div class="row">
@@ -16,8 +19,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 				<table class="table table-striped bg-light rounded-3">
 					<thead>
 						<form th:action="@{/inicio/listaFactura/nuevo}" method="POST">
-							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit"
-								aria-expanded="false">
+							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit" aria-expanded="false">
 								<img th:src="@{/images/facturaMas.png}">
 							</button>
 						</form>
@@ -32,23 +34,27 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 					</thead>
 					<tbody>
 						<tr th:each="factura : ${facturas}">
-    						<td th:text="${factura.numFactura}"></td>
-    						<td th:text="${factura.is_a_b} ? 'A' : 'B'"></td>
-    						<td th:text="${factura.fecha}"></td>
-    						<td> jiji</td>
-    						<td th:text="${factura.total}"></td>
-    						<td class="operaciones">
-        					<a href="#" th:href="@{/inicio/listaFactura/editar/{numFactura}(numFactura=${factura.numFactura})}" 
-        					class="btn btn-primary">
-								<img th:src="@{/images/editar.png}"></a>
-        					<a th:href="@{/inicio/listaFactura/borrar/{numFactura}(numFactura=${factura.numFactura})}" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
-								<img th:src="@{/images/borrar.png}"></a>
-    						</td>
+							<td th:text="${factura.numFactura}"></td>
+							<td th:text="${factura.is_a_b} ? 'A' : 'B'"></td>
+							<td th:text="${factura.fecha}"></td>
+							<td> jiji</td>
+							<td th:text="${factura.total}"></td>
+							<td class="operaciones">
+								<a href="#"
+									th:href="@{/inicio/listaFactura/editar/{numFactura}(numFactura=${factura.numFactura})}"
+									class="btn btn-primary">
+									<img th:src="@{/images/editar.png}"></a>
+								<a th:href="@{/inicio/listaFactura/borrar/{numFactura}(numFactura=${factura.numFactura})}"
+									class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
+									<img th:src="@{/images/borrar.png}"></a>
+							</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
 	</div>
+	
 </body>
+<footer th:replace="~{fragmentos/footer::footer}"></footer>
 </html>

@@ -5,8 +5,10 @@
 </head>
 
 <body class="main">
-	<nav th:replace="~{fragmentos/nav::nav}">
-	</nav>
+	<header>
+		<div th:replace="~{fragmentos/nav::nav}">
+		</div>
+	</header>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8">
@@ -29,10 +31,10 @@
 						<label for="referencia">Dirección</label>
 					</div>
 					<br>
-					
+
 					<div class="form-floating">
-						<textarea class="form-control" id="descripcion"
-							placeholder="Descripción" rows="3" th:field="*{descripcion}"></textarea>
+						<textarea class="form-control" id="descripcion" placeholder="Descripción" rows="3"
+							th:field="*{descripcion}"></textarea>
 						<label for="descripcion">Descripción</label>
 					</div>
 					<br>
@@ -43,6 +45,7 @@
 			</div>
 		</div>
 	</div>
+	
 </body>
-
+<footer th:replace="~{fragmentos/footer::footer}"></footer>
 </html>

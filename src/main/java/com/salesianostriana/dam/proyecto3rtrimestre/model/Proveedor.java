@@ -51,7 +51,7 @@ public class Proveedor {
 		this.productoLista.add(p);
 	}
 	
-	public void removeProveedor(Producto p) {
+	public void removeProducto(Producto p) {
 		this.productoLista.remove(p);
 		p.setProveedor(null);
 	}
