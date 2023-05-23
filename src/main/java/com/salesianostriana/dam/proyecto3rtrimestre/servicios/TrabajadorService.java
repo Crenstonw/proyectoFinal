@@ -18,7 +18,7 @@ public class TrabajadorService implements UserDetailsService {
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		return repositorio.findFirstByUsername(username)
+		return repositorio.findByUsername(username)
 				.orElseThrow(() -> new UsernameNotFoundException("Error al buscar el usuario"));
 	}
 	
@@ -31,7 +31,8 @@ public class TrabajadorService implements UserDetailsService {
 	}
 	
 	public Trabajador findById(Long idTrabajador) {
-		return repositorio.findById(idTrabajador).orElse(null);
+		return repositorio.findById(idTrabajador)
+				.orElseThrow(() -> new UsernameNotFoundException("Error al buscar el usuario"));
 	}
 	
 	public Trabajador delete(Trabajador t) {

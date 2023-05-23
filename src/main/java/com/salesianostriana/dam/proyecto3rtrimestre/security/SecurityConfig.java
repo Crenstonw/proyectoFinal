@@ -52,7 +52,10 @@ public class SecurityConfig {
 			.loginPage("/index")
 			.defaultSuccessUrl("/inicio", true)
 			.failureUrl("/index")
-			.permitAll();
+			.permitAll()
+			/*.and()
+		.exceptionHandling()
+			.accessDeniedPage("/AccessDenied")*/;
 		
 
 		http.csrf().disable();

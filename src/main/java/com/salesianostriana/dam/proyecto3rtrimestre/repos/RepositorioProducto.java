@@ -7,5 +7,4 @@ import com.salesianostriana.dam.proyecto3rtrimestre.model.Producto;
 
 @Repository
 public interface RepositorioProducto extends JpaRepository<Producto, String> {
-
 }

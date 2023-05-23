@@ -5,10 +5,6 @@
         <nav class="navbar navbar-expand-sm navbar-light bg-light border-bottom">
             <div class="container-fluid">
                 <a class="navbar-brand" th:href="@{/inicio}"><img id="logo" th:src="@{/images/logo.png}"></a>
-                <!--<button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    Datos
-                </button>-->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto overflow-hiden">
 						<li class="nav-item">
@@ -30,13 +26,14 @@
                             <a class="nav-link" th:href="@{/inicio/listaParte/}"><img th:src="@{/images/parte.png}">Parte Vehículo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><img th:src="@{/images/factura.png}">Factura</a>
+                            <a class="nav-link" th:href="@{/inicio/listaFactura/}"><img th:src="@{/images/factura.png}">Factura</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <img th:src="@{/images/cliente.png}"> 
-                                <sec:authorize url="/inicio/listaTrabajador/">Administrador</sec:authorize>
+                                <span sec:authorize="hasRole('ROLE_ADMIN')">Administrador</span>
+                                <span sec:authorize="hasRole('ROLE_USER')">Usuario</span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">Ajustes</a></li>
@@ -53,25 +50,6 @@
                 </div>
             </div>
         </nav>
-
-        <!--<div class="collapse" id="collapseExample">
-            <aside>
-                <div>
-                    <input type="search" name="busquedaAccion" placeholder="Ver lista de...">
-                    <input type="submit" value="Buscar">
-                    
-                </div>
-                <ul class="list-group d-flex">
-                    <a th:href="@{/inicio/listaCliente/}"><li class="list-group-item">Clientes</li></a>
-                    <a th:href="@{/inicio/listaVehiculo/}"><li class="list-group-item">Vehículos</li></a>
-                    <li class="list-group-item">Productos</li>
-                    <a th:href="@{/inicio/listaTrabajador/}"><li class="list-group-item">Trabajadores</li></a>
-                    <li class="list-group-item">Facturas</li>
-                    <li class="list-group-item">Proveedores</li>
-                    <li class="list-group-item">Partes</li>
-                </ul>
-            </aside>
-        </div>-->
     </div>
 </body>
 </html>
