@@ -113,4 +113,5 @@ INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, d
 INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('35398576', 5, 'Motor de arranque', 42437.97, 51349.94, 'Conjunto de componentes que permiten la conexión entre el chasis y las ruedas del vehículo.');
 INSERT INTO producto (referencia, proveedor_id_proveedor, nombre, precio, pvp, descripcion) VALUES ('71375194', 5, 'Correa de distribución', 82480.87, 99801.85, 'Garantiza un sellado hermético entre la culata y el bloque del motor, evitando fugas de gases o líquidos.');
 
+INSERT INTO parte_vehiculo (id_parte, vehiculo_matricula, cliente_cod_cliente, trabajador_id_trabajador, fecha_factura, fecha_llegada, fecha_salida, is_a_b, observaciones, parte_cerrado, tiempo_empleado, total) VALUES (1, '7482LWJ', 2, 2, null, null, null, false, 'no', false, 0, 0.0);
 ALTER SEQUENCE hibernate_sequence RESTART WITH 1000;

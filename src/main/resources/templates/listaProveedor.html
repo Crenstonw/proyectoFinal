@@ -37,13 +37,11 @@
 							<td th:text="${proveedor.direccion}"></td>
 							<td th:text="${proveedor.descripcion}"></td>
 							<td class="operaciones">
-								<span>
 								<a href="#"
 									th:href="@{/inicio/listaProveedor/editar/{idProveedor}(idProveedor=${proveedor.idProveedor})}"
 									class="btn btn-primary"><img th:src="@{/images/editar.png}"></a>
-								<a th:href="@{/inicio/listaProveedor/borrar/{idProveedor}(referencia=${proveedor.idProveedor})}"
+								<a th:href="@{/inicio/listaProveedor/borrar/{idProveedor}(idProveedor=${proveedor.idProveedor})}"
 									class="btn btn-danger" data-toggle="modal" data-target="#delete-modal"><img th:src="@{/images/borrar.png}"></a>
-								</span>
 							</td>
 						</tr>
 					</tbody>

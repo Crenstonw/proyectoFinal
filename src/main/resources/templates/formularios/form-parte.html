@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html
-xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="~{fragmentos/head::head}">
 </head>
 <body class="main">
 	<nav th:replace="~{fragmentos/nav::nav}">
 	</nav>
-		<div class="container">
+		<div class="container cuerpo">
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8">
 				<form method="post" action="#"
@@ -15,6 +14,11 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 						<span th:text="${parte.idParte} ? 'Editar' : 'Nuevo'"></span>
 						Parte
 					</h1>
+					<button type="submit" class="btn btn-primary">
+						<span th:text="${parte.idParte} ? 'Editar' : 'Agregar'"></span>
+					</button>
+					<br>
+					<br>
 					<input type="hidden" th:field="*{idParte}" id="idParte" />
 					<div class="form-floating">
 						 <input type="text"
@@ -32,7 +36,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 						 <input type="text"
 							class="form-control" id="idTrabajadorParte" placeholder="Trabajador asociado" 
 							th:field="*{trabajador.idTrabajador}" list="listaTrabajadores" />
-						<label for="idTrabajadorParte">ID del trabajador</label>
+						<label for="idTrabajadorParte">Nombre del trabajador</label>
 						<datalist id="listaTrabajadores">
 							<option th:each="trabajador : ${trabajadores}" th:if="${trabajador.username == null || trabajador.username == ''}"
 							th:value="${trabajador.idTrabajador}" 
@@ -75,15 +79,45 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 					<br>
 					<div class="form-floating">
 						<input class="form-control" type="text" id="observaciones"
-							placeholder="Observaciones" th:field="*{observaciones}"></input>
+							placeholder="Observaciones" th:field="*{observaciones}">
 							<label for="observaciones">Observaciones</label>
 					</div>
 					<br>
-					
-					<button type="submit" class="btn btn-primary">
-						<span th:text="${parte.idParte} ? 'Editar' : 'Agregar'"></span>
-					</button>
 				</form>
+				<br>
+				<br>
+				<table class="table table-striped bg-light rounded-3" th:if="${parte.idParte}">
+					<thead>
+						<form th:action="@{/inicio/articulo/nuevo}" method="POST">
+							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit"
+								aria-expanded="false">
+								<img th:src="@{/images/productoMas.png}">
+							</button>
+						</form>
+						<tr>
+							<th>Referencia</th>
+							<th>Nombre</th>
+							<th>PVP</th>
+							<th>Número de artículos</th>
+							<th>Operaciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="lineaFactura : ${lineaFacturas}">
+    						<td th:text="${lineaFactura.producto.referencia}"></td>
+    						<td th:text="${lineaFactura.producto.nombre}"></td>
+    						<td th:text="${lineaFactura.producto.pvp}"></td>
+    						<td th:text="${lineaFactura.cantidad}"></td>
+    						<td class="operaciones">
+        					<a href="#" th:href="@{/inicio/listaFactura/editar/{numFactura}(numFactura=${lineaFactura.numFactura})}" 
+        					class="btn btn-primary">
+								<img th:src="@{/images/editar.png}"></a>
+        					<a 			th:href="@{/inicio/listaFactura/borrar/{numFactura}(numFactura=${lineaFactura.numFactura})}" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
+								<img th:src="@{/images/borrar.png}"></a>
+    						</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
