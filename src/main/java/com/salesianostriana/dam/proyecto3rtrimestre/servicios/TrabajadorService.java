@@ -1,6 +1,7 @@
 package com.salesianostriana.dam.proyecto3rtrimestre.servicios;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,6 +25,10 @@ public class TrabajadorService implements UserDetailsService {
 	
 	public List<Trabajador> findAll() {
 		return repositorio.findAll();
+	}
+	
+	public Optional<Trabajador> findByName(String name) {
+		return repositorio.findByName(name);
 	}
 	
 	public Trabajador save(Trabajador t) {

@@ -9,7 +9,7 @@
 		<div th:replace="~{fragmentos/nav::nav}">
 		</div>
 	</header>
-	<div class="container cuerpo">
+	<div id="parte" class="container cuerpo">
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8">
 				<form method="post" action="#" th:action="@{/inicio/listaParte/nuevo/submit}" th:object="${parte}">
@@ -17,9 +17,6 @@
 						<span th:text="${parte.idParte} ? 'Editar' : 'Nuevo'"></span>
 						Parte
 					</h1>
-					<button type="submit" class="btn btn-primary">
-						<span th:text="${parte.idParte} ? 'Editar' : 'Agregar'"></span>
-					</button>
 					<br>
 					<br>
 					<input type="hidden" th:field="*{idParte}" id="idParte" />
@@ -80,8 +77,11 @@
 						<label for="observaciones">Observaciones</label>
 					</div>
 					<br>
+					<button type="submit" class="btn btn-primary">
+						<span th:text="${parte.idParte} ? 'Editar' : 'Agregar'"></span>
+					</button>
 				</form>
-				<br>
+				<!--<br>
 				<br>
 				<table class="table table-striped bg-light rounded-3" th:if="${parte.idParte}">
 					<thead>
@@ -115,7 +115,7 @@
 							</td>
 						</tr>
 					</tbody>
-				</table>
+				</table>-->
 			</div>
 		</div>
 	</div>

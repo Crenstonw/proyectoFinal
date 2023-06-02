@@ -36,11 +36,6 @@
                                 <span sec:authorize="hasRole('ROLE_USER')">Usuario</span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Ajustes</a></li>
-                                <li><a class="dropdown-item" href="#">Acerca de</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
                                 <form th:action="@{/index}" method="POST" id="logoutForm"></form>
                                 <li><a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()"><img id="salir" th:src="@{/images/salir.png}"> Cerrar sesión</a>
                                 </li>
