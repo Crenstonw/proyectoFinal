@@ -7,6 +7,7 @@
 </head>
 
 <body class="main">
+
 	<header>
 		<div th:replace="~{fragmentos/nav::nav}">
 		</div>
@@ -15,35 +16,35 @@
 	<div class="container mt-2 cuerpo">
 		<div class="row">
 			<div class="col-md-offset-1">
-				<table class="table table-striped bg-light rounded-2">
+				<table class="table table-striped bg-light rounded-3">
 					<thead>
-						<form th:action="@{/inicio/listaVehiculo/nuevo}" method="POST">
+						<form th:action="@{/inicio/listaFactura/nuevo}" method="POST">
 							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit" aria-expanded="false">
-								<img th:src="@{/images/vehiculoMas.png}">
+								<img th:src="@{/images/facturaMas.png}">
 							</button>
 						</form>
 						<tr>
-							<th>Matrícula</th>
-							<th>Tipo de vehículo</th>
-							<th>Numero de Bastidor</th>
-							<th>Marca</th>
-							<th>Modelo</th>
+							<th>Numero de factura</th>
+							<th>Es A o B</th>
+							<th>Fecha</th>
+							<th>Número de artículos</th>
+							<th>Total</th>
 							<th>Operaciones</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="vehiculo : ${vehiculos}">
-							<td th:text="${vehiculo.matricula}"></td>
-							<td th:text="${vehiculo.tipoVehiculo}"></td>
-							<td th:text="${vehiculo.bastidor}"></td>
-							<td th:text="${vehiculo.marca}"></td>
-							<td th:text="${vehiculo.modelo}"></td>
+						<tr th:each="factura : ${facturas}">
+							<td th:text="${factura.numFactura}"></td>
+							<td th:text="${factura.is_a_b} ? 'A' : 'B'"></td>
+							<td th:text="${factura.fecha}"></td>
+							<td> jiji</td>
+							<td th:text="${factura.total}"></td>
 							<td class="operaciones">
 								<a href="#"
-									th:href="@{/inicio/listaVehiculo/editar/{matricula}(matricula=${vehiculo.matricula})}"
+									th:href="@{/inicio/listaFactura/editar/{numFactura}(numFactura=${factura.numFactura})}"
 									class="btn btn-primary">
 									<img th:src="@{/images/editar.png}"></a>
-								<a th:href="@{/inicio/listaVehiculo/borrar/{matricula}(matricula=${vehiculo.matricula})}"
+								<a th:href="@{/inicio/listaFactura/borrar/{numFactura}(numFactura=${factura.numFactura})}"
 									class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
 									<img th:src="@{/images/borrar.png}"></a>
 							</td>

@@ -1,51 +1,55 @@
 <!DOCTYPE html>
-<html
-xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head th:replace="~{fragmentos/head::head}">
 </head>
+
 <body class="main">
-	<nav th:replace="~{fragmentos/nav::nav}">
-	</nav>
-		<div class="container">
+	<header>
+		<div th:replace="~{fragmentos/nav::nav}">
+		</div>
+	</header>
+	<div id="cliente" class="container">
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8">
-				<form method="post" action="#"
-					th:action="@{/inicio/listaCliente/nuevo/submit}" th:object="${cliente}">
+				<form method="post" action="#" id="form" th:action="@{/inicio/listaCliente/nuevo/submit}"
+					th:object="${cliente}">
 					<h1>
 						<span th:text="${cliente.codCliente} ? 'Editar' : 'Nuevo'"></span>
 						cliente
 					</h1>
 					<input type="hidden" th:field="*{codCliente}" id="codCliente" />
-					<div class="form-floating">
-						 <input type="text"
-							class="form-control" id="dni" placeholder="DNI"
-							th:field="*{dni}" />
+					<div class="form-floating input-control">
+						<input type="text" class="form-control" id="dni" placeholder="DNI" th:field="*{dni}" />
 						<label for="dni">DNI</label>
+						<div class="error"></div>
 					</div>
 					<br>
-					<div class="form-floating">
-						 <input type="text"
-							class="form-control" id="nombre" placeholder="Nombre"
+					<div class="form-floating input-control">
+						<input type="text" class="form-control" id="nombre" placeholder="Nombre"
 							th:field="*{nombre}" /><label for="nombre">Nombre</label>
+						<div class="error"></div>
 					</div>
 					<br>
-					<div class="form-floating">
-						 <input type="text"
-							class="form-control" id="apellidos" placeholder="Apellidos"
+					<div class="form-floating input-control">
+						<input type="text" class="form-control" id="apellidos" placeholder="Apellidos"
 							th:field="*{apellidos}">
 						<label for="apellidos">Apellidos</label>
+						<div class="error"></div>
 					</div>
 					<br>
-					<div class="form-floating">
-						<input class="form-control" type="text" id="telefono"
-							placeholder="Teléfono" th:field="*{telefono}"></input>
-							<label for="telefono">Teléfono</label>
+					<div class="form-floating input-control">
+						<input class="form-control" type="text" id="telefono" placeholder="Teléfono"
+							th:field="*{telefono}"></input>
+						<label for="telefono">Teléfono</label>
+						<div class="error"></div>
 					</div>
 					<br>
-					<div class="form-floating">
-						 <input type="text"
-							class="form-control" id="email" placeholder="example@gmail.com" th:field="*{email}" />
+					<div class="form-floating input-control">
+						<input type="text" class="form-control" id="email" placeholder="example@gmail.com"
+							th:field="*{email}" />
 						<label for="email">Email</label>
+						<div class="error"></div>
 					</div>
 					<br>
 					<button type="submit" class="btn btn-primary">
@@ -55,4 +59,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 			</div>
 		</div>
 	</div>
+	
 </body>
+<footer th:replace="~{fragmentos/footer::footer}"></footer>
+</html>

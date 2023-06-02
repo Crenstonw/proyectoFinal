@@ -27,7 +27,7 @@ public class ParteVehiculoService {
 	
 	public ParteVehiculo delete(ParteVehiculo pv) {
 		ParteVehiculo result = findById(pv.getIdParte());
-		repositorio.delete(result);
+		repositorio.delete(pv);
 		return result;
 	}
 }

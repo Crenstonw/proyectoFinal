@@ -6,8 +6,10 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 </head>
 <body class="main">
-	<div th:replace="~{fragmentos/nav::nav}">
-    </div>
+	<header>
+        <div th:replace="~{fragmentos/nav::nav}">
+        </div>
+    </header>
 	<div class="container mt-2 cuerpo">
 		<div class="row">
 			<div class="col-md-offset-1">
@@ -49,6 +51,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 				</table>
 			</div>
 		</div>
-	</div>
+	</div>	
 </body>
+<footer th:replace="~{fragmentos/footer::footer}"></footer>
 </html>

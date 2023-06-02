@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org"
-xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
 <head th:replace="/fragmentos/head::head">
-<meta charset="utf-8">
+	<meta charset="utf-8">
 
 </head>
+
 <body class="main">
 
-	<nav th:replace="/fragmentos/nav::nav">
-	</nav>
+	<header>
+		<div th:replace="~{fragmentos/nav::nav}">
+		</div>
+	</header>
 
 	<div class="container mt-2 cuerpo">
 		<div class="row">
@@ -16,8 +19,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 				<table class="table table-striped bg-light rounded-3">
 					<thead>
 						<form th:action="@{/inicio/listaParte/nuevo}" method="POST">
-							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit"
-								aria-expanded="false">
+							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit" aria-expanded="false">
 								<img th:src="@{/images/parteMas.png}">
 							</button>
 						</form>
@@ -35,26 +37,29 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 					</thead>
 					<tbody>
 						<tr th:each="parte : ${partes}">
-    						<td th:text="${parte.idParte}"></td>
-    						<td th:text="${parte.tiempoEmpleado}" + ' horas'></td>
-    						<td th:text="${parte.fechaLlegada}"></td>
-    						<td th:text="${parte.fechaSalida}"></td>
-    						<td th:text="${parte.vehiculo.matricula}"></td>
-   							<td th:text="${parte.trabajador.apellidos} + ', ' + ${parte.trabajador.nombre}"></td>
-   							<td th:text="${parte.cliente.apellidos} + ', ' + ${parte.cliente.nombre}"></td>
-   							<td th:text="${parte.observaciones}"></td>
-    						<td class="operaciones">
-        					<a href="#" th:href="@{/inicio/listaParte/editar/{idParte}(parte=${parte.idParte})}" 
-        					class="btn btn-primary">
-								<img th:src="@{/images/editar.png}"></a>
-        					<a th:href="@{/inicio/listaParte/borrar/{idParte}(idParte=${parte.idParte})}" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
-								<img th:src="@{/images/borrar.png}"></a>
-    						</td>
+							<td th:text="${parte.idParte}"></td>
+							<td th:text="${parte.tiempoEmpleado} + ' horas'"></td>
+							<td th:text="${parte.fechaLlegada}"></td>
+							<td th:text="${parte.fechaSalida}"></td>
+							<td th:text="${parte.vehiculo.matricula}"></td>
+							<td th:text="${parte.trabajador.apellidos} + ', ' + ${parte.trabajador.nombre}"></td>
+							<td th:text="${parte.cliente.apellidos} + ', ' + ${parte.cliente.nombre}"></td>
+							<td th:text="${parte.observaciones}"></td>
+							<td class="operaciones">
+								<a href="#" th:href="@{/inicio/listaParte/editar/{idParte}(idParte=${parte.idParte})}"
+									class="btn btn-primary">
+									<img th:src="@{/images/editar.png}"></a>
+								<a href="#" th:href="@{/inicio/listaParte/borrar/{idParte}(idParte=${parte.idParte})}"
+									class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
+									<img th:src="@{/images/borrar.png}"></a>
+							</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
 	</div>
+	
 </body>
+<footer th:replace="~{fragmentos/footer::footer}"></footer>
 </html>

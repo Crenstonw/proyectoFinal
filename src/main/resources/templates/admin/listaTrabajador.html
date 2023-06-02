@@ -8,8 +8,10 @@
 
 <body class="main">
 
-	<nav th:replace="/fragmentos/nav::nav">
-	</nav>
+	<header>
+		<div th:replace="~{fragmentos/nav::nav}">
+		</div>
+	</header>
 
 	<div class="container mt-2 cuerpo">
 		<div class="row">
@@ -17,8 +19,7 @@
 				<table class="table table-striped bg-light rounded-2">
 					<thead>
 						<form th:action="@{/inicio/listaTrabajador/nuevo}" method="POST">
-							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit"
-								aria-expanded="false">
+							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit" aria-expanded="false">
 								<img th:src="@{/images/trabajadorMas.png}">
 							</button>
 						</form>
@@ -34,7 +35,8 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="trabajador : ${trabajadores}" th:if="${trabajador.username == null || trabajador.username == ''}">
+						<tr th:each="trabajador : ${trabajadores}"
+							th:if="${trabajador.username == null || trabajador.username == ''}">
 							<td th:text="${trabajador.idTrabajador}"></td>
 							<td th:text="${trabajador.fechaNacimiento}"></td>
 							<td th:text="${trabajador.dni}"></td>
@@ -45,11 +47,12 @@
 							<td th:text="${trabajador.isAdmin}"></td>
 							<td class="operaciones">
 								<span>
-								<a href="#"
-									th:href="@{/inicio/listaTrabajador/editar/{idTrabajador}(idTrabajador=${trabajador.idTrabajador})}"
-									class="btn btn-primary"><img th:src="@{/images/editar.png}"></a>
-								<a th:href="@{/inicio/listaTrabajador/borrar/{idTrabajador}(idTrabajador=${trabajador.idTrabajador})}"
-									class="btn btn-danger" data-toggle="modal" data-target="#delete-modal"><img th:src="@{/images/borrar.png}"></a>
+									<a href="#"
+										th:href="@{/inicio/listaTrabajador/editar/{idTrabajador}(idTrabajador=${trabajador.idTrabajador})}"
+										class="btn btn-primary"><img th:src="@{/images/editar.png}"></a>
+									<a th:href="@{/inicio/listaTrabajador/borrar/{idTrabajador}(idTrabajador=${trabajador.idTrabajador})}"
+										class="btn btn-danger" data-toggle="modal" data-target="#delete-modal"><img
+											th:src="@{/images/borrar.png}"></a>
 								</span>
 							</td>
 						</tr>
@@ -58,6 +61,7 @@
 			</div>
 		</div>
 	</div>
+	
 </body>
-
+<footer th:replace="~{fragmentos/footer::footer}"></footer>
 </html>
