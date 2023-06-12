@@ -46,9 +46,24 @@
 						<label for="fotoTrabajador">Foto del Trabajador</label>
 					</div>
 					<br>
-					<input type="hidden" th:field="*{isAdmin}" value="false" id="isAdmin" />
-					<input type="hidden" th:field="*{username}" th:value="null" id="username" />
-					<input type="hidden" th:field="*{password}" th:value="null" id="password" />
+					<div class="form-floating">
+						<input class="form-control" type="text" id="username" placeholder="nombre del usuario"
+							th:field="*{username}"></input>
+						<label for="username">Nombre del usuario</label>
+					</div>
+					<br>
+					<div class="form-floating">
+						<input class="form-control" type="password" id="password" placeholder="http://"
+							th:field="*{password}"></input>
+						<label for="password">Contraseña del Trabajador</label>
+					</div>
+					<br>
+					<div class="form-control" th:if="!${trabajador.idTrabajador}">
+						<input type="checkbox" th:field="*{isAdmin}" value="false" id="isAdmin" />
+						<label for="password">es admin</label>
+					</div>
+					<br>
+					
 					<br>
 					<button type="submit" class="btn btn-primary">
 						Enviar

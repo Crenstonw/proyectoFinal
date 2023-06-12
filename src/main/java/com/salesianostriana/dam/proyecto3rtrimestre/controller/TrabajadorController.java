@@ -21,6 +21,7 @@ public class TrabajadorController {
 	@GetMapping("/")
 	public String showFormTrabajador(Model model) {
 		model.addAttribute("trabajadores", trabajadorService.findAll());
+		
 		return "admin/listaTrabajador";
 		
 	}

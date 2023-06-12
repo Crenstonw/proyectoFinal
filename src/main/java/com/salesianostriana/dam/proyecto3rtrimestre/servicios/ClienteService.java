@@ -1,6 +1,7 @@
 package com.salesianostriana.dam.proyecto3rtrimestre.servicios;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,10 @@ public class ClienteService {
 	
 	public Cliente save(Cliente c) {
 		return repositorio.save(c);
+	}
+	
+	public Optional<Cliente> findByApellidos(String apellidos) {
+		return repositorio.findByApellidos(apellidos);
 	}
 	
 	public Cliente findById(Long codCliente) {

@@ -31,12 +31,12 @@
 							<th>Apellidos</th>
 							<th>Foto del Trabajador</th>
 							<th>Admin</th>
+							<th>usuario</th>
 							<th>Operaciones</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="trabajador : ${trabajadores}"
-							th:if="${trabajador.username == null || trabajador.username == ''}">
+						<tr th:each="trabajador : ${trabajadores}">
 							<td th:text="${trabajador.idTrabajador}"></td>
 							<td th:text="${trabajador.fechaNacimiento}"></td>
 							<td th:text="${trabajador.dni}"></td>
@@ -45,12 +45,15 @@
 							<td><img th:src="${not (#strings.isEmpty(trabajador.fotoTrabajador))} ? ${trabajador.fotoTrabajador} : 'http://placehold.it/48x48'"
 									class="img-responsive icono-categoria" alt="imagen" /></td>
 							<td th:text="${trabajador.isAdmin}"></td>
+							<td th:text="${trabajador.username}"></td>
 							<td class="operaciones">
 								<span>
 									<a href="#"
 										th:href="@{/inicio/listaTrabajador/editar/{idTrabajador}(idTrabajador=${trabajador.idTrabajador})}"
 										class="btn btn-primary"><img th:src="@{/images/editar.png}"></a>
-									<a th:href="@{/inicio/listaTrabajador/borrar/{idTrabajador}(idTrabajador=${trabajador.idTrabajador})}"
+									<a
+									th:if="${trabajador.username} != ${#authentication.name}" 
+									th:href="@{/inicio/listaTrabajador/borrar/{idTrabajador}(idTrabajador=${trabajador.idTrabajador})}"
 										class="btn btn-danger" data-toggle="modal" data-target="#delete-modal"><img
 											th:src="@{/images/borrar.png}"></a>
 								</span>

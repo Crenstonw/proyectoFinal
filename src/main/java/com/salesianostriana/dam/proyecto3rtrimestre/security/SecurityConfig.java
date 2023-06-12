@@ -53,9 +53,9 @@ public class SecurityConfig {
 			.defaultSuccessUrl("/inicio", true)
 			.failureUrl("/index")
 			.permitAll()
-			.and()
+			/*.and()
 		.exceptionHandling()
-			.accessDeniedPage("/AccessDenied");
+			.accessDeniedPage("/AccessDenied")*/;
 		
 
 		http.csrf().disable();

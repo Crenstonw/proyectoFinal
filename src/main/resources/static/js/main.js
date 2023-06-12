@@ -17,6 +17,21 @@ if(document.getElementById('cliente')) {
 	/*alert('No se ha podido cargar el javaScript')*/
 }
 
+function dniValido(dni) {
+	let re = /^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKET]{1}$/i;
+	return re.test(String(dni).toUpperCase());
+}
+
+function emailValido(email) {
+	let re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	return re.test(String(email).toLowerCase());
+}
+
+function telefonoValido(telefono) {
+	let re = /^[0-9]+$/
+	return re.test(String(telefono));
+}
+
 function formValidationCliente() {
 	let form = document.getElementById('form');
 	let dni = document.getElementById('dni');
@@ -29,8 +44,6 @@ function formValidationCliente() {
 
 	form.addEventListener('submit', e => {
 		e.preventDefault();
-
-		validateImputs();
 
 		if(validateImputs()) {
 			form.submit();
@@ -53,21 +66,6 @@ function formValidationCliente() {
 		errorDisplay.innerText = '';
 		inputControl.classList.add('success');
 		inputControl.classList.remove('error');
-	}
-
-	function dniValido(dni) {
-		let re = /^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKET]{1}$/i;
-		return re.test(String(dni).toUpperCase());
-	}
-
-	function emailValido(email) {
-		let re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-		return re.test(String(email).toLowerCase());
-	}
-
-	function telefonoValido(telefono) {
-		let re = /^[0-9]+$/
-		return re.test(String(telefono));
 	}
 
 	function validateImputs() {
@@ -131,18 +129,18 @@ function formValidationCliente() {
 
 function formValidationParte() {
 	let form = document.getElementById('form');
-	let dni = document.getElementById('dni');
-	let nombre = document.getElementById('nombre');
-	let apellidos = document.getElementById('apellidos');
-	let telefono = document.getElementById('telefono');
-	let email = document.getElementById('email');
+	let matricula = document.getElementById('matricula');
+	let idTrabajadorParte = document.getElementById('idTrabajadorParte');
+	let codClienteParte = document.getElementById('codClienteParte');
+	let tiempoEmpleado = document.getElementById('tiempoEmpleado');
+	let fechaLlegada = document.getElementById('fechaLlegada');
+	let fechaSalida = document.getElementById('fechaSalida');
+	let observaciones = document.getElementById('observaciones')
 
 
 
 	form.addEventListener('submit', e => {
 		e.preventDefault();
-
-		validateImputs();
 
 		if(validateImputs()) {
 			form.submit();
@@ -167,41 +165,31 @@ function formValidationParte() {
 		inputControl.classList.remove('error');
 	}
 
-	function dniValido(dni) {
-		let re = /^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKET]{1}$/i;
-		return re.test(String(dni).toUpperCase());
-	}
-
-	function emailValido(email) {
-		let re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-		return re.test(String(email).toLowerCase());
-	}
-
-	function telefonoValido(telefono) {
-		let re = /^[0-9]+$/
-		return re.test(String(telefono));
-	}
-
 	function validateImputs() {
 		let submit = true;
-		let dniValue = dni.value.trim();
-		let nombreValue = nombre.value.trim();
-		let apellidosValue = apellidos.value.trim();
-		let telefonoValue = telefono.value.trim();
-		let emailValue = email.value.trim();
+		let matriculaValue = matricula.value.trim();
+		let idTrabajadorValue = idTrabajadorParte.value.trim();
+		let codClienteValue = codClienteParte.value.trim();
+		let tiempoEmpleadoValue = tiempoEmpleado.value.trim();
+		let fechaLlegadaValue = fechaLlegada.value.trim();
+		let fechaSalidaValue = fechaSalida.value.trim();
+		let observacionesValue = observaciones.value.trim();
 
-		if (nombreValue === '') {
-			setError(nombre, 'El nombre es obligatorio');
+		if (matriculaValue === '') {
+			setError(matricula, 'La matrícula es obligatoria');
 			submit = false;
 		} else {
-			setSuccess(nombre);
+			setSuccess(matricula);
 		}
 
-		if (apellidosValue === '') {
-			setError(apellidos, 'Los apellidos son obligatorios');
+		if (idTrabajadorValue === '') {
+			setError(idTrabajadorParte, 'El trabajador es obligatorio');
 			submit = false;
-		} else {
-			setSuccess(apellidos);
+		} else if(idTrabajadorValue){
+			setError(idTrabajadorParte, 'Este trabajador no existe')
+			submit = false;
+		} else{
+			setSuccess(idTrabajadorParte);
 		}
 
 		if (dniValue === '') {

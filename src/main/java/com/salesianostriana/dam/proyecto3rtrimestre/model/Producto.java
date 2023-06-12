@@ -44,7 +44,7 @@ public class Producto {
 	@OneToMany(
 			mappedBy = "producto",
 			fetch = FetchType.EAGER,
-			cascade = CascadeType.ALL,
+			cascade = CascadeType.REMOVE,
 			orphanRemoval = true
 	)
 	private List<LineaFactura> lineaFacturaLista = new ArrayList<>();

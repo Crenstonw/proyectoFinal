@@ -1,6 +1,9 @@
 package com.salesianostriana.dam.proyecto3rtrimestre.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,8 +11,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.salesianostriana.dam.proyecto3rtrimestre.model.Cliente;
 import com.salesianostriana.dam.proyecto3rtrimestre.model.LineaFactura;
 import com.salesianostriana.dam.proyecto3rtrimestre.model.ParteVehiculo;
+import com.salesianostriana.dam.proyecto3rtrimestre.model.Trabajador;
+import com.salesianostriana.dam.proyecto3rtrimestre.model.Vehiculo;
 import com.salesianostriana.dam.proyecto3rtrimestre.servicios.ClienteService;
 import com.salesianostriana.dam.proyecto3rtrimestre.servicios.LineaFacturaService;
 import com.salesianostriana.dam.proyecto3rtrimestre.servicios.ParteVehiculoService;
@@ -38,11 +44,13 @@ public class ParteVehiculoController {
 	}
 	
 	@PostMapping("/nuevo")
-	public String nuevoParteVehiculo(Model model) {
+	public String nuevoParteVehiculo(@AuthenticationPrincipal Trabajador t, Model model) {
+		List<Vehiculo> vehiculos = vehiculoService.findAll();	
+		List<Cliente> clientes = clienteService.findAll();
 		model.addAttribute("parte", new ParteVehiculo());
-		model.addAttribute("trabajadores", trabajadorService.findAll());
-		model.addAttribute("clientes", clienteService.findAll());
-		model.addAttribute("vehiculos", vehiculoService.findAll());	
+		model.addAttribute("trabajadores", t);
+		model.addAttribute("clientes", clientes);
+		model.addAttribute("vehiculos", vehiculos);	
 		return "formularios/form-parte";
 	}
 	
@@ -55,10 +63,10 @@ public class ParteVehiculoController {
 	}
 	
 	@GetMapping("/editar/{idParte}")
-	public String editarparteVehiculo(@PathVariable("idParte") Long idParte, Model model) {
+	public String editarparteVehiculo(@PathVariable("idParte") Long idParte, Model model, String apellidosTrabajador, String apellidosCliente) {
 		ParteVehiculo parteVehiculo = parteVehiculoService.findById(idParte);
-		model.addAttribute("trabajadores", trabajadorService.findAll());
-		model.addAttribute("clientes", clienteService.findAll());
+		model.addAttribute("trabajadores", trabajadorService.findByApellidos(apellidosTrabajador));
+		model.addAttribute("clientes", clienteService.findByApellidos(apellidosCliente));
 		model.addAttribute("vehiculos", vehiculoService.findAll());
 		model.addAttribute("lineaFacturas", lineaFacturaService.findAll());
 		

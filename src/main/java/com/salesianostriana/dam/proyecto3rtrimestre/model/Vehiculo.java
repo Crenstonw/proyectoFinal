@@ -38,9 +38,8 @@ public class Vehiculo {
 	@Builder.Default
 	@OneToMany(
 			mappedBy = "vehiculo",
-			fetch = FetchType.EAGER,
-			cascade = CascadeType.ALL,
-			orphanRemoval = true
+			fetch = FetchType.LAZY,
+			cascade = CascadeType.REMOVE
 	)
 	private List<ParteVehiculo> parteVehiculoLista = new ArrayList<>();
 	

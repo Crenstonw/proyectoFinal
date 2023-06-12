@@ -15,8 +15,8 @@ public class MainController {
 		return "inicio";
 	}
 	
-	@GetMapping("/AccessDenied")
+	/*@GetMapping("/AccessDenied")
 	public String accesoDenegado() {
 		return "error";
-	}
+	}*/
 }

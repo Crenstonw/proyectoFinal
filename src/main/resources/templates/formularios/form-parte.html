@@ -32,24 +32,17 @@
 					</div>
 					<br>
 					<div class="form-floating">
-						<input type="text" class="form-control" id="idTrabajadorParte" placeholder="Trabajador asociado"
-							th:field="*{trabajador.idTrabajador}" list="listaTrabajadores" />
-						<label for="idTrabajadorParte">Nombre del trabajador</label>
-						<datalist id="listaTrabajadores">
-							<option th:each="trabajador : ${trabajadores}"
-								th:if="${trabajador.username == null || trabajador.username == ''}"
-								th:value="${trabajador.idTrabajador}"
-								th:text="${trabajador.apellidos} + ', ' + ${trabajador.nombre}"></option>
-						</datalist>
+						<input type="hidden" th:field="*{trabajador}" id="idParte" th:value="${trabajador.idTrabajador}"/>
 					</div>
 					<br>
 					<div class="form-floating">
 						<input type="text" class="form-control" id="codClienteParte" placeholder="ID del cliente"
-							th:field="*{cliente.codCliente}" list="listaClientes" />
-						<label for="codClienteParte">ID del cliente</label>
+							th:field="*{cliente.apellidos}" list="listaClientes" />
+						<label for="codClienteParte">Nombre del cliente</label>
 						<datalist id="listaClientes">
-							<option th:each="cliente : ${clientes}" th:value="${cliente.codCliente}"
-								th:text="${cliente.apellidos} + ', ' + ${cliente.nombre}"></option>
+							<option th:each="cliente : ${clientes}" 
+								th:value="${cliente.apellidos}"
+								th:text="${cliente.nombre}"></option>
 						</datalist>
 					</div>
 					<br>
@@ -81,41 +74,6 @@
 						<span th:text="${parte.idParte} ? 'Editar' : 'Agregar'"></span>
 					</button>
 				</form>
-				<!--<br>
-				<br>
-				<table class="table table-striped bg-light rounded-3" th:if="${parte.idParte}">
-					<thead>
-						<form th:action="@{/inicio/articulo/nuevo}" method="POST">
-							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit" aria-expanded="false">
-								<img th:src="@{/images/productoMas.png}">
-							</button>
-						</form>
-						<tr>
-							<th>Referencia</th>
-							<th>Nombre</th>
-							<th>PVP</th>
-							<th>Número de artículos</th>
-							<th>Operaciones</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="lineaFactura : ${lineaFacturas}">
-							<td th:text="${lineaFactura.producto.referencia}"></td>
-							<td th:text="${lineaFactura.producto.nombre}"></td>
-							<td th:text="${lineaFactura.producto.pvp}"></td>
-							<td th:text="${lineaFactura.cantidad}"></td>
-							<td class="operaciones">
-								<a href="#"
-									th:href="@{/inicio/listaFactura/editar/{numFactura}(numFactura=${lineaFactura.numFactura})}"
-									class="btn btn-primary">
-									<img th:src="@{/images/editar.png}"></a>
-								<a th:href="@{/inicio/listaFactura/borrar/{numFactura}(numFactura=${lineaFactura.numFactura})}"
-									class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
-									<img th:src="@{/images/borrar.png}"></a>
-							</td>
-						</tr>
-					</tbody>
-				</table>-->
 			</div>
 		</div>
 	</div>
