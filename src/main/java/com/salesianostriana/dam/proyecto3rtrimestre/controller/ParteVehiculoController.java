@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.salesianostriana.dam.proyecto3rtrimestre.excep.ExcepcionMetodoNoSoportado;
 import com.salesianostriana.dam.proyecto3rtrimestre.model.Cliente;
 import com.salesianostriana.dam.proyecto3rtrimestre.model.LineaFactura;
 import com.salesianostriana.dam.proyecto3rtrimestre.model.ParteVehiculo;
@@ -43,29 +44,27 @@ public class ParteVehiculoController {
 		
 	}
 	
-	@PostMapping("/nuevo")
-	public String nuevoParteVehiculo(@AuthenticationPrincipal Trabajador t, Model model) {
+	@GetMapping("/nuevo")
+	public String nuevoParteVehiculo(Model model) {
 		List<Vehiculo> vehiculos = vehiculoService.findAll();	
 		List<Cliente> clientes = clienteService.findAll();
 		model.addAttribute("parte", new ParteVehiculo());
-		model.addAttribute("trabajadores", t);
 		model.addAttribute("clientes", clientes);
-		model.addAttribute("vehiculos", vehiculos);	
+		model.addAttribute("vehiculos", vehiculos);
 		return "formularios/form-parte";
 	}
 	
 	@PostMapping("/nuevo/submit")
-	public String submitNuevoProducto(ParteVehiculo parteVehiculo, Model model) {
-		
+	public String submitNuevoProducto( @AuthenticationPrincipal Trabajador t, ParteVehiculo parteVehiculo, Model model) {
+		parteVehiculo.setTrabajador(t);
 		parteVehiculoService.save(parteVehiculo);
 		return "redirect:/inicio/listaParte/";
 
 	}
 	
 	@GetMapping("/editar/{idParte}")
-	public String editarparteVehiculo(@PathVariable("idParte") Long idParte, Model model, String apellidosTrabajador, String apellidosCliente) {
+	public String editarparteVehiculo(@PathVariable("idParte") Long idParte, Model model, String apellidosCliente) {
 		ParteVehiculo parteVehiculo = parteVehiculoService.findById(idParte);
-		model.addAttribute("trabajadores", trabajadorService.findByApellidos(apellidosTrabajador));
 		model.addAttribute("clientes", clienteService.findByApellidos(apellidosCliente));
 		model.addAttribute("vehiculos", vehiculoService.findAll());
 		model.addAttribute("lineaFacturas", lineaFacturaService.findAll());
@@ -76,13 +75,6 @@ public class ParteVehiculoController {
 		} else {
 			return "listaParte";
 		}
-	}
-	
-	@PostMapping("/editar/{idParte}/nuevoArticulo/submit")
-	public String submitNuevoProducto(LineaFactura lineaFactura, Model model) {
-		lineaFacturaService.save(lineaFactura);
-		return "redirect:/inicio/listaParte/editar/{idParte}";
-
 	}
 	
 	@GetMapping("/borrar/{idParte}")

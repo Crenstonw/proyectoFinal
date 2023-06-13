@@ -12,7 +12,7 @@
 	<div id="parte" class="container cuerpo">
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8">
-				<form method="post" action="#" th:action="@{/inicio/listaParte/nuevo/submit}" th:object="${parte}">
+				<form method="post" action="#" id="form" th:action="@{/inicio/listaParte/nuevo/submit}" th:object="${parte}">
 					<h1>
 						<span th:text="${parte.idParte} ? 'Editar' : 'Nuevo'"></span>
 						Parte
@@ -31,21 +31,7 @@
 						</datalist>
 					</div>
 					<br>
-					<div class="form-floating">
-						<input type="hidden" th:field="*{trabajador}" id="idParte" th:value="${authentication.idTrabajador}"/>
-					</div>
-					<br>
-					<div class="form-floating">
-						<input type="text" class="form-control" id="codClienteParte" placeholder="ID del cliente"
-							th:field="*{cliente.apellidos}" list="listaClientes" />
-						<label for="codClienteParte">Nombre del cliente</label>
-						<datalist id="listaClientes">
-							<option th:each="cliente : ${clientes}" 
-								th:value="${cliente.apellidos}"
-								th:text="${cliente.nombre}"></option>
-						</datalist>
-					</div>
-					<br>
+					
 					<div class="form-floating">
 						<input type="number" min="0" class="form-control" id="tiempoEmpleado"
 							placeholder="Tiempo empleado" th:field="*{tiempoEmpleado}" />
