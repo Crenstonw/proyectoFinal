@@ -57,7 +57,7 @@ public class ParteVehiculoController {
 	@GetMapping("/editar/{idParte}")
 	public String editarparteVehiculo(@PathVariable("idParte") Long idParte, Model model) {
 		ParteVehiculo parteVehiculo = parteVehiculoService.findById(idParte);
-		model.addAttribute("clientes", clienteService.findAll());
+		model.addAttribute("clientes", clienteService.findByApellidos());
 		model.addAttribute("vehiculos", vehiculoService.findAll());
 		
 		if(parteVehiculo != null) {

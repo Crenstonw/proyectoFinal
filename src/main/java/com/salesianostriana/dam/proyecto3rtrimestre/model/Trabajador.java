@@ -74,7 +74,7 @@ public class Trabajador implements UserDetails {
 	@Builder.Default
 	@OneToMany(
 			mappedBy = "trabajador",
-			fetch = FetchType.LAZY
+			fetch = FetchType.EAGER
 	)
 	private List<ParteVehiculo> parteVehiculoLista = new ArrayList<>();
 	

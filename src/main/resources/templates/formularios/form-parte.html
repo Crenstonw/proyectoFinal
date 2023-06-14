@@ -20,26 +20,22 @@
 					<br>
 					<br>
 					<input type="hidden" th:field="*{idParte}" id="idParte" />
-					<div class="form-floating">
-						<input type="text" class="form-control" id="matricula" placeholder="Matrícula del vehículo"
-							th:field="*{vehiculo.matricula}" list="listaVehiculos" />
-						<label for="matricula">Matrícula del vehículo</label>
-						<datalist id="listaVehiculos">
+					<div class="form-group"> 
+						<label for="matricula" class="col-md-4 control-label">Matrícula del vehículo</label>
+						<select id="matricula" class="form-control">
 							<option th:each="vehiculo : ${vehiculos}" th:value="${vehiculo.matricula}"
-								th:text="${vehiculo.tipoVehiculo} + ', ' + ${vehiculo.marca} + ', ' + ${vehiculo.modelo}">
-							</option>
-						</datalist>
+									th:text="${vehiculo.tipoVehiculo} + ', ' + ${vehiculo.marca} + ', ' + ${vehiculo.modelo}">
+								</option>
+						</select>
 					</div>
 					<br>
-				
-					<div class="form-floating">
-						<input type="text" class="form-control" id="codClienteParte" placeholder="ID del cliente"
-							th:field="*{cliente.codCliente}" list="listaClientes" />
-						<label for="codClienteParte">ID del cliente</label>
-						<datalist id="listaClientes">
+					<div class="form-group"> 
+						<label for="cliente" class="col-md-4 control-label">Cliente</label>
+						<select id="cliente" class="form-control">
 							<option th:each="cliente : ${clientes}" th:value="${cliente.codCliente}"
-								th:text="${cliente.apellidos} + ', ' + ${cliente.nombre}"></option>
-						</datalist>
+									th:text="${cliente.apellidos} + ', ' + ${cliente.nombre}">
+								</option>
+						</select>
 					</div>
 					<br>
 					<div class="form-floating">
