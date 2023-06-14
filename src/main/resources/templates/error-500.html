@@ -2,6 +2,13 @@
 <html>
 <head th:replace="~{fragmentos/head::head}">
 </head>
-<body id="error-500">
+<body class="main">
+	<nav th:replace="~{fragmentos/nav::nav}"></nav>
+	<div class="container pt-5">
+		<h1>Error 500:</h1>
+		<p>Error interno del servidor</p>
+		<button id="volver" class="btn btn-primary">Volver</button>
+	</div>
 </body>
+<footer th:replace="~{fragmentos/footer::footer}"></footer>
 </html>

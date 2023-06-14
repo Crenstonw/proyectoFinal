@@ -2,6 +2,13 @@
 <html>
 <head th:replace="~{fragmentos/head::head}">
 </head>
-<body id="error-404">
+<body class="main">
+	<nav th:replace="~{fragmentos/nav::nav}"></nav>
+	<div class="container pt-5">
+		<h1>Error 404:</h1>
+		<p>Error al encontrar la página</p>
+		<button id="volver" class="btn btn-primary">Volver</button>
+	</div>
 </body>
+<footer th:replace="~{fragmentos/footer::footer}"></footer>
 </html>

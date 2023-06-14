@@ -1,13 +1,10 @@
+let volver = document.getElementById('volver');
 
-/*let nom = document.getElementById('nombre').value;
-document.getElementById('fotoTrabajador').addEventListener('focus', function () {
-	if (this.value == '') {
-		this.value = 'http://robohash.org/';
-	} else {
-		this.value = 'http://robohash.org/' + nom;
-	}
-});*/
+volver.addEventListener('click', volverFuncion);
 
+function volverFuncion() {
+	window.history.back();
+}
 /*Llamada a las validaciones*/ 
 if(document.getElementById('cliente')) {
 	formValidationCliente();

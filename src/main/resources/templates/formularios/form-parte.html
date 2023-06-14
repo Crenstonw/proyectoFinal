@@ -31,7 +31,17 @@
 						</datalist>
 					</div>
 					<br>
-					
+				
+					<div class="form-floating">
+						<input type="text" class="form-control" id="codClienteParte" placeholder="ID del cliente"
+							th:field="*{cliente.codCliente}" list="listaClientes" />
+						<label for="codClienteParte">ID del cliente</label>
+						<datalist id="listaClientes">
+							<option th:each="cliente : ${clientes}" th:value="${cliente.codCliente}"
+								th:text="${cliente.apellidos} + ', ' + ${cliente.nombre}"></option>
+						</datalist>
+					</div>
+					<br>
 					<div class="form-floating">
 						<input type="number" min="0" class="form-control" id="tiempoEmpleado"
 							placeholder="Tiempo empleado" th:field="*{tiempoEmpleado}" />
