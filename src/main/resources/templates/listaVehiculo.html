@@ -32,7 +32,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="vehiculo : ${vehiculos}">
+						<tr data-aos="fade-up" th:each="vehiculo : ${vehiculos}">
 							<td th:text="${vehiculo.matricula}"></td>
 							<td th:text="${vehiculo.tipoVehiculo}"></td>
 							<td th:text="${vehiculo.bastidor}"></td>

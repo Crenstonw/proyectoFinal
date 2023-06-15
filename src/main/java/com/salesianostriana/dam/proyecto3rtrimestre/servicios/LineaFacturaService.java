@@ -31,7 +31,11 @@ public class LineaFacturaService {
 		return result;
 	}
 	
-	public LineaFactura findByParte(Long idParte) {
-		return repositorio.findById(idParte).orElse(null);
+	public List<LineaFactura> findByParte(Long idParte) {
+		return repositorio.findByidParte(idParte);
 	}
+	
+	/*public List<LineaFactura> findByIdParte(Long idParte) {
+		return this.repositorio.findByidParte(idParte);
+	}*/
 }

@@ -5,9 +5,10 @@
 <body class="main">
 	<nav th:replace="~{fragmentos/nav::nav}"></nav>
 	<div class="container pt-5">
-		<h1>Error Inesperado:</h1>
-		<p>Ha ocurrido una tragedia</p>
-		<button id="volver" class="btn btn-primary volver">Volver</button>
+		<h1>Error:</h1>
+		<p>Este objeto ya está siendo utilizado en otra tabla</p>
+		<p>Por favor, elimine las relaciones e intentelo de nuevo</p>
+		<button id="volver" class="btn btn-primary">Volver</button>
 	</div>
 </body>
 <footer th:replace="~{fragmentos/footer::footer}"></footer>

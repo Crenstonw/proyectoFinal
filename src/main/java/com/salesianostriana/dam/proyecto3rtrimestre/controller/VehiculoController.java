@@ -53,14 +53,17 @@ public class VehiculoController {
 	
 	@GetMapping("/borrar/{matricula}")
 	public String borrarVehiculo(@PathVariable("matricula") String matricula, Model model) {
-		
-		Vehiculo vehiculo = vehiculoService.findById(matricula);
-		
-		if(vehiculo != null) {
-			vehiculoService.delete(vehiculo);
+		try {	
+				Vehiculo vehiculo = vehiculoService.findById(matricula);
+				
+				if(vehiculo != null) {
+					vehiculoService.delete(vehiculo);
+				}
+				
+				return "redirect:/inicio/listaVehiculo/";
+		} catch(Exception ErrorEliminarObjeto) {
+			return "errorObjetoUsado";
 		}
-		
-		return "redirect:/inicio/listaVehiculo/";
 	}
 }
 

@@ -27,8 +27,8 @@ public class TrabajadorService implements UserDetailsService {
 		return repositorio.findAll();
 	}
 	
-	public Optional<Trabajador> findByName(String name) {
-		return repositorio.findByName(name);
+	public Optional<Trabajador> findByApellidos(String apellidos) {
+		return repositorio.findByApellidos(apellidos);
 	}
 	
 	public Trabajador save(Trabajador t) {

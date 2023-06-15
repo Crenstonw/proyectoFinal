@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="/fragmentos/head::head">
+<meta charset="utf-8">
+
+</head>
+<body class="main">
+	<header>
+        <div th:replace="~{fragmentos/nav::nav}">
+        </div>
+    </header>
+	<div class="container mt-2 cuerpo">
+		<div class="row">
+			<div class="col-md-offset-1">
+				<h1>hola</h1>
+				<!--<table class="table table-striped bg-light rounded-3">
+					<thead>
+						<form th:action="@{/inicio/factura/mostrar/{idParte}(idParte=${parteVehiculo.idParte})}" method="POST">
+							<button class=" btn btn-primary mt-2 col-md-offset-1" type="submit"
+								aria-expanded="false">
+								<img th:src="@{/images/clienteMas.png}">
+							</button>
+						</form>
+						<tr>
+							<th>ID Parte</th>
+							<th>Producto</th>
+							<th>Referencia</th>
+							<th>Precio</th>
+							<th>PVP</th>
+							<th>Cantidad</th>
+							<th>Operaciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr data-aos="fade-up" th:each="factura : ${facturas}">
+    						<td th:text="${factura.parteVehiculo.idParte}"></td>
+    						<td th:text="${factura.producto.nombre}"></td>
+    						<td th:text="${factura.producto.referencia}"></td>
+    						<td th:text="${factura.producto.precio}"></td>
+    						<td th:text="${factura.producto.pvp}"></td>
+   							<td th:text="${factura.cantidad}"></td>
+    						<td class="operaciones">
+        					<a href="#" th:href="@{/inicio/listaCliente/editar/{idParte}(idParte=${factura.parteVehiculo.idParte})}" 
+        					class="btn btn-primary">
+								<img th:src="@{/images/editar.png}"></a>
+        					<a th:href="@{/inicio/listaCliente/borrar/{idParte}(idParte=${factura.parteVehiculo.idParte})}" class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
+								<img th:src="@{/images/borrar.png}"></a>
+    						</td>
+						</tr>
+					</tbody>
+				</table>-->
+			</div>
+		</div>
+	</div>	
+</body>
+<footer th:replace="~{fragmentos/footer::footer}"></footer>
+</html>

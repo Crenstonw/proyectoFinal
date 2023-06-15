@@ -12,7 +12,7 @@
 	<div id="parte" class="container cuerpo">
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8">
-				<form method="post" action="#" th:action="@{/inicio/listaParte/nuevo/submit}" th:object="${parte}">
+				<form method="post" action="#" id="form" th:action="@{/inicio/listaParte/nuevo/submit}" th:object="${parte}">
 					<h1>
 						<span th:text="${parte.idParte} ? 'Editar' : 'Nuevo'"></span>
 						Parte
@@ -20,37 +20,23 @@
 					<br>
 					<br>
 					<input type="hidden" th:field="*{idParte}" id="idParte" />
-					<div class="form-floating">
-						<input type="text" class="form-control" id="matricula" placeholder="Matrícula del vehículo"
-							th:field="*{vehiculo.matricula}" list="listaVehiculos" />
-						<label for="matricula">Matrícula del vehículo</label>
-						<datalist id="listaVehiculos">
+					<div class="form-group"> 
+						<label for="matricula" class="col-md-4 control-label">Matrícula del vehículo</label>
+						<select id="matricula" class="form-control" th:field="*{vehiculo.matricula}">
 							<option th:each="vehiculo : ${vehiculos}" th:value="${vehiculo.matricula}"
-								th:text="${vehiculo.tipoVehiculo} + ', ' + ${vehiculo.marca} + ', ' + ${vehiculo.modelo}">
-							</option>
-						</datalist>
+									th:text="${vehiculo.matricula}" th:selected="${vehiculo.matricula} == *{vehiculo.matricula}">
+								</option>
+						</select>
 					</div>
 					<br>
-					<div class="form-floating">
-						<input type="text" class="form-control" id="idTrabajadorParte" placeholder="Trabajador asociado"
-							th:field="*{trabajador.idTrabajador}" list="listaTrabajadores" />
-						<label for="idTrabajadorParte">Nombre del trabajador</label>
-						<datalist id="listaTrabajadores">
-							<option th:each="trabajador : ${trabajadores}"
-								th:if="${trabajador.username == null || trabajador.username == ''}"
-								th:value="${trabajador.idTrabajador}"
-								th:text="${trabajador.apellidos} + ', ' + ${trabajador.nombre}"></option>
-						</datalist>
-					</div>
-					<br>
-					<div class="form-floating">
-						<input type="text" class="form-control" id="codClienteParte" placeholder="ID del cliente"
-							th:field="*{cliente.codCliente}" list="listaClientes" />
-						<label for="codClienteParte">ID del cliente</label>
-						<datalist id="listaClientes">
+					<div class="form-group"> 
+						<label for="cliente" class="col-md-4 control-label">Cliente</label>
+						<select id="cliente" class="form-control" th:field="*{cliente.codCliente}">
 							<option th:each="cliente : ${clientes}" th:value="${cliente.codCliente}"
-								th:text="${cliente.apellidos} + ', ' + ${cliente.nombre}"></option>
-						</datalist>
+									th:text="${cliente.apellidos} + ', ' + ${cliente.nombre}"
+									th:selected="${cliente.codCliente} == *{cliente.codCliente}">
+								</option>
+						</select>
 					</div>
 					<br>
 					<div class="form-floating">
@@ -81,41 +67,6 @@
 						<span th:text="${parte.idParte} ? 'Editar' : 'Agregar'"></span>
 					</button>
 				</form>
-				<!--<br>
-				<br>
-				<table class="table table-striped bg-light rounded-3" th:if="${parte.idParte}">
-					<thead>
-						<form th:action="@{/inicio/articulo/nuevo}" method="POST">
-							<button class="btn btn-primary mt-2 col-md-offset-1" type="submit" aria-expanded="false">
-								<img th:src="@{/images/productoMas.png}">
-							</button>
-						</form>
-						<tr>
-							<th>Referencia</th>
-							<th>Nombre</th>
-							<th>PVP</th>
-							<th>Número de artículos</th>
-							<th>Operaciones</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="lineaFactura : ${lineaFacturas}">
-							<td th:text="${lineaFactura.producto.referencia}"></td>
-							<td th:text="${lineaFactura.producto.nombre}"></td>
-							<td th:text="${lineaFactura.producto.pvp}"></td>
-							<td th:text="${lineaFactura.cantidad}"></td>
-							<td class="operaciones">
-								<a href="#"
-									th:href="@{/inicio/listaFactura/editar/{numFactura}(numFactura=${lineaFactura.numFactura})}"
-									class="btn btn-primary">
-									<img th:src="@{/images/editar.png}"></a>
-								<a th:href="@{/inicio/listaFactura/borrar/{numFactura}(numFactura=${lineaFactura.numFactura})}"
-									class="btn btn-danger" data-toggle="modal" data-target="#delete-modal">
-									<img th:src="@{/images/borrar.png}"></a>
-							</td>
-						</tr>
-					</tbody>
-				</table>-->
 			</div>
 		</div>
 	</div>

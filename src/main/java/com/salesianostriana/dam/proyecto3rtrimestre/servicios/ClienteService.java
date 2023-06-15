@@ -21,6 +21,10 @@ public class ClienteService {
 		return repositorio.save(c);
 	}
 	
+	public List<Cliente> findByApellidos(String apellidos) {
+		return repositorio.findByApellidos(apellidos);
+	}
+	
 	public Cliente findById(Long codCliente) {
 		return repositorio.findById(codCliente).orElse(null);
 	}

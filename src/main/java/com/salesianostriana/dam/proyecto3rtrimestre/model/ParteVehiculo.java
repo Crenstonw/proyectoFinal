@@ -42,13 +42,13 @@ public class ParteVehiculo {
 	private boolean is_a_b, parteCerrado;
 	private double total;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private Vehiculo vehiculo;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private Trabajador trabajador;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private Cliente cliente;
 	
 	@ToString.Exclude

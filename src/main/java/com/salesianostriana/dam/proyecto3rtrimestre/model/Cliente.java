@@ -3,7 +3,6 @@ package com.salesianostriana.dam.proyecto3rtrimestre.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -35,9 +34,7 @@ public class Cliente {
 	@Builder.Default
 	@OneToMany(
 			mappedBy = "cliente",
-			fetch = FetchType.EAGER,
-			cascade = CascadeType.ALL,
-			orphanRemoval = true
+			fetch = FetchType.EAGER
 	)
 	private List<ParteVehiculo> parteVehiculoLista = new ArrayList<>();
 	

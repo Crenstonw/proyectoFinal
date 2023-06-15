@@ -21,6 +21,7 @@ public class TrabajadorController {
 	@GetMapping("/")
 	public String showFormTrabajador(Model model) {
 		model.addAttribute("trabajadores", trabajadorService.findAll());
+		
 		return "admin/listaTrabajador";
 		
 	}
@@ -53,14 +54,17 @@ public class TrabajadorController {
 	
 	@GetMapping("/borrar/{idTrabajador}")
 	public String borrarTrabajador(@PathVariable("idTrabajador") Long idTrabajador, Model model) {
-		
-		Trabajador trabajador = trabajadorService.findById(idTrabajador);
-		
-		if(trabajador != null) {
-			trabajadorService.delete(trabajador);
+		try {
+			Trabajador trabajador = trabajadorService.findById(idTrabajador);
+			
+			if(trabajador != null) {
+				trabajadorService.delete(trabajador);
+			}
+			
+			return "redirect:/inicio/listaTrabajador/";
+		} catch(Exception ErrorEliminarObjeto) {
+			return "errorObjetoUsado";
 		}
-		
-		return "redirect:/inicio/listaTrabajador/";
 	}
 	
 	

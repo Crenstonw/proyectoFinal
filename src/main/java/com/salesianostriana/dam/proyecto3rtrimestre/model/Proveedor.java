@@ -3,7 +3,6 @@ package com.salesianostriana.dam.proyecto3rtrimestre.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -40,9 +39,7 @@ public class Proveedor {
 	@Builder.Default
 	@OneToMany(
 			mappedBy = "proveedor",
-			fetch = FetchType.EAGER,
-			cascade = CascadeType.ALL,
-			orphanRemoval = true
+			fetch = FetchType.EAGER
 	)
 	private List<Producto> productoLista = new ArrayList<>();
 	

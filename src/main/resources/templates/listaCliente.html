@@ -32,7 +32,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="cliente : ${clientes}">
+						<tr data-aos="fade-up" th:each="cliente : ${clientes}">
     						<td th:text="${cliente.codCliente}"></td>
     						<td th:text="${cliente.dni}"></td>
     						<td th:text="${cliente.nombre}"></td>

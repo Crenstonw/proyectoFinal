@@ -53,13 +53,16 @@ public class ClienteController {
 	
 	@GetMapping("/borrar/{codCliente}")
 	public String borrarCliente(@PathVariable("codCliente") Long codCliente, Model model) {
-		
-		Cliente cliente = clienteService.findById(codCliente);
-		
-		if(cliente != null) {
-			clienteService.delete(cliente);
+		try {
+			Cliente cliente = clienteService.findById(codCliente);
+			
+			if(cliente != null) {
+				clienteService.delete(cliente);
+			}
+			
+			return "redirect:/inicio/listaCliente/";
+		} catch(Exception ErrorEliminarObjeto) {
+			return "errorObjetoUsado";
 		}
-		
-		return "redirect:/inicio/listaCliente/";
 	}
 }
