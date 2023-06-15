@@ -1,6 +1,6 @@
 # Importante
 <h1>La rama en la que he estado trabajando todo este tiempo ha sido en la HU 08</h1>
-# proyectoFinal
+<h2>proyectoFinal</h2>
 repositorio del proyecto final del 3r trimestre en primero de DAM
 <p>contraseñas:</p>
 <p><em>admin</em> - admin</p>
