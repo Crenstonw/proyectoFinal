@@ -2,10 +2,12 @@
 <html>
 <head th:replace="~{fragmentos/head::head}">
 </head>
-<body>
+<body class="main">
 	<nav th:replace="~{fragmentos/nav::nav}"></nav>
 	<div class="container pt-5">
-		<h1>Este objeto ya está siendo utilizado</h1>
+		<h1>Error:</h1>
+		<p>Este objeto ya está siendo utilizado en otra tabla</p>
+		<p>Por favor, elimine las relaciones e intentelo de nuevo</p>
 		<button id="volver" class="btn btn-primary">Volver</button>
 	</div>
 </body>

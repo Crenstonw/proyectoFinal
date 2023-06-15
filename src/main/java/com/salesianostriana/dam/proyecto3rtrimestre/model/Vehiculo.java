@@ -3,7 +3,6 @@ package com.salesianostriana.dam.proyecto3rtrimestre.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -38,8 +37,7 @@ public class Vehiculo {
 	@Builder.Default
 	@OneToMany(
 			mappedBy = "vehiculo",
-			fetch = FetchType.LAZY,
-			cascade = CascadeType.REMOVE
+			fetch = FetchType.EAGER
 	)
 	private List<ParteVehiculo> parteVehiculoLista = new ArrayList<>();
 	

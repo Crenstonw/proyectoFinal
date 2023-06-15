@@ -52,13 +52,16 @@ public class ProveedorController {
 	
 	@GetMapping("/borrar/{idProveedor}")
 	public String borrarProveedor(@PathVariable("idProveedor") Long idProveedor, Model model) {
-		
-		Proveedor proveedor = proveedorService.findById(idProveedor);
-		
-		if(proveedor != null) {
-			proveedorService.delete(proveedor);
+		try {
+			Proveedor proveedor = proveedorService.findById(idProveedor);
+			
+			if(proveedor != null) {
+				proveedorService.delete(proveedor);
+			}
+			
+			return "redirect:/inicio/listaProveedor/";
+		} catch(Exception ErrorEliminarObjeto) {
+			return "errorObjetoUsado";
 		}
-		
-		return "redirect:/inicio/listaProveedor/";
 	}
 }

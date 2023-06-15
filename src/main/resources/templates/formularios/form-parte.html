@@ -22,9 +22,9 @@
 					<input type="hidden" th:field="*{idParte}" id="idParte" />
 					<div class="form-group"> 
 						<label for="matricula" class="col-md-4 control-label">Matrícula del vehículo</label>
-						<select id="matricula" class="form-control" th:value="*{vehiculo.matricula}">
+						<select id="matricula" class="form-control" th:field="*{vehiculo.matricula}">
 							<option th:each="vehiculo : ${vehiculos}" th:value="${vehiculo.matricula}"
-									th:text="${vehiculo.matricula}">
+									th:text="${vehiculo.matricula}" th:selected="${vehiculo.matricula} == *{vehiculo.matricula}">
 								</option>
 						</select>
 					</div>
@@ -33,7 +33,8 @@
 						<label for="cliente" class="col-md-4 control-label">Cliente</label>
 						<select id="cliente" class="form-control" th:field="*{cliente.codCliente}">
 							<option th:each="cliente : ${clientes}" th:value="${cliente.codCliente}"
-									th:text="${cliente.apellidos} + ', ' + ${cliente.nombre}">
+									th:text="${cliente.apellidos} + ', ' + ${cliente.nombre}"
+									th:selected="${cliente.codCliente} == *{cliente.codCliente}">
 								</option>
 						</select>
 					</div>

@@ -1,10 +1,4 @@
 AOS.init();
-if (document.getElementsByName('input')) {
-	new dateDropper({
-		selector: 'input[type="date"]'
-	});
-}
-
 
 var dateInputs = document.querySelectorAll('input[type="date"]');
 
@@ -30,8 +24,6 @@ function volverFuncion() {
 /*Llamada a las validaciones*/ 
 if(document.getElementById('cliente')) {
 	formValidationCliente();
-}else if(document.getElementById('parte')){
-	formValidationParte();
 }else{
 	/*alert('No se ha podido cargar el javaScript')*/
 }
@@ -146,7 +138,7 @@ function formValidationCliente() {
 	}
 }
 
-function formValidationParte() {
+/*function formValidationParte() {
 	let form = document.getElementById('form');
 	let matricula = document.getElementById('matricula');
 	let idTrabajadorParte = document.getElementById('idTrabajadorParte');
@@ -246,4 +238,4 @@ function formValidationParte() {
 
 		return submit;
 	}
-}
+}*/

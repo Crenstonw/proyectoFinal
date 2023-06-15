@@ -30,15 +30,15 @@ public class FacturaController {
 	
 	@PostMapping("/submit")
 	public String submitBuscarFactura(Long idParte, Model model) {
-		model.addAttribute(idParte);
+		
 		return "redirect:/inicio/factura/mostrar/{idParte}";
 	}
 	
-	@PostMapping("/mostrar/{idParte}")
+	@GetMapping("/mostrar/{idParte}")
 	public String mostrarFactura(@PathVariable("idParte") Long idParte, Model model) {
 		List<LineaFactura> factura = lineaFacturaService.findByParte(idParte);
 		model.addAttribute(factura);
-		return "redirect:/inicio/factura/{idParte}";
+		return "formularios/factura-parte";
 	}
 	
 	/*@GetMapping("factura/{idParte}")
