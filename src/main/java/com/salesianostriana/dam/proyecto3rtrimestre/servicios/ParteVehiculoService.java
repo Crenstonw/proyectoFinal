@@ -30,4 +30,10 @@ public class ParteVehiculoService {
 		repositorio.delete(pv);
 		return result;
 	}
+	
+	/*public List<ParteVehiculo> findByCerrado(Boolean parteCerrado) {
+		parteCerrado = true;
+		
+		return this.repositorio.findByCerrado(parteCerrado);
+	}*/
 }

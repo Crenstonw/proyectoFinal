@@ -36,7 +36,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="trabajador : ${trabajadores}">
+						<tr data-aos="fade-up" th:each="trabajador : ${trabajadores}">
 							<td th:text="${trabajador.idTrabajador}"></td>
 							<td th:text="${trabajador.fechaNacimiento}"></td>
 							<td th:text="${trabajador.dni}"></td>

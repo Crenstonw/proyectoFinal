@@ -47,7 +47,7 @@ public class ParteVehiculoController {
 	}
 	
 	@PostMapping("/nuevo/submit")
-	public String submitNuevoProducto(@AuthenticationPrincipal Trabajador t, ParteVehiculo parteVehiculo, Model model) {
+	public String submitNuevoProducto(@AuthenticationPrincipal Trabajador t, ParteVehiculo parteVehiculo,  Model model) {
 		parteVehiculo.setTrabajador(t);
 		parteVehiculoService.save(parteVehiculo);
 		return "redirect:/inicio/listaParte/";
@@ -57,11 +57,11 @@ public class ParteVehiculoController {
 	@GetMapping("/editar/{idParte}")
 	public String editarparteVehiculo(@PathVariable("idParte") Long idParte, Model model) {
 		ParteVehiculo parteVehiculo = parteVehiculoService.findById(idParte);
-		model.addAttribute("clientes", clienteService.findByApellidos());
+		model.addAttribute("clientes", clienteService.findAll());
 		model.addAttribute("vehiculos", vehiculoService.findAll());
 		
 		if(parteVehiculo != null) {
-			model.addAttribute("parte", parteVehiculo);
+			model.addAttribute("parte", parteVehiculo); 
 			return "formularios/form-parte";
 		} else {
 			return "listaParte";

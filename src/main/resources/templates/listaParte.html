@@ -36,7 +36,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="parte : ${partes}">
+						<tr data-aos="fade-up" th:each="parte : ${partes}">
 							<td th:text="${parte.idParte}"></td>
 							<td th:text="${parte.tiempoEmpleado} + ' horas'"></td>
 							<td th:text="${parte.fechaLlegada}"></td>

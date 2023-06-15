@@ -32,7 +32,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="proveedor : ${proveedores}">
+						<tr data-aos="fade-up" th:each="proveedor : ${proveedores}">
 							<td th:text="${proveedor.idProveedor}"></td>
 							<td th:text="${proveedor.nombre}"></td>
 							<td th:text="${proveedor.direccion}"></td>

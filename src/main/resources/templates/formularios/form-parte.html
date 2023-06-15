@@ -24,7 +24,7 @@
 						<label for="matricula" class="col-md-4 control-label">Matrícula del vehículo</label>
 						<select id="matricula" class="form-control">
 							<option th:each="vehiculo : ${vehiculos}" th:value="${vehiculo.matricula}"
-									th:text="${vehiculo.tipoVehiculo} + ', ' + ${vehiculo.marca} + ', ' + ${vehiculo.modelo}">
+									th:text="${vehiculo.matricula}">
 								</option>
 						</select>
 					</div>

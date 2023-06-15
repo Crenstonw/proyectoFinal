@@ -1,6 +1,25 @@
-let volver = document.getElementById('volver');
+AOS.init();
+new dateDropper({
+	selector: 'input[type="date"]'
+  });
 
-volver.addEventListener('click', volverFuncion);
+var dateInputs = document.querySelectorAll('input[type="date"]');
+
+if(dateInputs != null) {
+	dateInputs.forEach(function(input) {
+		new dateDropper({
+		  selector: input,
+		  format: "y-mm-dd",
+		  expandable: true
+		});
+	  });
+}
+
+let volver = document.getElementById('volver')
+
+if(volver != null) {
+	volver.addEventListener('click', volverFuncion);
+}
 
 function volverFuncion() {
 	window.history.back();

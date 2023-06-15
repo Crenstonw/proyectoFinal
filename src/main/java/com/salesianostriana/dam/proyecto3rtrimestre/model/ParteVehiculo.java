@@ -45,7 +45,7 @@ public class ParteVehiculo {
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	private Vehiculo vehiculo;
 	
-	@ManyToOne(cascade = CascadeType.PERSIST)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private Trabajador trabajador;
 	
 	@ManyToOne(cascade = CascadeType.PERSIST)
