@@ -38,7 +38,7 @@ public class ParteVehiculoController {
 	
 	@GetMapping("/nuevo")
 	public String nuevoParteVehiculo(Model model) {
-		List<Vehiculo> vehiculos = vehiculoService.findAll();	
+		List<Vehiculo> vehiculos = vehiculoService.findAll();
 		List<Cliente> clientes = clienteService.findAll();
 		model.addAttribute("parte", new ParteVehiculo());
 		model.addAttribute("clientes", clientes);

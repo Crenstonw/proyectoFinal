@@ -1,13 +1,17 @@
 package com.salesianostriana.dam.proyecto3rtrimestre.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.salesianostriana.dam.proyecto3rtrimestre.model.ParteVehiculo;
+import com.salesianostriana.dam.proyecto3rtrimestre.model.LineaFactura;
+import com.salesianostriana.dam.proyecto3rtrimestre.servicios.LineaFacturaService;
 import com.salesianostriana.dam.proyecto3rtrimestre.servicios.ParteVehiculoService;
 
 @Controller
@@ -15,6 +19,8 @@ import com.salesianostriana.dam.proyecto3rtrimestre.servicios.ParteVehiculoServi
 public class FacturaController {
 	@Autowired
 	private ParteVehiculoService parteVehiculoService;
+	@Autowired
+	private LineaFacturaService lineaFacturaService;
 
 	@GetMapping("/")
 	public String buscarFactura(Model model) {
@@ -22,8 +28,25 @@ public class FacturaController {
 		return "listaFactura";
 	}
 	
-	@PostMapping("/factura/submit")
-	public String mostrarFactura(ParteVehiculo parteVehiculo, Model model) {
-		return "";
+	@PostMapping("/submit")
+	public String submitBuscarFactura(Long idParte, Model model) {
+		model.addAttribute(idParte);
+		return "redirect:/inicio/factura/mostrar/{idParte}";
 	}
+	
+	@PostMapping("/mostrar/{idParte}")
+	public String mostrarFactura(@PathVariable("idParte") Long idParte, Model model) {
+		List<LineaFactura> factura = lineaFacturaService.findByParte(idParte);
+		model.addAttribute(factura);
+		return "redirect:/inicio/factura/{idParte}";
+	}
+	
+	/*@GetMapping("factura/{idParte}")
+	public String nuevaFactura(@PathVariable("idParte") Long idParte, Model model) {
+		List<LineaFactura> facturas = lineaFacturaService.findByIdParte(idParte);
+		model.addAttribute(facturas);
+		return "factura-parte";
+	}*/
+	
+	
 }
