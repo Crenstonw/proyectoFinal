@@ -1,7 +1,10 @@
 AOS.init();
-new dateDropper({
-	selector: 'input[type="date"]'
-  });
+if (document.getElementsByName('input')) {
+	new dateDropper({
+		selector: 'input[type="date"]'
+	});
+}
+
 
 var dateInputs = document.querySelectorAll('input[type="date"]');
 

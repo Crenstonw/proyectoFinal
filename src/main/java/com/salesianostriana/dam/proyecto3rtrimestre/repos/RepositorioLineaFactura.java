@@ -9,8 +9,7 @@ import org.springframework.data.repository.query.Param;
 import com.salesianostriana.dam.proyecto3rtrimestre.model.LineaFactura;
 
 public interface RepositorioLineaFactura extends JpaRepository<LineaFactura, Long> {
-	@Query(value = "Select lf from LineaFactura lf where lf.ParteVehiculo.idParte IN :idParte",
-			nativeQuery = true)
+	@Query(value = "Select lf from LineaFactura lf where lf.parteVehiculo.idParte = :idParte")
 	List<LineaFactura> findByidParte(@Param("idParte") Long idParte);
 	
 }
