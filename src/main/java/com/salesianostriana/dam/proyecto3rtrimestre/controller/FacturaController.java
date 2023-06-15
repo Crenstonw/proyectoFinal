@@ -38,7 +38,7 @@ public class FacturaController {
 	public String mostrarFactura(@PathVariable("idParte") Long idParte, Model model) {
 		List<LineaFactura> factura = lineaFacturaService.findByParte(idParte);
 		model.addAttribute(factura);
-		return "formularios/factura-parte";
+		return "formularios/form-proveedor";
 	}
 	
 	/*@GetMapping("factura/{idParte}")
